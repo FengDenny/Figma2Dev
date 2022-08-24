@@ -1,0 +1,13 @@
+.container {
+  background: var(--light-white);
+  height: 100px;
+}
+
+.bannerImg img {
+  padding: 0 70px;
+  margin-top: 30px;
+}
+
+.bannerImg:nth-child(1) {
+  margin-left: -40px;
+}

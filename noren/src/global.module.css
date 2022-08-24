@@ -1,0 +1,43 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,700&display=swap");
+:root {
+  --primary-color: #6246e4;
+  --secondary-color: #fcbc14;
+  --teritary-color: #9acf61;
+  --white: #fff;
+  --light-white: #f7fafd;
+  --transparent-box-shadow: 0 0 50px transparent;
+  --primary-font: "Philosopher", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--primary-font);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0;
+}
+
+.dFlex {
+  display: flex;
+}
+
+.justifySpaceBetween {
+  justify-content: space-between;
+}
+
+.justifySpaceAround {
+  justify-content: space-around;
+}
