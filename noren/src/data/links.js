@@ -1,27 +1,27 @@
 export const links = [
   {
     id: 1,
-    name: "Home",
-    ahref: "#home",
+    name: 'Home',
+    ahref: '/',
   },
   {
     id: 2,
-    name: "Service",
-    ahref: "#service",
+    name: 'Service',
+    ahref: '#service',
   },
   {
     id: 3,
-    name: "Team",
-    ahref: "#team",
+    name: 'Testimonials',
+    ahref: '#testimonials',
   },
   {
     id: 4,
-    name: "Blog",
-    ahref: "#blog",
+    name: 'Blog',
+    ahref: '#blog',
   },
   {
     id: 5,
-    name: "Contact",
-    ahref: "#contact",
+    name: 'Contact',
+    ahref: '#contact',
   },
 ];
