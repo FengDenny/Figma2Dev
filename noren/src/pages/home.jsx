@@ -5,6 +5,7 @@ import Banner from '../component/Banner/Banner';
 import Card from '../component/Card/Card';
 import ThreeSteps from '../component/ThreeSteps/ThreeSteps';
 import Numbers from '../component/Numbers/Numbers';
+import Blog from '../component/Blog/Blog';
 
 export default function home() {
   return (
@@ -14,6 +15,7 @@ export default function home() {
       <Card />
       <ThreeSteps />
       <Numbers />
+      <Blog />
     </div>
   );
 }
