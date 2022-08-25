@@ -1,0 +1,91 @@
+.container {
+  position: relative;
+  padding: 100px 0;
+  height: 100vh;
+}
+.container::before {
+  position: absolute;
+  content: url('../../img/StepsRight.png');
+  right: 0;
+  margin-top: -50px;
+  padding: 0 20px;
+}
+
+.sectionLeft {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 0.5;
+}
+.sectionRight {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-grow: 0;
+}
+
+.sectionLeft img {
+  width: auto;
+  height: 80%;
+}
+
+.sectionRight h2 {
+  font-size: 3rem;
+  max-width: 400px;
+  font-weight: bold;
+  margin-right: 80px;
+}
+.sectionRight p {
+  width: 350px;
+  line-height: 1.3rem;
+  margin-top: 0.9rem;
+}
+.circleGray {
+  border-radius: 50%;
+  border: 1px solid var(--circle-light-gray);
+  background: var(--circle-light-gray);
+  height: 65px;
+  width: 50px;
+  margin-top: 2.5rem;
+}
+.circleOne {
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid var(--circle-one);
+  background: var(--circle-one);
+  height: 50px;
+  width: 50px;
+}
+
+.circleTwo {
+  border-radius: 50%;
+  border: 1px solid var(--circle-two);
+  background: var(--circle-two);
+  height: 50px;
+  width: 50px;
+}
+.circleThree {
+  border-radius: 50%;
+  border: 1px solid var(--circle-three);
+  background: var(--circle-three);
+  height: 50px;
+  width: 50px;
+}
+
+.circleGray h3 {
+  position: relative;
+  width: 300px;
+  font-size: 1.2rem;
+  margin-left: 100px;
+  bottom: 40px;
+}
+
+.circleOne h2,
+.circleTwo h2,
+.circleThree h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin: 10px auto;
+  color: var(--white);
+}
