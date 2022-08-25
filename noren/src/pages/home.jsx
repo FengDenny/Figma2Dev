@@ -3,9 +3,9 @@ import Hero from '../component/Hero/Hero';
 import Banner from '../component/Banner/Banner';
 import Card from '../component/Card/Card';
 import Service from '../component/Service/Service';
-import Numbers from '../component/Numbers/Numbers';
+import Accomplishments from '../component/Accomplishments/Accomplishments';
 import Blog from '../component/Blog/Blog';
-import Testimonials from '../component/Testimonials/Testimonials';
+import Testimonials from '../component/Testimonial/Testimonials';
 
 export default function home() {
   return (
@@ -14,7 +14,7 @@ export default function home() {
       <Banner />
       <Card />
       <Service />
-      <Numbers />
+      <Accomplishments />
       <Blog />
       <Testimonials />
     </main>
