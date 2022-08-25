@@ -1,18 +1,18 @@
 import React from 'react';
-import ThreeStepStyles from './ThreeSteps.module.css';
+import ServiceStyle from './Service.module.css';
 import globalStyles from '../../global.module.css';
 import { steps } from '../../data/threeSteps';
 import Section3 from '../../img/section3.png';
 export default function ThreeSteps() {
   return (
-    <section className={ThreeStepStyles.container}>
+    <section className={ServiceStyle.container}>
       <div
         className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceAround}`}
       >
-        <div className={ThreeStepStyles.sectionLeft}>
+        <div className={ServiceStyle.sectionLeft}>
           <img src={Section3} alt="Steps" />
         </div>
-        <div className={ThreeStepStyles.sectionRight}>
+        <div className={ServiceStyle.sectionRight}>
           <h2>We take care of your business</h2>
           <p>
             Power your business to new heights with our award-winning digital
@@ -22,10 +22,10 @@ export default function ThreeSteps() {
           {steps.map((data) => {
             const { id, title } = data;
             return (
-              <div className={ThreeStepStyles.circleGray} key={id}>
+              <div className={ServiceStyle.circleGray} key={id}>
                 {id === 1 && (
                   <>
-                    <div className={ThreeStepStyles.circleOne}>
+                    <div className={ServiceStyle.circleOne}>
                       <h2>{id}</h2>
                     </div>
                     <h3>{title}</h3>
@@ -33,7 +33,7 @@ export default function ThreeSteps() {
                 )}
                 {id === 2 && (
                   <>
-                    <div className={ThreeStepStyles.circleTwo}>
+                    <div className={ServiceStyle.circleTwo}>
                       <h2>{id}</h2>
                     </div>
                     <h3>{title}</h3>
@@ -41,7 +41,7 @@ export default function ThreeSteps() {
                 )}
                 {id === 3 && (
                   <>
-                    <div className={ThreeStepStyles.circleThree}>
+                    <div className={ServiceStyle.circleThree}>
                       <h2>{id}</h2>
                     </div>
                     <h3>{title}</h3>
