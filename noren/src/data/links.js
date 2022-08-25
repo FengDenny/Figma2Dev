@@ -1,23 +1,23 @@
 export const links = [
   {
     id: 1,
-    name: 'Home',
-    ahref: '/',
-  },
-  {
-    id: 2,
     name: 'Service',
     ahref: '#service',
   },
   {
+    id: 2,
+    name: 'Accomplishments',
+    ahref: '#accomplishment',
+  },
+  {
     id: 3,
-    name: 'Testimonials',
-    ahref: '#testimonials',
+    name: 'Blog',
+    ahref: '#blog',
   },
   {
     id: 4,
-    name: 'Blog',
-    ahref: '#blog',
+    name: 'Testimonials',
+    ahref: '#testimonials',
   },
   {
     id: 5,
