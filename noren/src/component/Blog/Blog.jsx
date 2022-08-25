@@ -6,7 +6,7 @@ import { blogData } from '../../data/blog';
 
 export default function Blog() {
   return (
-    <section className={BlogStyles.container}>
+    <section id="blog" className={BlogStyles.container}>
       <div className={`${globalStyles.container}`}>
         <div className={BlogStyles.header}>
           <h2>From Blog</h2>

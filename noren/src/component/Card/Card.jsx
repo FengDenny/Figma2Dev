@@ -4,7 +4,7 @@ import CardStyles from '../../component/Card/card.module.css';
 import { cards } from '../../data/cards';
 export default function Card() {
   return (
-    <section className={CardStyles.container}>
+    <section id="service" className={CardStyles.container}>
       <div
         className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceAround}`}
       >

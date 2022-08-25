@@ -7,7 +7,7 @@ import { testimonialData } from '../../data/testimonials';
 import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 export default function Testimonials() {
   return (
-    <section className={testStyles.container}>
+    <section id="testimonials" className={testStyles.container}>
       <div className={`${globalStyles.container} ${globalStyles.dFlex}`}>
         <div className={testStyles.leftSection}>
           <img src={TestImage} alt="Testimonials" />

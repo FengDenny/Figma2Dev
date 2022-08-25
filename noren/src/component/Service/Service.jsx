@@ -5,7 +5,7 @@ import { steps } from '../../data/threeSteps';
 import Section3 from '../../img/section3.png';
 export default function ThreeSteps() {
   return (
-    <section className={ServiceStyle.container}>
+    <section id="service" className={ServiceStyle.container}>
       <div
         className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceAround}`}
       >
