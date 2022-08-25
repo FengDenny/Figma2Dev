@@ -2,7 +2,7 @@
   padding: 180px;
   margin-left: 5rem;
   max-width: 1500px;
-  /* margin: 0 auto; */
+  height: 100vh;
 }
 
 .header {
@@ -30,7 +30,10 @@
 }
 
 .card p {
-  padding: 10px 22px;
+  position: relative;
+  bottom: 20px;
+  padding: 2px 20px;
+  margin: 20px 0;
   width: 300px;
   font-size: 0.9rem;
 }
