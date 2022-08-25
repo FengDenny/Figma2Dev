@@ -4,7 +4,7 @@ import CardStyles from '../../component/Card/card.module.css';
 import { cards } from '../../data/cards';
 export default function Card() {
   return (
-    <div className={CardStyles.container}>
+    <section className={CardStyles.container}>
       <div
         className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceAround}`}
       >
@@ -16,6 +16,6 @@ export default function Card() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

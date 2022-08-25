@@ -5,7 +5,7 @@ import { steps } from '../../data/threeSteps';
 import Section3 from '../../img/section3.png';
 export default function ThreeSteps() {
   return (
-    <div className={ThreeStepStyles.container}>
+    <section className={ThreeStepStyles.container}>
       <div
         className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceAround}`}
       >
@@ -52,6 +52,6 @@ export default function ThreeSteps() {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

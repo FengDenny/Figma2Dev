@@ -8,7 +8,7 @@ import { formatValueToK } from './formatValueToK';
 
 export default function Numbers() {
   return (
-    <div className={NumberStyles.container}>
+    <section className={NumberStyles.container}>
       <div
         className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceBetween}`}
       >
@@ -55,6 +55,6 @@ export default function Numbers() {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
