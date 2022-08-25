@@ -6,7 +6,7 @@
 
 .container::before {
   position: absolute;
-  content: url("../../img/heroLeft.png");
+  content: url('../../img/heroLeft.png');
   height: 15px;
   max-width: 15px;
   bottom: 51rem;
@@ -37,7 +37,7 @@
   font-weight: bold;
   margin-top: 1rem;
   cursor: pointer;
-  box-shadow: var(--transparent-box-shadow);
+  box-shadow: var(--button-box-shadow);
   transition: 0.3s;
 }
 
