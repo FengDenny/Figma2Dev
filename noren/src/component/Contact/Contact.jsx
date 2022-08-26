@@ -9,7 +9,7 @@ export default function Contact() {
       <div className={`${globalStyles.container} ${contactStyles.form}`}>
         <form>
           <h3>Get the best project estimation.</h3>
-          <input type="email" />
+          <input type="email" placeholder="Enter your email" />
           <button> Send</button>
         </form>
         <div>
