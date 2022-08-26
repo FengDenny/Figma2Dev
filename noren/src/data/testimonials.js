@@ -15,4 +15,28 @@ export const testimonialData = [
     testimonial:
       'Noren has helped Saro bring in more traffic. With more incoming traffic, our sales increased.  ',
   },
+  {
+    id: 3,
+    image: 'test2.png',
+    fullName: 'Karl Kalagin',
+    occupation: 'Manager at Saro',
+    testimonial:
+      'Noren has helped Saro bring in more traffic. With more incoming traffic, our sales increased.  ',
+  },
+  {
+    id: 4,
+    image: 'test2.png',
+    fullName: 'Karl Kalagin',
+    occupation: 'Manager at Saro',
+    testimonial:
+      'Noren has helped Saro bring in more traffic. With more incoming traffic, our sales increased.  ',
+  },
+  {
+    id: 5,
+    image: 'test2.png',
+    fullName: 'Karl Kalagin',
+    occupation: 'Manager at Saro',
+    testimonial:
+      'Noren has helped Saro bring in more traffic. With more incoming traffic, our sales increased.  ',
+  },
 ];
