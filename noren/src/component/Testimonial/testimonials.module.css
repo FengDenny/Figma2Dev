@@ -39,8 +39,8 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  left: 120px;
-  top: 50px;
+  right: 120px;
+  top: 90px;
 }
 
 .buttons button {
