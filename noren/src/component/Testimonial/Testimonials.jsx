@@ -15,17 +15,17 @@ export default function Testimonials() {
           <p>Take a look at what our customers are saying about our work.</p>
         </div>
         <div className={testStyles.rightSection}>
-          {testimonialData.map((data) => (
+          {testimonialData.slice(0, 2).map((data) => (
             <Slider testimonialData={data} />
           ))}
-          <div className={testStyles.buttons}>
-            <button>
-              <FiArrowLeft />
-            </button>
-            <button>
-              <FiArrowRight />
-            </button>
-          </div>
+        </div>
+        <div className={testStyles.buttons}>
+          <button>
+            <FiArrowLeft />
+          </button>
+          <button>
+            <FiArrowRight />
+          </button>
         </div>
       </div>
     </section>
