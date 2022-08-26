@@ -7,13 +7,14 @@
 .form {
   display: flex;
   justify-content: space-between;
-  width: 1200px;
+  width: 1320px;
   background: var(--secondary-color);
   border-radius: 30px;
   border: 1px solid var(--secondary-color);
   padding: 50px 50px;
   box-shadow: var(--button-box-shadow);
   height: 200px;
+  margin-left: 13%;
 }
 
 .form:after {
