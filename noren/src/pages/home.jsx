@@ -6,6 +6,7 @@ import Service from '../component/Service/Service';
 import Accomplishments from '../component/Accomplishments/Accomplishments';
 import Blog from '../component/Blog/Blog';
 import Testimonials from '../component/Testimonial/Testimonials';
+import Contact from '../component/Contact/Contact';
 
 export default function home() {
   return (
@@ -17,6 +18,7 @@ export default function home() {
       <Accomplishments />
       <Blog />
       <Testimonials />
+      <Contact />
     </main>
   );
 }
