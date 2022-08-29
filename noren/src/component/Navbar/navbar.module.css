@@ -31,3 +31,24 @@ a {
   border-bottom: 1px solid var(--white);
   color: var(--light-gray);
 }
+
+/* Media Queries */
+@media screen and (max-width: 899px) {
+  .logoContainer {
+    position: relative;
+    margin: 0 auto;
+    right: 117px;
+  }
+  ul > li {
+    margin-top: 1.3rem;
+    border-bottom: 1px solid var(--light-gray);
+    padding: 10px;
+  }
+  a {
+    color: var(--primary-color);
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}

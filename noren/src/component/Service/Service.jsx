@@ -7,7 +7,8 @@ export default function ThreeSteps() {
   return (
     <section id="service" className={ServiceStyle.container}>
       <div
-        className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceAround}`}
+        className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceAround}
+        ${ServiceStyle.mobile}`}
       >
         <div className={ServiceStyle.sectionLeft}>
           <img src={Section3} alt="Steps" />

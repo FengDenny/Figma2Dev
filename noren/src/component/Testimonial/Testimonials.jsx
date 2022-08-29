@@ -8,7 +8,9 @@ import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 export default function Testimonials() {
   return (
     <section id="testimonials" className={testStyles.container}>
-      <div className={`${globalStyles.container} ${globalStyles.dFlex}`}>
+      <div
+        className={`${globalStyles.container} ${globalStyles.dFlex} ${testStyles.mobile}`}
+      >
         <div className={testStyles.leftSection}>
           <img src={TestImage} alt="Testimonials" />
           <h2>What they say?</h2>

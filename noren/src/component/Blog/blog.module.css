@@ -1,12 +1,11 @@
 .container {
-  padding: 180px;
-  margin-left: 5rem;
-  max-width: 1500px;
+  padding: 150px 0;
+  margin-right: 3rem;
   height: 100vh;
 }
 
 .header {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -15,7 +14,7 @@
   margin-top: 1.5rem;
   border: 2px solid var(--light-gray);
   border-radius: 32.5px;
-  width: 301px;
+  width: 290px;
   height: auto;
   box-shadow: var(--button-box-shadow);
 }
@@ -24,6 +23,11 @@
   display: flex;
   flex-direction: row;
 }
+
+.card img {
+  width: 286px;
+}
+
 .card h3 {
   padding: 10px 22px;
   font-size: 1.3rem;
@@ -67,4 +71,22 @@
 }
 .card .duration {
   background: var(--circle-two);
+}
+
+/* Media Queries */
+@media screen and (max-width: 898px) {
+  .mobile {
+    padding: 10px 225px;
+  }
+  .container {
+    height: auto;
+  }
+
+  .card {
+    width: 390px;
+    border-radius: 45px;
+  }
+  .card img {
+    width: 389px;
+  }
 }

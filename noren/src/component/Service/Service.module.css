@@ -89,3 +89,33 @@
   margin: 10px auto;
   color: var(--white);
 }
+
+/* Media Queries */
+@media screen and (max-width: 898px) {
+  .mobile {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  .container {
+    height: auto;
+    margin-left: 90px;
+  }
+
+  .container::before {
+    display: none;
+  }
+  .sectionLeft,
+  .sectionRight {
+    margin: 0 auto;
+  }
+
+  .sectionRight {
+    margin-right: 50px;
+  }
+
+  .sectionLeft img {
+    width: 420px;
+    height: 50%;
+  }
+}

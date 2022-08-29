@@ -50,3 +50,27 @@
   position: relative;
   bottom: 50px;
 }
+.heroImg img {
+  width: 550px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 899px) {
+  .mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container::before {
+    display: none;
+  }
+
+  .heroImg img {
+    width: calc(100% - 100px);
+  }
+
+  .heroImg {
+    position: relative;
+    padding: 150px 0;
+    left: 120px;
+  }
+}

@@ -6,7 +6,8 @@ export default function Card() {
   return (
     <section id="service" className={CardStyles.container}>
       <div
-        className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceAround}`}
+        className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceAround}
+        ${CardStyles.mobile}`}
       >
         {cards.map((data) => (
           <div className={CardStyles.card}>

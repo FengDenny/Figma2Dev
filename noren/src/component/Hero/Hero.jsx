@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <div className={HeroStyles.container}>
       <div
-        className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceBetween}`}
+        className={`${HeroStyles.heroWidth} ${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceBetween} ${HeroStyles.mobile}`}
       >
         <div className={HeroStyles.hero}>
           <h2> Get business solutions with Noren.</h2>

@@ -10,7 +10,7 @@ export default function Numbers() {
   return (
     <section id="accomplishment" className={accompStyles.container}>
       <div
-        className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceBetween}`}
+        className={`${globalStyles.container} ${globalStyles.dFlex} ${globalStyles.justifySpaceBetween} ${accompStyles.mobile}`}
       >
         <div className={accompStyles.sectionLeft}>
           <h2>Our numbers</h2>

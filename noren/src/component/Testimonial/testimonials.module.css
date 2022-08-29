@@ -1,7 +1,6 @@
 .container {
   position: relative;
   padding: 100px 0;
-  height: 100vh;
 }
 
 .leftSection {
@@ -39,7 +38,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  right: 120px;
+  right: 100px;
   top: 90px;
 }
 
@@ -62,4 +61,43 @@
   background: var(--test-button-color);
   color: var(--white);
   border: 2px solid var(--test-button-color);
+}
+
+/* Media Queries */
+@media screen and (max-width: 961px) {
+  .mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 34.5%;
+    top: -190px;
+  }
+}
+@media screen and (max-width: 898px) {
+  .container {
+    /* height: auto; */
+    margin-right: 19px;
+  }
+  .leftSection {
+    margin-right: 5%;
+  }
+
+  .leftSection img {
+    width: 236px;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .rightSection {
+    margin-left: 25%;
+  }
+
+  .rightSection {
+    display: flex;
+    flex-direction: column;
+  }
 }
