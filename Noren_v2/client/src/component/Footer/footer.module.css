@@ -1,0 +1,39 @@
+.container {
+  padding: 50px 10px;
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.copyright h5 {
+  padding: 0px 10px;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  margin-top: 1rem;
+}
+
+.logo,
+.navLogo {
+  margin-top: 0.5rem;
+}
+
+.navLogo {
+  margin-left: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
