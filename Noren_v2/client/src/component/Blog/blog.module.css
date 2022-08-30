@@ -1,0 +1,93 @@
+.container {
+  position: relative;
+  padding: 100px 0;
+  min-height: 100vh;
+}
+
+.mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  margin-top: 1.5rem;
+  border: 2px solid var(--light-gray);
+  border-radius: 32.5px;
+  width: 290px;
+  height: auto;
+  box-shadow: var(--button-box-shadow);
+}
+
+.card .blogInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.card img {
+  width: 286px;
+}
+
+.card h3 {
+  padding: 10px 22px;
+  font-size: 1.3rem;
+}
+
+.card p {
+  position: relative;
+  bottom: 20px;
+  padding: 2px 20px;
+  margin: 20px 0;
+  width: 300px;
+  font-size: 0.9rem;
+}
+
+.card svg {
+  font-weight: light;
+}
+
+.card .blogInfo h4 {
+  position: relative;
+  padding: 10px 10px;
+  margin: 5px auto;
+  right: 8px;
+  color: var(--light-black);
+  font-size: 0.9rem;
+}
+
+.card .icon {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  color: var(--light-black);
+  width: 28px;
+  height: 28px;
+  padding: 5px 6px;
+  border-radius: 50%;
+}
+
+.card .date {
+  background: var(--circle-one);
+}
+.card .duration {
+  background: var(--circle-two);
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+  .header {
+    justify-content: flex-start;
+  }
+  .mobile {
+    flex-direction: row;
+    gap: 80px;
+  }
+}
