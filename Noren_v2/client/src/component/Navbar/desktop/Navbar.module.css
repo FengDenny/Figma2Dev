@@ -1,0 +1,52 @@
+.container {
+  background: var(--primary-color);
+  color: #fff;
+  height: 100px;
+}
+
+.logo {
+  margin-top: 10px;
+}
+
+.logo h2 {
+  position: relative;
+  top: 10px;
+  left: 5px;
+}
+
+.links {
+  position: relative;
+  padding: 0 10px;
+  top: 20px;
+  transition: text-decoration 0.5s ease-in;
+  font-size: 1.1rem;
+}
+
+.links a {
+  padding: 10px 20px;
+  color: var(--white);
+}
+
+.links a:hover {
+  text-decoration: underline;
+  color: var(--light-gray);
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    justify-content: center;
+    flex-grow: 0.6;
+  }
+}
+@media screen and (max-width: 610px) {
+  .logo {
+    justify-content: center;
+    flex-grow: 0.5;
+  }
+}
+@media screen and (max-width: 475px) {
+  .logo {
+    justify-content: center;
+    flex-grow: 0;
+  }
+}
