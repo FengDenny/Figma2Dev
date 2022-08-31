@@ -2,6 +2,7 @@
   padding: 50px 10px;
   background: var(--primary-color);
   color: var(--white);
+  display: flex;
 }
 
 .footer {
@@ -35,5 +36,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+  .container {
+    display: block;
+  }
+  .logo,
+  .navLogo {
+    margin-top: 2rem;
   }
 }

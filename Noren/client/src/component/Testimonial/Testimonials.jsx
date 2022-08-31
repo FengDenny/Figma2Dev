@@ -16,7 +16,7 @@ export default function Testimonials() {
         </div>
         <div className={testStyles.rightSection}>
           {testimonialData.slice(0, 2).map((data) => (
-            <Slider testimonialData={data} />
+            <Slider testimonialData={data} key={data.id} />
           ))}
         </div>
         <div className={testStyles.buttons}>
