@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Figma2Dev/static/css/main.2e0e3987.css",
-    "main.js": "/Figma2Dev/static/js/main.3651a1f0.js",
+    "main.css": "/Figma2Dev/static/css/main.4d51339b.css",
+    "main.js": "/Figma2Dev/static/js/main.063121e3.js",
     "static/js/787.c4e7f8f9.chunk.js": "/Figma2Dev/static/js/787.c4e7f8f9.chunk.js",
     "static/media/section3.png": "/Figma2Dev/static/media/section3.5df082ea87f183662172.png",
     "static/media/heroRight.png": "/Figma2Dev/static/media/heroRight.2389c9b3f57c364c245c.png",
@@ -12,12 +12,12 @@
     "static/media/numbers.png": "/Figma2Dev/static/media/numbers.dd112ab5737d12ad6584.png",
     "static/media/test0.png": "/Figma2Dev/static/media/test0.c2d8d0c0bdf189109626.png",
     "index.html": "/Figma2Dev/index.html",
-    "main.2e0e3987.css.map": "/Figma2Dev/static/css/main.2e0e3987.css.map",
-    "main.3651a1f0.js.map": "/Figma2Dev/static/js/main.3651a1f0.js.map",
+    "main.4d51339b.css.map": "/Figma2Dev/static/css/main.4d51339b.css.map",
+    "main.063121e3.js.map": "/Figma2Dev/static/js/main.063121e3.js.map",
     "787.c4e7f8f9.chunk.js.map": "/Figma2Dev/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e0e3987.css",
-    "static/js/main.3651a1f0.js"
+    "static/css/main.4d51339b.css",
+    "static/js/main.063121e3.js"
   ]
 }
