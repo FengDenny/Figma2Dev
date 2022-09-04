@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import ServiceStyle from "./Service.module.css";
 import globalStyles from "../../global.module.css";
 import { steps } from "../../data/threeSteps";
 import Section3 from "../../img/section3.png";
+import { ScrollAnimation } from "../ScrollAnimation/ScrollAnimation";
 export default function ThreeSteps() {
   return (
     <section id='service' className={ServiceStyle.container}>
@@ -20,32 +21,43 @@ export default function ThreeSteps() {
           {steps.map((data) => {
             const { id, title } = data;
             return (
-              <div className={ServiceStyle.circleGray} key={id}>
-                {id === 1 && (
-                  <>
-                    <div className={ServiceStyle.circleOne}>
-                      <h2>{id}</h2>
-                    </div>
-                    <h3>{title}</h3>
-                  </>
-                )}
-                {id === 2 && (
-                  <>
-                    <div className={ServiceStyle.circleTwo}>
-                      <h2>{id}</h2>
-                    </div>
-                    <h3>{title}</h3>
-                  </>
-                )}
-                {id === 3 && (
-                  <>
-                    <div className={ServiceStyle.circleThree}>
-                      <h2>{id}</h2>
-                    </div>
-                    <h3>{title}</h3>
-                  </>
-                )}
-              </div>
+              <ScrollAnimation
+                showClass={`${ServiceStyle.show}`}
+                content={
+                  <div className={ServiceStyle.circleGray} key={id}>
+                    {id === 1 && (
+                      <>
+                        <ScrollAnimation
+                          showClass={ServiceStyle.fadeBottom}
+                          content={
+                            <div className={`${ServiceStyle.circleOne}`}>
+                              <h2>{id}</h2>
+                            </div>
+                          }
+                        ></ScrollAnimation>
+
+                        <h3>{title}</h3>
+                      </>
+                    )}
+                    {id === 2 && (
+                      <>
+                        <div className={ServiceStyle.circleTwo}>
+                          <h2>{id}</h2>
+                        </div>
+                        <h3>{title}</h3>
+                      </>
+                    )}
+                    {id === 3 && (
+                      <>
+                        <div className={ServiceStyle.circleThree}>
+                          <h2>{id}</h2>
+                        </div>
+                        <h3>{title}</h3>
+                      </>
+                    )}
+                  </div>
+                }
+              ></ScrollAnimation>
             );
           })}
         </div>

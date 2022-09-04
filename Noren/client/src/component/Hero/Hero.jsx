@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HeroStyles from "./Hero.module.css";
 import globalStyles from "../../global.module.css";
+import ModalStyle from "../../component/Modal/Modal.module.css";
 
 import HeroImage from "../../img/heroRight.png";
 import Modal from "../Modal/Modal";
@@ -8,7 +9,6 @@ export default function Hero() {
   const [showModal, setShowModal] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const handleSignUp = (e) => {
     e.preventDefault();
     setEmail("");
@@ -27,6 +27,7 @@ export default function Hero() {
             marketing services and technology platform.
           </p>
           <button onClick={() => setShowModal(!showModal)}>Get Started</button>
+
           {showModal && (
             <Modal
               title='Sign up to get started'
@@ -35,6 +36,7 @@ export default function Hero() {
               btnLabel='Sign Up'
               email={email}
               password={password}
+              showModal={showModal}
               closeModal={() => setShowModal(!showModal)}
               setEmail={(e) => setEmail(e.target.value)}
               setPassword={(e) => setPassword(e.target.value)}

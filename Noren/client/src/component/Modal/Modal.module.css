@@ -8,6 +8,7 @@
   /* border-bottom-left-radius: 100px; */
   height: 450px;
   box-shadow: var(--button-box-shadow);
+
   z-index: 1000;
 }
 
@@ -112,6 +113,34 @@
 
 .form input:focus {
   outline: none;
+}
+
+/*  Modal Animation */
+
+@keyframes show {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes hide {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+.container.show {
+  animation: show 300ms ease-in-out;
+}
+
+.container.hide {
+  animation: hide 1s ease-out;
 }
 
 @media screen and (min-width: 768px) {

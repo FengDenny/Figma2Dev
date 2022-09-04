@@ -5,7 +5,11 @@ import { AiOutlineClose } from "react-icons/ai";
 
 export default function Modal(props) {
   return (
-    <div className={ModalStyle.container}>
+    <div
+      className={`${ModalStyle.container}  ${
+        props.showModal ? ` ${ModalStyle.show}` : `${ModalStyle.hide}`
+      }`}
+    >
       <div className={ModalStyle.closeBtn}>
         <button className={ModalStyle.cross} onClick={props.closeModal}>
           <AiOutlineClose />
@@ -21,7 +25,7 @@ export default function Modal(props) {
               name='email'
               placeholder='JohnDoe@gmail.com'
               value={props.email}
-              onClick={props.setEmail}
+              onChange={props.setEmail}
               required
             />
           </div>
@@ -32,7 +36,7 @@ export default function Modal(props) {
               name='email'
               placeholder='**************'
               value={props.password}
-              onClick={props.setPassword}
+              onChange={props.setPassword}
               required
             />
           </div>
