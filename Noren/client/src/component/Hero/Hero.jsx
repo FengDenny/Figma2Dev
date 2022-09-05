@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import HeroStyles from "./Hero.module.css";
 import globalStyles from "../../global.module.css";
-import ModalStyle from "../../component/Modal/Modal.module.css";
+import AnimationStyles from "../ScrollAnimation/Animations.module.css";
+import { ScrollAnimation } from "../ScrollAnimation/ScrollAnimation";
 
 import HeroImage from "../../img/heroRight.png";
-import Modal from "../Modal/Modal";
+import Modal from "../Modal/GetStartedModal";
 export default function Hero() {
   const [showModal, setShowModal] = useState(false);
   const [email, setEmail] = useState("");
@@ -21,12 +22,27 @@ export default function Hero() {
         className={`${globalStyles.container} ${HeroStyles.heroContainer} `}
       >
         <div className={HeroStyles.hero}>
-          <h1> Get business solutions with Noren.</h1>
-          <p>
-            Power your business to new heights with our award-winning digital
-            marketing services and technology platform.
-          </p>
-          <button onClick={() => setShowModal(!showModal)}>Get Started</button>
+          <ScrollAnimation
+            showClass={AnimationStyles.fadeTop}
+            content={<h1> Get business solutions with Noren.</h1>}
+          />
+          <ScrollAnimation
+            showClass={AnimationStyles.fadeLeft}
+            content={
+              <p>
+                Power your business to new heights with our award-winning
+                digital marketing services and technology platform.
+              </p>
+            }
+          />
+          <ScrollAnimation
+            showClass={AnimationStyles.fadeBottom}
+            content={
+              <button onClick={() => setShowModal(!showModal)}>
+                Get Started
+              </button>
+            }
+          />
 
           {showModal && (
             <Modal
@@ -45,7 +61,10 @@ export default function Hero() {
           )}
         </div>
         <div className={HeroStyles.heroImg}>
-          <img src={HeroImage} alt='hero' />
+          <ScrollAnimation
+            showClass={AnimationStyles.fadeRight}
+            content={<img src={HeroImage} alt='hero' />}
+          />
         </div>
       </section>
     </div>

@@ -29,6 +29,7 @@ export default function Modal(props) {
               required
             />
           </div>
+
           <div className={ModalStyle.formItems}>
             <label htmlFor='email'>{props.labelTwo}</label>
             <input

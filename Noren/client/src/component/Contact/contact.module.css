@@ -131,8 +131,9 @@
   }
 
   .form button {
-    margin: 0 10px;
-    padding: 10px 20px;
+    margin: 0 79%;
+    position: relative;
+    bottom: 47px;
   }
 
   .formImage {

@@ -1,0 +1,144 @@
+.container {
+  position: relative;
+  top: 20px;
+  /* left: 50%; */
+  background: var(--light-gray);
+  width: 320px;
+  height: auto;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 20px 20px;
+  box-shadow: var(--button-box-shadow);
+}
+
+.container h2 {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 20px;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.closeBtn button {
+  width: 50px;
+  background: transparent;
+  border: none;
+  border-radius: none;
+  box-shadow: none;
+  position: absolute;
+  right: 0;
+  top: -25px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  color: var(--light-black);
+}
+
+.closeBtn button:hover {
+  color: red;
+  border: none;
+  box-shadow: none;
+  border-radius: none;
+  background: transparent;
+}
+
+.form {
+  padding: 10px 20px;
+}
+
+.form .formItems {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 10px;
+}
+
+.formItems label {
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+  color: var(--light-black);
+  font-weight: 300;
+}
+
+.formItems input {
+  width: 250px;
+  height: 40px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  outline: none;
+}
+
+.formItems textarea {
+  width: 250px !important;
+  height: 100px;
+  resize: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  outline: none;
+  padding-left: 5px;
+  padding-top: 5px;
+  line-height: 15px;
+}
+
+.formItems input[type="email"] {
+  padding-left: 3px;
+  color: var(--light-black);
+}
+
+.formItems input::placeholder,
+.formItems textarea::placeholder {
+  color: var(--light-black);
+}
+
+.formItems button {
+  width: 100px;
+  height: 40px;
+  margin: 3% 60%;
+  font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes show {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes hide {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+.container.show {
+  animation: show 300ms ease-in-out;
+}
+
+.container.hide {
+  animation: hide 1s ease-out;
+}
+
+@media screen and (min-width: 768px) {
+  /* .container {
+    background: var(--light-gray);
+    padding: 20px 10px;
+    width: 380px;
+    margin: -5% 10%;
+    border-bottom-left-radius: 100px;
+  } */
+  .container {
+    position: absolute;
+    top: 15%;
+    left: 21.5%;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+  }
+}

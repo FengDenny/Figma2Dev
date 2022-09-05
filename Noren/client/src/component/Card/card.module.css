@@ -1,13 +1,13 @@
 .container {
   margin-top: 3rem;
-  padding: 50px 0px;
+  padding: 100px 0px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: auto;
+  height: 300px;
   padding: 30px 30px;
   margin: 0 auto;
   justify-content: center;
@@ -39,5 +39,8 @@
   .cardContainer {
     display: flex;
     flex-flow: row wrap;
+  }
+  .card {
+    margin-left: 27px;
   }
 }
