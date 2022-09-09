@@ -1,0 +1,25 @@
+@import "../../global.scss";
+
+.nav-container{
+  @include bgColorBlue;
+}
+
+.btn-nav-menu{
+    background:transparent;
+    padding:10px 20px;
+    color:$white;
+    border:1px solid $white;
+    border-radius:8px;
+    font-size:1.1rem;
+    box-shadow: $btn-box-shadow;
+    cursor:pointer;
+    transition: background, color 0.5s ease-in-out;
+    font-weight:bold;
+}
+.btn-nav-menu:hover{
+    background:$white;
+   color:$hero-blue;
+}
+
+
+
