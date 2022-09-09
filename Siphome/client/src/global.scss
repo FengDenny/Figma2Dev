@@ -1,0 +1,49 @@
+$primary-color:#1ECE7A;
+$secondary-color: #606B86;
+$dark-color: #262B36;
+$btn-close: #FA4949;
+$white: #fff;
+$btn-box-shadow:  0px 8px 15px rgba(0, 0, 0, 0.1);
+$linear-color: rgba(255, 255, 255, 0.0001);
+$hero-blue: #1C57C9;
+$hero-blue-hover: #1e61e6;
+$primary-font:  'Inter', sans-serif;
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:$primary-font;
+}
+a,
+ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+.container{
+    max-width:1400px;
+    margin: auto;
+    padding:30px 30px;
+}
+
+
+.d-flex-row{
+    display:flex;
+    flex-direction: row;
+}
+.d-flex-column{
+    display:flex;
+    flex-direction: column;
+}
+
+.justify-space-between{
+justify-content:space-between;
+}
+
+@mixin bgColorBlue {
+ background:$hero-blue;
+}
