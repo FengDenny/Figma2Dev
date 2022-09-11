@@ -1,10 +1,12 @@
 $primary-color:#1ECE7A;
+$primary-color-hover:#13a75f;
 $secondary-color: #606B86;
 $dark-color: #262B36;
 $btn-close: #FA4949;
-$vertical-line: #eeeeee93;
+$vertical-line: #eeeeee;
 $white: #fff;
 $white-40: rgba(255, 255, 255, 0.4);
+$white-opacity: rgba(255, 255, 255, 0.12);
 $btn-box-shadow:  0px 8px 15px rgba(0, 0, 0, 0.1);
 $linear-color: rgba(255, 255, 255, 0.0001);
 $hero-blue: #1C57C9;
@@ -17,6 +19,10 @@ $primary-font:  'Inter', sans-serif;
     padding:0;
 }
 
+html,body{
+    overflow:hidden;
+}
+
 body{
     font-family:$primary-font;
 }
@@ -27,7 +33,7 @@ ul {
 }
 
 .container{
-    max-width:1400px;
+    max-width:1192px;
     margin: auto;
     padding:30px 30px;
 }
@@ -46,6 +52,13 @@ ul {
 justify-content:space-between;
 }
 
+
+// color
+.green{
+    color:$primary-color
+}
+
 @mixin bgColorBlue {
  background:$hero-blue;
 }
+

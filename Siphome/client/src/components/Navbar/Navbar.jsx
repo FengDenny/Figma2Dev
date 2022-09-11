@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className={"nav-container"}>
         <nav className='container'>
           <div className='d-flex-row justify-space-between'>
-            <img src={Logo} alt='Logo' />
+            <img className='logo' src={Logo} alt='Logo' />
             <button
               className='btn-nav-menu'
               onClick={() => setOpenMenu(!openMenu)}
