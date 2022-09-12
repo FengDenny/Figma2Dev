@@ -19,7 +19,7 @@
     background: $hero-blue;
     color:$white;
     width:100%;
-    min-height:75vh;
+    min-height:85vh;
 }
 
 .hero-container::before{
@@ -147,6 +147,10 @@ left:10px;
     .img-hero img{
         display:none;
     }
+
+    .hero-info{
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 400px){
@@ -187,7 +191,6 @@ left:10px;
   
     .hero-container{
         width:80%;
-        min-height:80vh;
         border-radius: 0 0 50% 0/ 100% 0 100% 100%;
 
     }
