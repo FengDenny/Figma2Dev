@@ -1,0 +1,210 @@
+@import "../../globalVariables.scss";
+
+.features-container{
+    position: relative;
+    background: $white;
+    color:$secondary-color;
+    width:100%;
+    min-height:100vh;
+    z-index:-1;
+}
+
+
+.features-container::before{
+    content:url("../../img/HeroDot2.png");
+    position: absolute;
+    bottom: 90%;
+    right: -4%;
+    width:300px;
+    height:300px;
+}
+
+.features-header h2{
+ position: relative;
+ margin-top:20px;
+ right:20px;
+ font-weight:500;
+ text-align: center;
+ width:390px;
+ font-size:1.2rem;
+ line-height:30px;
+ padding:10px 30px;
+}
+
+.features-header img{
+    margin-top:30px;  
+    width:100%;
+    max-width:400px;
+    height:400px;
+}
+
+
+.features-info{
+    text-align:center;
+    font-size:1.2rem;
+    margin-top:20px;
+}
+
+.features-info-header h3{
+    color:$hero-blue;
+    letter-spacing:10px;
+}
+
+.features-info-header h4{
+    color:$dark-color;
+    font-size:2rem;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.features-info-header p{
+    color:$secondary-color;
+    font-size:1rem;
+    font-weight:normal;
+    width:280px;
+    margin: 10px auto;
+    line-height:25px;
+}
+
+.features-info-steps{
+    display:flex;
+    flex-direction:column;
+    margin: 0 auto;
+    padding:30px 0;
+}
+
+.features-info-steps img{
+    width: 100%;
+    max-width:50px;
+    height:50px;
+    margin: 25px auto;
+}
+
+.features-info-steps h3{
+   font-size:1rem;
+ }
+
+.features-info-steps p{
+   font-size:0.9rem;
+   margin-top:10px;
+   width:320px;
+   line-height:20px;
+}
+
+
+
+
+@media only screen and (max-width: 997px) and (min-width: 768px){
+    .features-container::before{
+        bottom: 69%;
+        right:-12%;
+    }
+    
+    .features-header{
+    position: relative;
+     align-items: center;
+    }
+
+    .features-header h2{
+        position: relative;
+        margin-top:20px;
+        margin-left:15%;
+        font-weight:400;
+        width:75%;
+        padding:10px 10px;
+       }
+
+      
+    .features-header img{
+      display:block;
+      margin:5% auto;
+    } 
+.features-info{
+    margin-top:10%;
+}
+
+.features-info-header p{
+    width:500px;
+}
+.features-info-steps{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    flex-wrap:wrap;
+    width:800px;
+}
+
+}
+
+
+@media screen and (min-width: 998px){
+    .features-header{
+        position:absolute;
+        top:5%;
+        left:10%;
+    }
+    .features-header h2{
+    
+  
+        width:800px;
+        text-align: start;
+    }
+
+    .features-header img{
+        margin-top:20%;  
+    }
+
+    .features-info{
+        position: absolute;
+        top:20%;
+        left:40%;
+
+    }
+
+    .features-info-header p{
+        width:500px;
+    }
+    .features-info-steps{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        flex-wrap:wrap;
+        width:800px;
+    }
+    
+}
+
+@media screen and (max-width: 767px){
+
+.features-header{
+    margin-top: 50px;
+}
+
+ .features-header h2{
+    text-align:start;
+    width:420px;
+    line-height: 40px;
+    margin: 0 auto;
+    font-size:1rem;
+ }   
+.features-header img{
+    display:block;
+   margin: 0 auto;
+ }   
+
+
+.features-info-steps p{
+   margin: 0 auto; 
+}
+
+.features-container::before{
+    display:none;
+}
+}
+
+@media screen and (max-width:400px) {
+    .features-header h2{
+        font-size: 0.8rem;
+        width:400px;
+    }
+}
