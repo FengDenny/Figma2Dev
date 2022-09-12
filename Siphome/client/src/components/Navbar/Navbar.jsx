@@ -23,8 +23,6 @@ export default function Navbar() {
             <ul className='desktop-nav'>
               {data.map((data) => {
                 const { id, link, ahref } = data;
-                console.log(id, link, ahref);
-
                 return (
                   <li className='desktop-nav-li' key={id}>
                     <a href={ahref}>{link}</a>
