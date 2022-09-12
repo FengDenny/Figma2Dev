@@ -1,17 +1,5 @@
-$primary-color:#1ECE7A;
-$primary-color-hover:#13a75f;
-$secondary-color: #606B86;
-$dark-color: #262B36;
-$btn-close: #FA4949;
-$vertical-line: #eeeeee;
-$white: #fff;
-$white-40: rgba(255, 255, 255, 0.4);
-$white-opacity: rgba(255, 255, 255, 0.12);
-$btn-box-shadow:  0px 8px 15px rgba(0, 0, 0, 0.1);
-$linear-color: rgba(255, 255, 255, 0.0001);
-$hero-blue: #1C57C9;
-$hero-blue-hover: #1e61e6;
-$primary-font:  'Inter', sans-serif;
+@import "./globalVariables.scss";
+
 
 *{
     box-sizing: border-box;
@@ -20,7 +8,7 @@ $primary-font:  'Inter', sans-serif;
 }
 
 html,body{
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
 body{
@@ -56,9 +44,5 @@ justify-content:space-between;
 // color
 .green{
     color:$primary-color
-}
-
-@mixin bgColorBlue {
- background:$hero-blue;
 }
 
