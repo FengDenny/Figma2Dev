@@ -20,7 +20,7 @@
     background: $hero-blue;
     color:$white;
     width:100%;
-    min-height:100vh;
+    min-height:65vh;
 }
 
 .hero-container::before{
@@ -39,7 +39,7 @@
 .hero-container::after{
     content:url("../../img/dot.png");
     position: absolute;
-    bottom: 50px;
+    bottom: 0;
     left:0;
 }
 
@@ -118,6 +118,38 @@ left:10px;
     color:$primary-color
 }
 
+
+@media screen and (min-width: 775px) and (max-width: 997px){
+    .img-hero img{
+        display:none;
+    }
+    .hero-container{
+        width:100% !important;
+    }
+
+    .hero-info h1{
+        line-height:5rem !important;
+        font-size:4.5rem !important;
+        text-align:center !important;
+    }
+
+    .hero-info{
+        flex-grow:0 !important;
+        margin:20% auto;
+    }
+    
+    .btn-hero{
+        padding: 40px 70px !important
+    }
+    
+}
+
+@media screen and (max-width: 775PX){
+    .img-hero img{
+        display:none;
+    }
+}
+
 @media (max-width: 400px){
   
     .hero-circle{
@@ -141,14 +173,10 @@ left:10px;
     }
 }
 
-@media screen and  (max-width: 767px){
-    .img-hero img{
-        display:none;
-    }
-}
 
 
-@media (min-width: 768px){
+
+@media screen and (min-width: 768px){
 
     .hero-circle{
         position: absolute;
@@ -177,10 +205,11 @@ left:10px;
     .hero-info {
         position: relative;
         right: 0px;
+        margin: 10% auto;
         flex-grow:3;
     }
     .hero-info h1 {
-        text-align: start !important;
+        text-align: start ;
         width:528px;
         font-size:3.5rem;
     }
