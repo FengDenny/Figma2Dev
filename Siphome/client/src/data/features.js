@@ -7,37 +7,31 @@ export const featuresLeft = [
   },
 ];
 
-export const featuresRight = [
-  {
-    id: 0,
-    title: "Meet Siphome",
-    description:
-      "The most comprehensive smart solution to home maintenance. All it takes is a simple and affordable sensor installation by one of our Siphome certified technicians.",
-  },
+export const FeaturesRight = [
   {
     id: 1,
-    image: "./icon1.png",
+    image: "icon1.png",
     title: "Automatic Threat Detection",
     description:
       "Siphome reacts the moment your equipment fails, alerting you to the problem.",
   },
   {
     id: 2,
-    image: "./icon2.png",
+    image: "icon2.png",
     title: "Smart Diagnostics",
     description:
       "See exactly what is malfunctioning and compare your maintenance options on the same screen.",
   },
   {
     id: 3,
-    image: "./icon3.png",
+    image: "icon3.png",
     title: "Disaster Prevention",
     description:
       "Predictive analytics lets you see what needs maintenance before it fails.",
   },
   {
     id: 4,
-    image: "./icon4.png",
+    image: "icon4.png",
     title: "24/7 Service",
     description:
       "Siphome monitors your critical systems 24/7 so you can enjoy peace of mind.",
