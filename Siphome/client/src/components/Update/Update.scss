@@ -1,0 +1,249 @@
+@import "../../globalVariables.scss";
+
+.update-container{
+    position: relative;
+    background: $white;
+    color:$secondary-color;
+    width:100%;
+    min-height:100vh;
+}
+
+
+
+.update-info-header{
+    position: relative;
+    text-align:center;
+    font-size:1.2rem;
+    margin-top:50px;
+    z-index:1000;
+    height:62vh;
+}
+
+
+.update-info-header h3{
+    color:$hero-blue;
+    letter-spacing:10px;
+}
+
+.update-info-header h4{
+    color:$dark-color;
+    font-size:2rem;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+
+.update-info-header img{
+    width:100%;
+    display:flex;
+}
+
+.update-info-header .update-img{
+    max-width:180px;
+    height:180px;
+    margin-top:30%;
+}
+
+.update-info-header .update-img-2{
+    margin-top: 20px;
+    max-width:220px;
+    height:220px;
+}
+
+.update-info-header .update-img-3{
+    position: relative;
+    bottom: 342px;
+    left: 203px;
+    max-width:220px;
+    height:300px;
+    z-index:-1;
+}
+
+.update-info{
+    position: relative;
+    background:$hero-blue;
+    color:$white;
+    padding:50% 0;
+    border-radius: 0 0 0 32%/ 0 17%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.update-info::before{
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    height: 37vh;
+    width: 35vw;
+    background: transparent;
+    border: 1px solid $white-opacity;
+    border-radius: 0 0 100% 0/0 0 100% 0;
+    border-left-style:none;
+    border-top-style: none;
+    border-bottom-style: none;
+}
+
+.update-info::after{
+    content: url("../../img/heroDot1.png");         
+    position: absolute;
+    bottom: 0;
+    right:0;                 
+}
+
+
+
+.update-info img{
+    display:flex;
+    width:80px;
+    height:80px;
+    margin:0 auto;
+    margin-top:50px;
+   padding:10px 10px;
+}
+
+.update-info h3{
+    text-align: center;
+    font-weight: normal;
+}
+.update-info p{
+    text-align: center;
+    font-weight: 200;
+    font-size:0.9rem;
+    width:300px;
+    margin:0 auto;
+    margin-top:4px;
+    
+}
+
+
+@media screen and (max-width: 997px) and (min-width: 768px) {
+    .update-info{
+        padding:30% 0;
+    }
+
+    .update-info::before{
+        height: 45vh;
+        width: 35vw;
+    }
+
+    .update-info-card{
+        padding:0 25px;
+    }
+
+    .update-info-header img{
+        margin:0 auto;
+    }
+
+
+    .update-info-header .update-img{
+        position: relative;
+        right:20%;
+        max-width:250px;
+        height:200px;
+    }
+    
+    .update-info-header .update-img-2{
+        position: relative;
+        right:16%;
+        margin-top: 20px;
+        max-width:320px;
+        height:280px;
+    }
+    
+    .update-info-header .update-img-3{
+        position: relative;
+        bottom: 450px;
+        left: 15% ;
+        max-width:290px;
+        height:300px;
+    }
+    
+    
+.update-info-header .update-img{
+    margin-top:15%;
+}
+
+}
+
+@media screen and (min-width: 998px){
+
+
+    .update-info-header::before{
+     content: url("../../img/section3Dot1.png");
+        position: absolute;
+        top: 100%;
+        left:0;
+        z-index:-1;
+    }
+    
+    .update-info::before{
+        display:none;
+    }
+
+    .update-dot{
+        position: absolute;
+        right:95%;
+        top:18%;
+    } 
+    
+    .update-dot img{
+       width:150px;
+       height:150px;
+    }
+
+   .update-info-header{
+    text-align: start;
+    margin:0 10%;
+    margin-top:150px;
+   }
+ .update-info-header .update-img {
+    margin-top: 30%;
+}
+
+.update-info-header .update-img{
+    max-width:300px;
+    height:220px;
+}
+
+.update-info-header .update-img-2{
+    margin-top: 20px;
+    max-width:400px;
+    height:280px;
+}
+
+.update-info-header .update-img-3{
+    position: relative;
+    left:85%;
+    bottom:400px;
+    max-width:280px;
+    height:320px;
+}
+
+
+.update-info{
+   margin-top:140px;
+    padding:5%;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    flex-grow:1;
+}
+#desktop{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+}
+
+
+@media screen and (max-width: 767px) {
+    .update-dot{
+        display:none;
+    }
+    .update-info-card{
+        padding:0 20px;
+    }
+}
