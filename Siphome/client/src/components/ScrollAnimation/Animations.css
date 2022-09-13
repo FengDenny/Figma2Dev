@@ -16,6 +16,16 @@
   animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
+.fade-1 {
+  animation: fade1 5s ease-in;
+}
+.fade-2 {
+  animation: fade2 5s ease-in;
+}
+.fade-3 {
+  animation: fade3 5s ease-in;
+}
+
 .opacity {
   animation: opacity 1s ease-in;
 }
@@ -62,6 +72,36 @@
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade1 {
+  0% {
+    opacity: 0;
+  }
+
+  33% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade2 {
+  33% {
+    opacity: 0;
+  }
+
+  67% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade3 {
+  67% {
+    opacity: 0;
+  }
+
+  100% {
     opacity: 1;
   }
 }
