@@ -1,0 +1,55 @@
+@import "../../globalVariables.scss";
+@import "../../components/ScrollAnimation/Animations.css";
+
+.slider{
+  position: relative;
+}
+
+.slider .list{
+  display:flex;
+  flex-direction: row;
+}
+
+.navButtons {
+  width: 24px;
+  height: 24px;
+  margin: 0px 32px;
+  cursor: pointer;
+  color:$secondary-color;
+  z-index: 100;
+}
+
+.dotsControls {
+  display: block;
+  text-align: center;
+
+}
+
+
+@media screen and (max-width: 997px) and (min-width: 768px) {
+  .slider .list{
+    width:850px;
+  }
+}
+
+
+@media screen and (min-width: 997px){
+  .testimonials .list{
+      justify-content:center;
+    }
+ 
+.next-button{
+  position: absolute;
+    bottom: 43%;
+    right: 96.5%;
+    animation:fadeLeft 1.2s ease-in-out;
+}
+
+.prev-button{
+  position: absolute;
+  bottom: 43%;
+  left: 93.5%;
+  animation: fadeRight 1.2s ease-in-out;
+}
+}
+
