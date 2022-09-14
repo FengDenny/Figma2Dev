@@ -1,0 +1,307 @@
+@import "../../globalVariables.scss";
+@import "../ScrollAnimation/Animations.css";
+
+.testimonials-container{
+    width:100%;
+    min-height:100vh;
+    padding: 10px 10px;
+    background: $linear-color;
+}
+
+.testimonials-header{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    
+    & h3{
+        color: $hero-blue;
+        letter-spacing:5px;
+    }
+
+    & h4{
+       font-size:2rem; 
+       font-weight:bold;
+       width: 300px;
+       margin:15px auto;
+       padding: 10px 10px;
+    }   
+}
+
+.testimonials{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+
+    & .testimonials-card{
+        position: relative;
+        background:$white;
+        width: 300px;
+        max-width:320px;
+        height: 350px;
+        max-height: 350px;
+        border:1px solid $white;
+        border-radius:20px;
+        box-shadow: $btn-box-shadow;
+        margin-right:10px;
+        margin-top:120px;;
+        padding:10px 10px;
+        animation: opacity 1.25s ease;
+
+
+        & p{
+            position: relative;
+            bottom:25px;
+            width:270px;
+            line-height:25px;
+            font-weight:500;
+            color:$dark-color;
+            text-align: center;
+            font-size:1rem
+
+        }
+        & img{
+            position:relative;
+            bottom:55px;
+            display:block;
+            margin: 0 auto;
+        }
+
+        & h3{
+            text-align: center;
+            font-size:1rem;
+            margin-top:20px;
+        }    
+
+         & h5{
+            text-align: center;
+            font-size:0.7rem;
+            margin-top:15px;
+            font-weight:400;
+            color:$secondary-color
+        }
+
+        & img:last-child{
+            position: relative;
+            left:30%;
+        }
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 997px) and (min-width: 768px) {
+    .testimonials .list{
+        justify-content:center;
+      }
+
+    .testimonials  .testimonials-card:nth-child(odd){
+        width: 555px !important;
+        max-width: 500px;
+        height: 270px;
+        padding:10px 20px;
+        margin-right:30px;
+        
+        & p{
+            position: relative;
+            bottom:50px;
+            width:431px;
+            line-height:25px;
+            font-weight:500;
+            color:$dark-color;
+            text-align: start;
+            font-size:1rem
+
+        }
+        & img:first-child{
+            position:relative;
+            bottom:55px;
+            display:block;
+            margin: 0 91%;
+        }
+
+        & h3{
+            position: relative;
+            top: 1px;
+            text-align: start;
+            font-size:1rem;
+            
+        }    
+
+         & h5{
+            position: relative;
+            bottom:12px;
+            text-align: start;
+            font-size:0.7rem;
+            font-weight:400;
+            color:$secondary-color
+        }
+
+        & img:last-child{
+            position: relative;
+            left:43%;
+            bottom:25%
+        }
+      }
+
+      .testimonials  .testimonials-card:nth-child(even){
+        width: 555px !important;
+        max-width: 500px;
+        height: 300px;
+        padding:10px 20px;
+        margin-right:30px;
+        
+        & p{
+            position: relative;
+            bottom:50px;
+            width:320px;
+            line-height:25px;
+            font-weight:500;
+            color:$dark-color;
+            text-align: start;
+            font-size:1rem
+
+        }
+        & img:first-child{
+            position:relative;
+            bottom:55px;
+            display:block;
+            margin: 0 91%;
+        }
+
+        & h3{
+            position: relative;
+            text-align: start;
+            font-size:1rem;
+            
+           
+        }    
+
+         & h5{
+            position: relative;
+            text-align: start;
+            font-size:0.7rem;
+            bottom:15px;
+            font-weight:400;
+            color:$secondary-color
+        }
+
+        & img:last-child{
+            position: relative;
+            left:40%;
+        }
+      }
+
+
+
+}
+
+
+
+@media screen and (min-width: 997px) {
+    .testimonials .list{
+        justify-content:center;
+      }
+
+    .testimonials  .testimonials-card:nth-child(odd){
+        width: 555px !important;
+        max-width: 500px;
+        height: 270px;
+        padding:10px 20px;
+        margin-right:30px;
+        
+        & p{
+            position: relative;
+            bottom:50px;
+            width:431px;
+            line-height:25px;
+            font-weight:500;
+            color:$dark-color;
+            text-align: start;
+            font-size:1rem
+
+        }
+        & img:first-child{
+            position:relative;
+            bottom:55px;
+            display:block;
+            margin: 0 91%;
+        }
+
+        & h3{
+            position: relative;
+            top: 1px;
+            text-align: start;
+            font-size:1rem;
+            
+        }    
+
+         & h5{
+            position: relative;
+            bottom:12px;
+            text-align: start;
+            font-size:0.7rem;
+            font-weight:400;
+            color:$secondary-color
+        }
+
+        & img:last-child{
+            position: relative;
+            left:43%;
+            bottom:25%
+        }
+      }
+
+      .testimonials  .testimonials-card:nth-child(even){
+        width: 555px !important;
+        max-width: 500px;
+        height: 300px;
+        padding:10px 20px;
+        margin-right:30px;
+        
+        & p{
+            position: relative;
+            bottom:50px;
+            width:320px;
+            line-height:25px;
+            font-weight:500;
+            color:$dark-color;
+            text-align: start;
+            font-size:1rem
+
+        }
+        & img:first-child{
+            position:relative;
+            bottom:55px;
+            display:block;
+            margin: 0 91%;
+        }
+
+        & h3{
+            position: relative;
+            text-align: start;
+            font-size:1rem;
+            
+           
+        }    
+
+         & h5{
+            position: relative;
+            text-align: start;
+            font-size:0.7rem;
+            bottom:15px;
+            font-weight:400;
+            color:$secondary-color
+        }
+
+        & img:last-child{
+            position: relative;
+            left:44%;
+        }
+      }
+
+
+
+}
