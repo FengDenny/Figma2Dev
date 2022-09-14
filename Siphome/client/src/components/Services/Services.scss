@@ -1,0 +1,98 @@
+@import "../../globalVariables.scss";
+
+.services-container{
+    width:100%;
+    min-height:100vh;
+    padding: 10px 10px;
+    background: $linear-color;
+    margin-top:15px;
+}
+
+.services-header{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 15px;
+
+    & h3{
+        color:$hero-blue;
+        letter-spacing:5px;
+    }
+
+    & h4{
+     font-size:1.5rem;
+     margin-top:10px;
+    }
+
+    & p{
+    font-size:1rem;
+    color:$secondary-color;
+    margin:10px auto;
+    width:280px;
+    }
+
+    & img{
+    width:320px;
+    height:320px;
+    display:block;
+    margin:0 auto;
+    padding:25px 10px;
+    }
+    
+}
+
+
+.services-slider{
+    background:$white;
+    box-shadow: $btn-box-shadow;
+    border:1px solid $white;
+    padding:10px 15px;
+    border-radius: 15px;
+    margin-left:15px;
+    height:80px;
+
+     & h3{
+        font-size: 1rem;
+        width: 210px;
+        text-align: center;
+        margin:5% 0;
+    }
+
+    & img{
+        width: 55px;
+        height:55px;
+        padding:5px 5px;
+    }
+}
+
+
+.services-info, .services-slider{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 997px) and (min-width: 768px) {
+    .services-header p{
+        width:600px;
+    }
+  }
+
+  @media screen and (min-width: 997px){
+    .services-info{
+    flex-wrap:wrap;
+    }
+
+    .services-slider{
+        margin:15px;
+    }
+    .services-header p{
+        width:600px;
+    }
+
+    .services-header img{
+        width:400px;
+        height:400px;
+    }
+  }
