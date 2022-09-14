@@ -7,7 +7,7 @@ import { ScrollAnimation } from "../ScrollAnimation/ScrollAnimation";
 
 export default function Features() {
   return (
-    <section className='features-container'>
+    <section className='features-container' id='features'>
       <div className='container'>
         <div className='features-header'>
           <ScrollAnimation

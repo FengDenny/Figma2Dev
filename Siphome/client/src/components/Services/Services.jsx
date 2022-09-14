@@ -7,7 +7,7 @@ import "../ScrollAnimation/Animations.css";
 import { ScrollAnimation } from "../ScrollAnimation/ScrollAnimation";
 export default function Services() {
   return (
-    <section className='services-container'>
+    <section className='services-container' id='services'>
       <div className='container'>
         <div className='services-header'>
           {serviceHeader.map((data) => (
