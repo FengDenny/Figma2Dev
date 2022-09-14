@@ -4,6 +4,7 @@ import Features from "../../components/Features/Features";
 import Update from "../../components/Update/Update";
 import Services from "../../components/Services/Services";
 import Testimonials from "../../components/Testimonials/Testimonials";
+import Contact from "../../components/Contact/Contact";
 export default function Home() {
   return (
     <main>
@@ -12,6 +13,7 @@ export default function Home() {
       <Update />
       <Services />
       <Testimonials />
+      <Contact />
     </main>
   );
 }
