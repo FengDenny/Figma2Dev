@@ -14,8 +14,6 @@ export default function MobileMenu(props) {
         <ul className='nav-mobile-ul'>
           {props.data.map((data) => {
             const { id, link, ahref } = data;
-            console.log(id, link, ahref);
-
             return (
               <li className='nav-mobile-li' key={id}>
                 <a href={ahref}>{link}</a>
