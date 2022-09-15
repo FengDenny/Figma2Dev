@@ -1,0 +1,33 @@
+@use "globalVariables.module.scss" as gv;
+
+*{
+   @include gv.css-reset;
+}
+
+
+a,li{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.container{
+   @include gv.container
+}
+
+// Flex Box
+
+.dFlexRow{
+    @include gv.display-flex($column: false);
+}
+
+.dFlexColumn{
+    @include gv.display-flex($column: true);
+}
+
+.spaceBetween{
+    @include gv.justify-content($space-between: true) 
+}
+
+.spaceCenter{
+    @include gv.justify-content($space-between: false) 
+}

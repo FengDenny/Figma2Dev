@@ -1,0 +1,35 @@
+@use "../../../globalVariables.module.scss" as gv;
+
+.button {
+  position: relative;
+  bottom: 5px;
+
+  & .buttonStyle {
+    @include gv.button(200, 60, var(--secondary-green));
+    color: var(--white);
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: var(--glow-box-shadow);
+    transition: box-shadow, background 200ms ease-in;
+
+    &:hover {
+      box-shadow: var(--glow-box-shadow-hover);
+      background: var(--secondary-green-hover);
+    }
+  }
+
+  & .buttonNoStyle {
+    @include gv.button(0, 0, transparent, none, none);
+    position: relative;
+    right: 10px;
+    color: var(--white);
+    padding: 10px 50px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: text-decoration, color 200ms ease-in-out;
+    &:hover {
+      color: var(--white-hover);
+      text-decoration: underline;
+    }
+  }
+}

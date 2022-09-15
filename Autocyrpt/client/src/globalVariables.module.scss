@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
+
+$dark-blue: #313a5a;
+$green-glow: #1fdb84;
+$green-glow-hover: #00eb7d;
+$bar-blue: #0a8aff;
+$primary-font: #031d5b;
+$card-white: rgba(255, 255, 255, 0.95);
+$secondary-font: #5b6c94;
+$white: #fff;
+$white-hover: rgba(218, 218, 218, 0.897);
+$btn-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+$glow-box-shadow: 0 5px 15px #09f587de;
+$glow-box-shadow-hover: 0 5px 15px #00eb7dc2;
+$column: "column";
+$space-between: "space-between";
+$layout-breakpoint-max-width: 997px;
+$layout-breakpoint-min-width: 998px;
+
+:root {
+  --primary-color: #{$dark-blue};
+  --secondary-green: #{$green-glow};
+  --secondary-green-hover: #{$green-glow-hover};
+  --primary-font-color: #{$primary-font};
+  --secondary-font-color: #{$secondary-font};
+  --white: #{$white};
+  --white-hover: #{$white-hover};
+  --white-card: #{$card-white};
+  --bar-blue: #{$bar-blue};
+  --btn-box-shadow: #{$btn-box-shadow};
+  --glow-box-shadow: #{$glow-box-shadow};
+  --glow-box-shadow-hover: #{$glow-box-shadow-hover};
+  --f-d-column: #{$column};
+  --j-c-space-between: #{$space-between};
+}
+// Mixins
+@mixin css-reset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+}
+
+@mixin container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 30px 30px;
+}
+
+@mixin display-flex($column: false) {
+  display: flex;
+  flex-direction: row;
+  @if ($column) {
+    flex-direction: var(--f-d-column);
+  }
+}
+
+@mixin justify-content($space-between: false) {
+  justify-content: center;
+  @if ($space-between) {
+    justify-content: var(--j-c-space-between);
+  }
+}
+
+@mixin button(
+  $width,
+  $height,
+  $bg,
+  $border: 1px solid var(--secondary-color),
+  $border-radius: 5px 0 5px 0
+) {
+  width: $width;
+  height: $height;
+  background: $bg;
+  border: $border;
+  border-radius: $border-radius;
+}

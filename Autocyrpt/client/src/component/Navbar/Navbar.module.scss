@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  min-height: 10vh;
+  background: var(--primary-color);
+}
+
+.nav {
+  & img {
+    width: 120px;
+    height: 22px;
+    height: 20px;
+  }
+
+  & img,
+  & li,
+  & .navButton {
+    margin-top: 10px;
+  }
+
+  & ul {
+    display: flex;
+
+    & li {
+      padding: 1px 10px;
+      & a {
+        color: var(--white);
+        transition: text-direction 0.5s ease-in;
+        font-size: 0.9rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .navButton {
+    display: flex;
+  }
+}
+
+// Media Queries for nav mobile
+$layout-breakpoint-max-width: 997px;
+$layout-breakpoint-min-width: 998px;
+@media (max-width: $layout-breakpoint-max-width) {
+  .navItems,
+  .navButton {
+    display: none !important;
+  }
+}
+@media (min-width: $layout-breakpoint-min-width) {
+  .toggleBtn {
+    display: none !important;
+  }
+}

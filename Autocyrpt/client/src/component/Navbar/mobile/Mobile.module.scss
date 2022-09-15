@@ -1,0 +1,63 @@
+// Hamburger
+.buttonToggler {
+  height: 25px;
+  width: 30px;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.buttonToggler:focus {
+  outline: none;
+}
+
+.toggleBtnLine {
+  width: 30px;
+  height: 3px;
+  background: var(--white);
+}
+
+// Mobile Menu
+.sideMenu {
+  height: 100%;
+  background: var(--white);
+  box-shadow: var(--btn-box-shadow);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  max-width: 210px;
+  border-radius: 5%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  & .closeBtn {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+}
+
+// Media Queries for Mobile menus
+$layout-breakpoint-max-width: 997px;
+$layout-breakpoint-min-width: 998px;
+@media (min-width: $layout-breakpoint-min-width) {
+  .sideMenu {
+    display: none !important;
+  }
+}
