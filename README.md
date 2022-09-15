@@ -12,6 +12,10 @@
 
 2. Siphome's development: [Siphome website](https://siphomee.netlify.app/)
 
+### Autocrypt
+
+1. Autocrypt's design: [Autocrypt design](https://www.sketchappsources.com/free-source/3301-autocrypt-landing-page-sketch-freebie-resouce.html)
+
 # Tool Used
 
 1. Figma
