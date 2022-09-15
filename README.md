@@ -25,3 +25,4 @@
 1. React
 2. CSS Modules
 3. SCSS
+4. CSS Animations
