@@ -1,0 +1,16 @@
+@use "../../../globalVariables.module.scss" as gv;
+
+.buttonStyle {
+  @include gv.button(var(--secondary-green));
+  width: 150px;
+  height: 40px;
+  color: var(--white);
+  cursor: pointer;
+  box-shadow: var(--glow-box-shadow);
+  transition: box-shadow, background 200ms ease-in;
+
+  &:hover {
+    box-shadow: var(--glow-box-shadow-hover);
+    background: var(--secondary-green-hover);
+  }
+}
