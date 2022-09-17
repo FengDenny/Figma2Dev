@@ -5,7 +5,7 @@
   bottom: 5px;
 
   & .buttonStyle {
-    @include gv.button(200, 60, var(--secondary-green));
+    @include gv.button(var(--secondary-green));
     color: var(--white);
     padding: 10px 20px;
     cursor: pointer;
@@ -19,7 +19,7 @@
   }
 
   & .buttonNoStyle {
-    @include gv.button(0, 0, transparent, none, none);
+    @include gv.button(transparent, none, none);
     position: relative;
     right: 10px;
     color: var(--white);
