@@ -16,6 +16,8 @@
 
 1. Autocrypt's design: [Autocrypt design](https://www.sketchappsources.com/free-source/3301-autocrypt-landing-page-sketch-freebie-resouce.html)
 
+2. Autocrypt's development: [Autocrypt website](https://autocryptt.netlify.app/)
+
 # Tool Used
 
 1. Figma
