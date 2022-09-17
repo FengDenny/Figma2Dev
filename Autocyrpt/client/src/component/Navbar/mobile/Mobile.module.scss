@@ -1,3 +1,4 @@
+@use "../../../globalVariables.module.scss" as gv;
 // Hamburger
 .buttonToggler {
   height: 25px;
@@ -24,22 +25,24 @@
 
 // Mobile Menu
 .sideMenu {
-  height: 100%;
+  height: 50%;
   background: var(--white);
   box-shadow: var(--btn-box-shadow);
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 70%;
-  max-width: 210px;
+  top: 30px;
+  right: 5px;
+  width: 300px;
+  max-width: 300px;
   border-radius: 5%;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-out;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-90px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
 
   &.open {
-    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   & .closeBtn {
@@ -50,14 +53,54 @@
     background: transparent;
     color: var(--primary-color);
     cursor: pointer;
+    &:hover,
+    &:focus {
+      color: red;
+    }
   }
-}
 
-// Media Queries for Mobile menus
-$layout-breakpoint-max-width: 997px;
-$layout-breakpoint-min-width: 998px;
-@media (min-width: $layout-breakpoint-min-width) {
-  .sideMenu {
-    display: none !important;
+  & .navItems {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10%;
+    & li {
+      margin: 7% auto;
+      width: 100%;
+      border-bottom: 1px solid var(--white-hover);
+      & a {
+        color: var(--primary-color);
+        font-size: 1.3rem;
+        font-weight: 400;
+        transition: color 300ms ease-in-out;
+
+        &:hover {
+          color: var(--primary-color-hover);
+        }
+      }
+    }
+  }
+
+  & .navButton {
+    display: flex;
+    flex-direction: column;
+    & .buttonNoStyle button {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      width: 95%;
+      margin-top: 2%;
+      left: 10px;
+      &:hover {
+        color: var(--primary-color-hover);
+      }
+    }
+
+    & .buttonStyle button {
+      padding: 10px 50px;
+      width: 95%;
+      position: relative;
+      font-size: 1.3rem;
+      top: 30px;
+      left: 10px;
+    }
   }
 }
