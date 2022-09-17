@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <main className={global.container}>
+      <main>
         <Home />
       </main>
     </div>
