@@ -45,6 +45,8 @@
   right: 5px;
   width: 300px;
   max-width: 300px;
+  height: 454px;
+  max-height: 500px;
   border-radius: 5%;
   opacity: 0;
   visibility: hidden;
@@ -102,6 +104,7 @@
       width: 95%;
       margin-top: 2%;
       left: 10px;
+      border-bottom: 1px solid var(--white-hover);
       &:hover {
         color: var(--primary-color-hover);
       }
