@@ -51,4 +51,15 @@ $layout-breakpoint-min-width: 998px;
   .toggleBtn {
     display: none !important;
   }
+
+  .nav {
+    & li {
+      padding: 1px 39px !important;
+    }
+
+    & button {
+      position: relative;
+      right: 85px !important;
+    }
+  }
 }
