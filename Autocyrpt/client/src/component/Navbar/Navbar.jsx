@@ -23,7 +23,7 @@ export default function Navbar() {
         <nav
           className={`${styles.nav} ${global.dFlexRow} ${global.spaceBetween}`}
         >
-          <img src={NavLogo} alt='Autocryp' />
+          <img src={NavLogo} alt='Autocrypt' />
           <ul className={styles.navItems}>
             {navigations.map((link) => (
               <li key={link.id}>

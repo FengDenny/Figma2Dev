@@ -23,6 +23,18 @@
   background: var(--white);
 }
 
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.2s ease-in;
+  width: 100vw;
+  z-index: 1000;
+}
+
 // Mobile Menu
 .sideMenu {
   height: 50%;
@@ -38,6 +50,7 @@
   visibility: hidden;
   transform: translateY(-90px);
   transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  z-index: 100;
 
   &.open {
     opacity: 1;
