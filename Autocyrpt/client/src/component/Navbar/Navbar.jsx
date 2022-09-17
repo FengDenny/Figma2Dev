@@ -6,6 +6,7 @@ import { navigations } from "../../data/navigation";
 import RegisterBtn from "./NavButtons/Register";
 import LoginBtn from "./NavButtons/Login";
 import ToggleMobileNav from "./mobile/ToggleMobileNav";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const toggleHandler = () => {
@@ -15,6 +16,7 @@ export default function Navbar() {
   const closeMobileMenu = () => {
     return setOpen(false);
   };
+
   return (
     <div className={styles.container}>
       <div className={global.container}>
