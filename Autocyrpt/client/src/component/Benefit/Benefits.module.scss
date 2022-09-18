@@ -1,0 +1,111 @@
+.container {
+  width: 100%;
+  min-height: 50vh;
+  padding: 10px 5px;
+  position: relative;
+}
+
+.rectangle {
+  position: absolute;
+  top: -40%;
+  width: calc(100% - 93px);
+  min-height: auto;
+  padding: 15px 15px;
+  margin: 0 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: var(--white);
+  box-shadow: var(--btn-box-shadow);
+  border-radius: 10px;
+
+  & .rectangleItems {
+    margin: 0 auto;
+    padding: 20px;
+    & .imgContainer {
+      background: var(--img-container);
+      z-index: -1;
+      padding: 10px;
+      width: 59px;
+      margin: 0 auto;
+      & img {
+        z-index: 1;
+      }
+    }
+
+    & h2 {
+      font-size: 1rem;
+      width: 250px;
+      text-align: center;
+      margin: 20px auto;
+      color: var(--primary-font-color);
+    }
+
+    & .greenLine {
+      border-bottom: 3px solid var(--secondary-green);
+      width: 50px;
+      margin: 10px auto;
+    }
+
+    & p {
+      text-align: center;
+      color: var(--secondary-font-color);
+      width: calc(100% - 30px);
+      max-width: 400px;
+      margin: 0 auto;
+      line-height: 25px;
+    }
+  }
+}
+
+$layout-breakpoint-max-width: 997px;
+$layout-breakpoint-min-width: 998px;
+
+@media (max-width: $layout-breakpoint-max-width) {
+  $layout-breakpoint-min-width: 768px;
+  @media (min-width: $layout-breakpoint-min-width) {
+    .rectangle {
+      margin: 0 29px;
+      & .rectangleItems {
+        & p {
+          width: 456px;
+          max-width: 460px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-min-width) {
+  .rectangle {
+    margin: 0 auto;
+    padding: 53px 15px;
+    & .rectangleItems {
+      padding: 0;
+      & p {
+        width: 294px;
+        max-width: 460px;
+      }
+    }
+  }
+}
+
+$xlg-layout-breakpoint-max-width: 2560px;
+$xlg-layout-breakpoint-min-width: 1440px;
+@media (max-width: $xlg-layout-breakpoint-max-width) {
+  @media (min-width: $xlg-layout-breakpoint-min-width) {
+    .rectangle {
+      width: 1280px;
+      max-width: 1280px;
+      padding: 53px 15px;
+      & .rectangleItems {
+        padding: 0;
+        & p {
+          width: 294px;
+          max-width: 460px;
+        }
+      }
+    }
+  }
+}
