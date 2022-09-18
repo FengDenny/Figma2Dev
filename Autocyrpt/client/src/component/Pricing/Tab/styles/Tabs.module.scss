@@ -1,0 +1,131 @@
+.container {
+  padding: 15px 1px;
+  margin: 0 auto;
+}
+
+.tabList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 7px;
+  //   margin-left: 24px;
+
+  & .tabItems {
+    padding-top: 10px;
+    padding-left: 20px;
+    color: var(--secondary-green);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    width: auto;
+    max-width: 300px;
+    text-align: center;
+    padding: 10px 10px;
+    box-shadow: var(--btn-box-shadow);
+    cursor: pointer;
+    transition: border-left, border-right, background 0.5s ease-in-out;
+    &.active {
+      background: var(--white);
+      border-left: none;
+    }
+
+    &.notActive {
+      background: var(--tab-non-active);
+      border-right: 2px solid var(--secondary-green);
+      &:last-child {
+        border-left: 2px solid var(--secondary-green);
+        border-right: none;
+      }
+    }
+  }
+}
+
+.tabsContentContainer {
+  margin-top: 50px;
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+
+  & .tabContent {
+    display: flex;
+    flex-direction: column;
+    &.active {
+      display: flex;
+    }
+
+    &.notActive {
+      display: none;
+    }
+
+    & .tabCard {
+      border: 2px solid var(--secondary-font-color);
+      border-radius: 5px;
+      text-align: center;
+      margin: 10px;
+      padding: 15px;
+
+      & h2 {
+        color: var(--primary-font-color);
+        font-size: 1.5rem;
+      }
+
+      & h3 {
+        color: var(--secondary-green);
+        font-size: 2.5rem;
+        padding: 10px;
+      }
+
+      & h6 {
+        font-weight: normal;
+        color: var(--secondary-font-color);
+      }
+
+      & p {
+        margin: 20px;
+        padding: 1px;
+        color: var(--secondary-font-color);
+      }
+
+      & .firstChild {
+        margin-top: 45px;
+      }
+
+      & button {
+        padding: 10px;
+        width: 200px;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: 1px solid var(--secondary-green);
+        color: var(--white);
+        background-color: var(--secondary-green);
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        box-shadow: var(--glow-box-shadow);
+        cursor: pointer;
+      }
+
+      &.main {
+        border: none;
+        border-top: 5px solid var(--bar-blue);
+        border-radius: 5px;
+        background: var(--white);
+        box-shadow: var(--btn-box-shadow);
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+}
+
+$layout-breakpoint-min-width: 998px;
+@media (min-width: $layout-breakpoint-min-width) {
+  .tabContent {
+    flex-direction: row !important;
+  }
+}
+$layout-breakpoint-min-width: 400px;
+@media (min-width: $layout-breakpoint-min-width) {
+  .tabContent {
+    // flex-direction: row !important;
+  }
+}
