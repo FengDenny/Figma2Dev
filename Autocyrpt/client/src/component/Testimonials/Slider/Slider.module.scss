@@ -1,0 +1,27 @@
+.slider {
+  position: relative;
+}
+
+.slider {
+  & .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.dotsControls {
+  display: block;
+  text-align: center;
+}
+
+$layout-breakpoint-min-width: 997px;
+
+@media (min-width: $layout-breakpoint-min-width) {
+  .slider {
+    & .list {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
