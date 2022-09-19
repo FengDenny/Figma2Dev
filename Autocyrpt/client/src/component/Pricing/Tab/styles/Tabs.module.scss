@@ -8,7 +8,6 @@
   flex-direction: row;
   justify-content: center;
   margin-left: 7px;
-  //   margin-left: 24px;
 
   & .tabItems {
     padding-top: 10px;
@@ -121,11 +120,5 @@ $layout-breakpoint-min-width: 998px;
 @media (min-width: $layout-breakpoint-min-width) {
   .tabContent {
     flex-direction: row !important;
-  }
-}
-$layout-breakpoint-min-width: 400px;
-@media (min-width: $layout-breakpoint-min-width) {
-  .tabContent {
-    // flex-direction: row !important;
   }
 }
