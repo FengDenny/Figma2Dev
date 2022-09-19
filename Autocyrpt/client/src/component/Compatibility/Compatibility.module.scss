@@ -1,0 +1,40 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 15px;
+  margin-top: 10%;
+}
+
+.iconsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 100%;
+  & h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--primary-font-color);
+  }
+
+  & .small {
+    width: 80px;
+  }
+
+  & img {
+    width: 140px;
+    margin-left: 80px;
+    margin-top: 10%;
+    min-height: 55px;
+  }
+}
+
+$layout-breakpoint-max-width: 400px;
+
+@media (max-width: $layout-breakpoint-max-width) {
+  .iconsContainer {
+    & img {
+      margin-left: 57px;
+    }
+  }
+}

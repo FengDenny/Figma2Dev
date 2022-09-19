@@ -3,6 +3,7 @@ import styles from "./styles/Tabs.module.scss";
 import TabsItem from "./TabsItem";
 import TabsContent from "./TabsContent";
 import { pricing, tabs } from "../../../data/pricing";
+import animate from "../../Animations/animations.module.scss";
 
 export default function Tabs() {
   const [tab, setTab] = useState(0);
@@ -17,7 +18,7 @@ export default function Tabs() {
           <div key={index}>
             <TabsItem
               handleClick={() => handleClick(index)}
-              className={`${styles.tabItems} ${
+              className={`${styles.tabItems} ${animate.opacity} ${
                 tab === index ? styles.active : styles.notActive
               }`}
               key={item.id}
@@ -32,7 +33,9 @@ export default function Tabs() {
           {pricing.map((item, index) => (
             <div
               key={index}
-              className={`${styles.tabCard} ${item.id === 1 && styles.main}`}
+              className={`${styles.tabCard} ${item.id === 1 && styles.main} ${
+                animate.opacity
+              }`}
             >
               <h2>{item.title}</h2>
               <h3>${item.monthlyPrice}</h3>

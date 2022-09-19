@@ -78,6 +78,27 @@ $layout-breakpoint-min-width: 998px;
 }
 
 @media (min-width: $layout-breakpoint-min-width) {
+  .rectangleItems {
+    & .imgContainer {
+      margin: 0 7% !important;
+    }
+    & h2 {
+      text-align: start !important;
+    }
+
+    & .greenLine {
+      display: flex;
+      margin: 15px 7% !important;
+    }
+
+    & p {
+      text-align: start !important;
+      padding-left: 20px;
+    }
+  }
+}
+
+@media (min-width: $layout-breakpoint-min-width) {
   .rectangle {
     margin: 0 auto;
     padding: 53px 15px;
