@@ -12,7 +12,7 @@ export default function Footer() {
         <ul className={styles.links}>
           {navigations.map((item) => (
             <li key={item.id}>
-              <a href={item.ahref}>{item.name}</a>{" "}
+              <a href={item.ahref}>{item.name}</a>
               <span className={`${item.id === 3 && styles.lastChild}`}> /</span>
             </li>
           ))}
