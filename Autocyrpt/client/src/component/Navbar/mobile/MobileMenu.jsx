@@ -14,7 +14,7 @@ export default function MobileMenu(props) {
         </button>
         <ul className={styles.navItems}>
           {navigations.map((link) => (
-            <li key={link.id}>
+            <li key={link.id} onClick={props.close}>
               <a href={link.ahref}>{link.name}</a>
             </li>
           ))}
