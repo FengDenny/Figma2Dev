@@ -16,6 +16,20 @@ $white-hover: rgba(218, 218, 218, 0.897);
 $btn-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 $glow-box-shadow: 0 5px 15px #09f587de;
 $glow-box-shadow-hover: 0 5px 15px #00eb7dc2;
+$half-bg: linear-gradient(
+  to right,
+  $bg-color 0%,
+  $bg-color 50%,
+  $dark-blue 50%,
+  $dark-blue 100%
+);
+$mobile-half-bg: linear-gradient(
+  to bottom,
+  $bg-color 0%,
+  $bg-color 50%,
+  $dark-blue 50%,
+  $dark-blue 100%
+);
 $column: "column";
 $space-between: "space-between";
 $layout-breakpoint-max-width: 997px;
@@ -38,6 +52,8 @@ $layout-breakpoint-min-width: 998px;
   --btn-box-shadow: #{$btn-box-shadow};
   --glow-box-shadow: #{$glow-box-shadow};
   --glow-box-shadow-hover: #{$glow-box-shadow-hover};
+  --half-bg: #{$half-bg};
+  --mobile-half-bg: #{$mobile-half-bg};
   --f-d-column: #{$column};
   --j-c-space-between: #{$space-between};
 }
