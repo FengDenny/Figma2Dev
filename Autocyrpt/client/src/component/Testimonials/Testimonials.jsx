@@ -26,7 +26,7 @@ export default function Testimonials() {
           >
             <Slider slides={testimonials}>
               {(data) => (
-                <div className={styles.sliderCard}>
+                <div key={data.id} className={styles.sliderCard}>
                   <CgQuote size={70} className={styles.cgIcon} />
                   <p>{data.testimonial}</p>
                   <h3>

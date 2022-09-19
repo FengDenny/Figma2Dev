@@ -35,7 +35,7 @@ export default function Tabs() {
       <div className={styles.tabsContentContainer}>
         <TabsContent tabID='0' activeTab={`${tab}`}>
           {pricing.map((item, index) => (
-            <Animate setVisible={setVisible}>
+            <Animate setVisible={setVisible} key={index}>
               <div
                 key={index}
                 className={`${styles.tabCard} ${item.id === 1 && styles.main} ${
@@ -59,9 +59,8 @@ export default function Tabs() {
         </TabsContent>
         <TabsContent tabID='1' activeTab={`${tab}`}>
           {pricing.map((item, index) => (
-            <Animate setVisible={setVisible}>
+            <Animate setVisible={setVisible} key={index}>
               <div
-                key={index}
                 className={`${styles.tabCard} ${item.id === 1 && styles.main} ${
                   item.id === 1
                     ? visible && animate.fadeTop
