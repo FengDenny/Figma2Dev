@@ -14,48 +14,35 @@ export default function Hero() {
         {hero.map((data) => (
           <div key={data.id} className={styles.hero}>
             <div className={styles.header}>
-              <Animate
-                setVisible={setVisible}
-                content={
-                  <h1 className={`${visible && animate.fadeTop}`}>
-                    {data.header}
-                  </h1>
-                }
-              />
-              <Animate
-                setVisible={setVisible}
-                content={
-                  <h3 className={`${visible && animate.fadeBottom}`}>
-                    {data.description}
-                  </h3>
-                }
-              />
-              <Animate
-                setVisible={setVisible}
-                content={
-                  <div
-                    className={`${styles.button} ${visible && animate.opacity}`}
-                  >
-                    <GetStartedButton title={data.buttonTitle} />
-                  </div>
-                }
-              />
-            </div>
-            <Animate
-              setVisible={setVisible}
-              content={
+              <Animate setVisible={setVisible}>
+                <h1 className={`${visible && animate.fadeTop}`}>
+                  {data.header}
+                </h1>
+              </Animate>
+
+              <Animate setVisible={setVisible}>
+                <h3 className={`${visible && animate.fadeBottom}`}>
+                  {data.description}
+                </h3>
+              </Animate>
+              <Animate setVisible={setVisible}>
                 <div
-                  className={`${styles.heroImage} ${
-                    visible && animate.opacity
-                  }`}
+                  className={`${styles.button} ${visible && animate.opacity}`}
                 >
-                  <img
-                    src={require(`../../image/${data.image}`)}
-                    alt={data.alt}
-                  />
+                  <GetStartedButton title={data.buttonTitle} />
                 </div>
-              }
-            />
+              </Animate>
+            </div>
+            <Animate setVisible={setVisible}>
+              <div
+                className={`${styles.heroImage} ${visible && animate.opacity}`}
+              >
+                <img
+                  src={require(`../../image/${data.image}`)}
+                  alt={data.alt}
+                />
+              </div>
+            </Animate>
           </div>
         ))}
       </div>
