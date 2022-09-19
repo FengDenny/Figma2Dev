@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react";
 
-export default function AnimateOnScroll({ setVisible, content }) {
+export default function AnimateOnScroll({ setVisible, children }) {
   const ref = useRef();
   useLayoutEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -10,5 +10,5 @@ export default function AnimateOnScroll({ setVisible, content }) {
     observer.observe(ref.current);
   }, []);
 
-  return <div ref={ref}>{content}</div>;
+  return <div ref={ref}>{children}</div>;
 }
