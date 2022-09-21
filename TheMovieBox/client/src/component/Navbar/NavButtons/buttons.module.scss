@@ -1,0 +1,66 @@
+.loginBtnMobile,
+.signupBtnMobile {
+  width: 260px;
+  height: 40px;
+  padding: 5px;
+  font-size: 1.2rem;
+  box-shadow: var(--btn-box-shadow);
+  color: var(--white);
+  cursor: pointer;
+}
+
+// Mobile
+
+.loginBtnMobile {
+  border: 2px solid var(--white);
+  background: none;
+  border-radius: 10px;
+}
+
+.signupBtnMobile {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+// Desktop
+
+.loginBtnDesktop,
+.signupBtnDesktop {
+  position: relative;
+  bottom: 5px;
+  cursor: pointer;
+}
+
+.loginBtnDesktop {
+  padding: 10px;
+  border: none;
+  background: none;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.signupBtnDesktop {
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+  border-radius: 5px;
+  width: 100px;
+  color: var(--white);
+  font-size: 1rem;
+  margin-left: 20px;
+  box-shadow: var(--btn-box-shadow);
+}
+
+$layout-breakpoint-max-width: 997px;
+
+@media (max-width: $layout-breakpoint-max-width) {
+  $layout-breakpoint-min-width: 769px;
+
+  @media (min-width: $layout-breakpoint-min-width) {
+    .signupBtnMobile {
+      margin-top: 0;
+      margin-left: 20px;
+    }
+  }
+}
