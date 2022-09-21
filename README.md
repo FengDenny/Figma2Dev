@@ -1,5 +1,7 @@
 # Figma2Dev Projects
 
+## Flexbox Layout Development
+
 ### Noren
 
 1. Noren's design: [Noren design](https://www.sketchappsources.com/free-source/4556-noren-landing-page-sketch-freebie-resource.html)
@@ -18,9 +20,22 @@
 
 2. Autocrypt's development: [Autocrypt website](https://autocryptt.netlify.app/)
 
+---
+
+## CSS Grid Layout w/ Flexbox Development
+
+### The Movie Box
+
+1. API used: [The Movie Database](https://www.themoviedb.org/documentation/api).
+
+2. The Movie Box design: [The Movie Box design](https://www.sketchappsources.com/free-source/2682-the-movie-box-landing-page-sketch-freebie-resource.html)
+
+---
+
 # Tool Used
 
 1. Figma
+2. Postman
 
 # Technical Stack
 
