@@ -15,7 +15,9 @@
   & .logo {
     width: 70px;
     max-width: 50px;
-    min-height: 30px;
+    height: 20px;
+    min-height: 24px;
+    margin-top: 10px;
     cursor: pointer;
   }
 }
@@ -34,5 +36,10 @@ $layout-breakpoint-min-width: 998px;
   }
   .desktopNav {
     display: flex;
+
+    & .navButtons {
+      display: flex;
+      padding: 10px 20px;
+    }
   }
 }
