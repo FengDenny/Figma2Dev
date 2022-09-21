@@ -2,6 +2,7 @@ $primary-font: "Yanone Kaffeesatz", sans-serif;
 $bg-color: #f8f9fc;
 $btn-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 $primary-color: #ff0079;
+$primary-color-hover: #cc0763;
 $secondary-color: #80818a;
 $primary-card-font-color: #494c62;
 $secondary-card-font-color: #babbc3;
@@ -13,6 +14,7 @@ $space-between: "space-between";
 :root {
   --primary-font: #{$primary-font};
   --primary-color: #{$primary-color};
+  --primary-color-hover: #{$primary-color-hover};
   --secondary-color: #{$secondary-color};
   --bg-color: #{$bg-color};
   --btn-box-shadow: #{$btn-box-shadow};

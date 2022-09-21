@@ -9,6 +9,15 @@
   cursor: pointer;
 }
 
+.signupBtnDesktop,
+.signupBtnMobile {
+  transition: background 300ms ease-in;
+  &:hover {
+    background: var(--primary-color-hover);
+    border: 1px solid var(--primary-color-hover);
+  }
+}
+
 // Mobile
 
 .loginBtnMobile {
