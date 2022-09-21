@@ -1,0 +1,40 @@
+$primary-font: "Yanone Kaffeesatz", sans-serif;
+$bg-color: #f8f9fc;
+$btn-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+$primary-color: #ff0079;
+$secondary-color: #80818a;
+$primary-card-font-color: #494c62;
+$secondary-card-font-color: #babbc3;
+$white: #fff;
+$size: 40px;
+$column: "column";
+$space-between: "space-between";
+
+:root {
+  --primary-font: #{$primary-font};
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --bg-color: #{$bg-color};
+  --btn-box-shadow: #{$btn-box-shadow};
+  --primary-card-font: #{$primary-card-font-color};
+  --white: #{$white};
+  --secondary-card-font: #{$secondary-card-font-color};
+  --f-d-column: #{$column};
+  --j-c-space-between: #{$space-between};
+  --size: #{$size};
+}
+
+@mixin display-flex($column: false) {
+  display: flex;
+  flex-direction: row;
+  @if ($column) {
+    flex-direction: var(--f-d-column);
+  }
+}
+
+@mixin justify-content($space-between: false) {
+  justify-content: center;
+  @if ($space-between) {
+    justify-content: var(--j-c-space-between);
+  }
+} ;
