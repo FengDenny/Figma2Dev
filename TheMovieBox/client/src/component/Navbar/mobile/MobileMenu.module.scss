@@ -50,26 +50,44 @@
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: 10%;
   left: 0;
-  // animate nav opening details start
   opacity: 0;
   visibility: hidden;
   height: 0%;
-  transition: opacity 0.75s, visibility 0.75s, height 0.75s;
+  transition: flex-direction 0.75s, opacity 0.75s, visibility 0.75s,
+    height 0.75s;
+
   overflow: hidden;
 
   &.open {
     opacity: 1;
     visibility: visible;
-    height: 20vh;
+    height: 27vh;
+  }
+
+  & .mobileButton {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50px;
   }
 }
 
 $layout-breakpoint-min-width: 998px;
+$layout-breakpoint-max-width: 997px;
 
 @media (min-width: $layout-breakpoint-min-width) {
   .buttonToggler {
     display: none;
+  }
+}
+
+@media (max-width: $layout-breakpoint-max-width) {
+  $layout-breakpoint-min-width: 769px;
+
+  @media (min-width: $layout-breakpoint-min-width) {
+    .mobileButton {
+      flex-direction: row !important;
+    }
   }
 }
