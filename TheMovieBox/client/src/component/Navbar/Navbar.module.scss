@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  min-height: 10vh;
+}
+
+.navbar {
+  grid-area: nav;
+  background: var(--primary-card-font);
+  z-index: 1000;
+
+  & .nav {
+    margin-top: 10px;
+  }
+
+  & .logo {
+    width: 70px;
+    max-width: 50px;
+    min-height: 30px;
+    cursor: pointer;
+  }
+}
+
+$layout-breakpoint-max-width: 997px;
+$layout-breakpoint-min-width: 998px;
+@media (max-width: $layout-breakpoint-max-width) {
+  .desktopNav {
+    display: none;
+  }
+}
+
+@media (min-width: $layout-breakpoint-min-width) {
+  .toggleBtn {
+    display: none;
+  }
+  .desktopNav {
+    display: flex;
+  }
+}

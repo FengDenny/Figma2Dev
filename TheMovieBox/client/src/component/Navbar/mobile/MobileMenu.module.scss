@@ -1,0 +1,75 @@
+.container {
+  padding-right: 20px;
+}
+
+.buttonToggler {
+  height: 30px;
+  width: 30px;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0;
+  margin-top: 5px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  & .toggleBtnLine {
+    width: 30px;
+    height: 4px;
+    background: var(--white);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+
+  &.open {
+    .toggleBtnLine:first-child {
+      transform: rotate(45deg);
+    }
+    .toggleBtnLine:nth-child(2) {
+      opacity: 0;
+    }
+    .toggleBtnLine:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.mobileNavWrapper {
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-card-font);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 10%;
+  left: 0;
+  // animate nav opening details start
+  opacity: 0;
+  visibility: hidden;
+  height: 0%;
+  transition: opacity 0.75s, visibility 0.75s, height 0.75s;
+  overflow: hidden;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    height: 20vh;
+  }
+}
+
+$layout-breakpoint-min-width: 998px;
+
+@media (min-width: $layout-breakpoint-min-width) {
+  .buttonToggler {
+    display: none;
+  }
+}
