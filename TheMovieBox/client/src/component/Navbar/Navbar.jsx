@@ -4,6 +4,9 @@ import global from "../../global.module.scss";
 import { useNavigate } from "react-router-dom";
 import ToggleMobileNav from "./mobile/ToggleMobileNav";
 import Searchbar from "./Searchbar/Searchbar";
+import Login from "./NavButtons/Login";
+import Signup from "./NavButtons/Signup";
+
 export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
   const navigate = useNavigate();
 
@@ -29,6 +32,10 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
           />
           <div className={styles.desktopNav}>
             <Searchbar />
+            <div className={styles.navButtons}>
+              <Login desktop />
+              <Signup desktop />
+            </div>
           </div>
           <div className={styles.toggleBtn}>
             <ToggleMobileNav
