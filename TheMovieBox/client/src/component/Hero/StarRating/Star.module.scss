@@ -2,7 +2,7 @@
   background: transparent;
   z-index: 100;
   position: relative;
-  top: -115px;
+  bottom: 12rem;
 
   right: 0;
   color: var(--primary-color);
@@ -11,6 +11,7 @@
   border-radius: 14px;
   padding: 14px;
   width: 272px;
+  height: 80px;
 
   & h4 {
     color: var(--white);
@@ -38,26 +39,22 @@
   }
 }
 
-$layout-breakpoint-min-width: 668px;
+// $layout-breakpoint-min-width: 668px;
+$layout-breakpoint-max-width: 667px;
 
-@media (min-width: $layout-breakpoint-min-width) {
+@media (max-width: $layout-breakpoint-max-width) {
   .star {
-    position: absolute;
-    right: 5%;
-    top: 70%;
-  }
-}
+    margin: 0 auto;
+    bottom: 18rem;
+    right: 3px;
+    width: 300px;
+    padding: 16px 40px;
 
-$layout-breakpoint-min-height: 740px;
-$layout-breakpoint-max-height: 700px;
-
-@media (min-height: $layout-breakpoint-min-height) {
-  .star {
-    top: -180px;
-  }
-}
-@media (max-height: $layout-breakpoint-max-height) {
-  .star {
-    top: -120px;
+    & h4 {
+      text-align: center;
+    }
+    & p {
+      text-align: right;
+    }
   }
 }

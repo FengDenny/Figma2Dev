@@ -33,7 +33,10 @@ export default function Hero() {
           return (
             <div key={data.id}>
               <img src={imageBg} alt={data.title} />
-              <div key={data.id} className={global.container}>
+              <div
+                key={data.id}
+                className={`${global.container} ${styles.flexHeader} `}
+              >
                 <div className={styles.header}>
                   <h2>{data.title}</h2>
                   <div className={styles.flexHeader}>
@@ -50,7 +53,6 @@ export default function Hero() {
                   <WatchMovieButton title='Watch Movie' />
                   <ViewInfoButton title='View Info' />
                 </div>
-
                 <Star
                   title='Rating'
                   totalReview={`based on ${data.vote_count} reviews`}
