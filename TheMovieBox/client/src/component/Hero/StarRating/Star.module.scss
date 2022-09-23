@@ -1,0 +1,48 @@
+.star {
+  background: transparent;
+  z-index: 100;
+  position: relative;
+  bottom: 150px;
+  right: 0;
+  color: var(--primary-color);
+  border: 2px solid var(--secondary-color);
+  box-shadow: var(--btn-box-shadow);
+  border-radius: 14px;
+  padding: 14px;
+  width: 272px;
+
+  & h4 {
+    color: var(--white);
+    font-weight: normal;
+    font-size: 1.4rem;
+  }
+
+  & p {
+    margin-top: 10px;
+  }
+  & span {
+    font-size: 1rem;
+    color: var(--secondary-card-font);
+    padding-left: 5px;
+    padding-top: 20px;
+    &.starTotal {
+      position: relative;
+      bottom: 5px;
+      left: 5px;
+      border: 1px solid var(--secondary-card-font);
+      border-radius: 3px;
+      padding: 3px;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+$layout-breakpoint-min-width: 668px;
+
+@media (min-width: $layout-breakpoint-min-width) {
+  .star {
+    position: absolute;
+    right: 5%;
+    bottom: 100px;
+  }
+}
