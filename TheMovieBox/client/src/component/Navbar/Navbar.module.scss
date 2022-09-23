@@ -4,9 +4,10 @@
 }
 
 .navbar {
-  grid-area: nav;
-  background: transparent;
-  z-index: 1000;
+    background: transparent;
+    grid-area: nav;
+    z-index: 1000;
+    position: absolute;
 
   & .nav {
     margin-top: 10px;
