@@ -28,7 +28,7 @@
   & .header {
     display: block;
     margin: 0 auto;
-    width: 320px;
+    width: 313px;
     position: relative;
     bottom: 23rem;
     z-index: 1;
@@ -118,5 +118,9 @@ $xsm-layout-breakpoint-max-width: 397px;
 @media (max-width: $xsm-layout-breakpoint-max-width) {
   .header {
     bottom: 21rem !important;
+
+    & h5 {
+      font-size: 1.1rem !important;
+    }
   }
 }
