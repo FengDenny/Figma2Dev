@@ -42,14 +42,15 @@
 }
 
 .mobileNavWrapper {
-  z-index: 1;
+  z-index: -1;
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: var(--primary-card-font);
+  background: rgba(0, 0, 0, 0.9);
   align-items: center;
   justify-content: center;
   position: fixed;
+  top: 0;
   left: 0;
   opacity: 0;
   visibility: hidden;
@@ -62,7 +63,7 @@
   &.open {
     opacity: 1;
     visibility: visible;
-    height: 27vh;
+    height: 70vh;
   }
 
   & .mobileButton {
