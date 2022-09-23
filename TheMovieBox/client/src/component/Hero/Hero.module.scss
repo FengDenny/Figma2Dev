@@ -47,12 +47,9 @@
         font-size: 1.2rem;
         color: var(--secondary-card-font);
         margin-top: 20px;
-        &:nth-of-type(2) {
-          padding-left: 20px;
-        }
 
         & span {
-          padding-left: 7px;
+          padding-left: 4px;
 
           &::after {
             content: "";
