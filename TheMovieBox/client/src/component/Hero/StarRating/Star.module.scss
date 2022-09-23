@@ -47,3 +47,17 @@ $layout-breakpoint-min-width: 668px;
     top: 70%;
   }
 }
+
+$layout-breakpoint-min-height: 740px;
+$layout-breakpoint-max-height: 700px;
+
+@media (min-height: $layout-breakpoint-min-height) {
+  .star {
+    top: -180px;
+  }
+}
+@media (max-height: $layout-breakpoint-max-height) {
+  .star {
+    top: -120px;
+  }
+}
