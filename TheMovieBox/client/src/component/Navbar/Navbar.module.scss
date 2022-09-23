@@ -5,7 +5,7 @@
 
 .navbar {
   grid-area: nav;
-  background: var(--primary-card-font);
+  background: transparent;
   z-index: 1000;
 
   & .nav {
