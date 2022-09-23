@@ -2,7 +2,8 @@
   background: transparent;
   z-index: 100;
   position: relative;
-  bottom: 150px;
+  top: -135px;
+
   right: 0;
   color: var(--primary-color);
   border: 2px solid var(--secondary-color);
@@ -43,6 +44,6 @@ $layout-breakpoint-min-width: 668px;
   .star {
     position: absolute;
     right: 5%;
-    bottom: 100px;
+    top: 70%;
   }
 }
