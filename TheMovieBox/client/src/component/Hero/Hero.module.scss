@@ -6,7 +6,6 @@
 
 .hero {
   position: relative;
-  bottom: 100px;
   &::after {
     content: "";
     background: rgba(0, 0, 0, 0.75);
