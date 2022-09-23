@@ -85,3 +85,11 @@ $layout-breakpoint-min-width: 668px;
     top: 65% !important;
   }
 }
+
+$layout-breakpoint-max-height: 700px;
+
+@media (max-height: $layout-breakpoint-max-height) {
+  .header {
+    top: 40% !important;
+  }
+}
