@@ -26,7 +26,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className={styles.container}>
+    <section>
       <div className={styles.hero}>
         {item.map((data) => {
           const imageBg = getImage(data.backdrop_path);
