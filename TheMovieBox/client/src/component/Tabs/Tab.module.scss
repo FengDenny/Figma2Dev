@@ -1,0 +1,61 @@
+.container {
+  position: relative;
+  width: 100%;
+  //   min-height: 150px;
+  bottom: 240px;
+  grid-area: tab;
+}
+
+.HLine {
+  &::before {
+    position: relative;
+    top: 42px;
+    left: 13px;
+    display: block;
+    content: "";
+    border-bottom: 1px solid var(--secondary-card-font);
+  }
+}
+
+.tabList {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  & .tabItems {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin: 10px 12px;
+    color: var(--secondary-card-font);
+    transition: border, color 300ms ease-in-out;
+    cursor: pointer;
+    &.active {
+      color: var(--primary-color);
+      &::after {
+        position: relative;
+        display: block;
+        content: "";
+        border-bottom: 3px solid var(--primary-color);
+        top: 11px;
+      }
+    }
+  }
+}
+
+.tabsContentContainer {
+  display: flex;
+  justify-content: center;
+
+  & .tabContent {
+    display: flex;
+    flex-direction: column;
+
+    &.active {
+      display: flex;
+    }
+
+    &.notActive {
+      display: none;
+    }
+  }
+}
