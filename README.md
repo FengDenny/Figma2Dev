@@ -1,4 +1,6 @@
-# Figma2Dev Projects
+# Figma2Dev Projects (Ongoing)
+
+Turning high-fidelity mockups to pixel-pefect websites.
 
 ## Flexbox Layout Development
 
