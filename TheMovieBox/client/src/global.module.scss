@@ -53,6 +53,41 @@ li {
   grid-template-areas: "nav" "hero" "tab" "footer";
 }
 
+.gridWrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+$layout-breakpoint-min-width: 1200px;
+$layout-breakpoint-max-width: 1199px;
+$sm-layout-breakpoint-max-width: 997px;
+
+@media (min-width: $layout-breakpoint-min-width) {
+  .gridWrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: $layout-breakpoint-max-width) {
+  $layout-breakpoint-min-width: 997px;
+
+  @media (min-width: $layout-breakpoint-min-width) {
+    .gridWrapper {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+@media (max-width: $sm-layout-breakpoint-max-width) {
+  $layout-breakpoint-min-width: 668px;
+
+  @media (min-width: $layout-breakpoint-min-width) {
+    .gridWrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
 // overlay
 .overlay {
   background-color: rgba(0, 0, 0, 0.7);
