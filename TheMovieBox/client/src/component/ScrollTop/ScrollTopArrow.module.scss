@@ -1,0 +1,40 @@
+.scrollTop {
+  color: var(--primary-color);
+  position: fixed;
+  width: 100%;
+  bottom: 50px;
+  height: 30px;
+  left: 0;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.show {
+  display: flex;
+}
+
+.none {
+  display: none;
+}
+
+.scrollTop:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: 468px) {
+  .scrollTop {
+    left: 43%;
+    height: 40px;
+  }
+}
