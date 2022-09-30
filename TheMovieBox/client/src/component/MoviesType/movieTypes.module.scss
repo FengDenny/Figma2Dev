@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 320px;
@@ -23,11 +24,10 @@
   }
 
   & .header {
-    position: relative;
     padding: 10px;
     & h5 {
       position: absolute;
-      bottom: 75px;
+      top: 56%;
       color: var(--secondary-card-font);
       font-size: 1.1rem;
     }
@@ -39,7 +39,8 @@
       flex-direction: row;
       font-size: 0.7rem;
       color: var(--secondary-card-font);
-      top: 3px;
+      top: 10px;
+      width: 240px;
       font-style: italic;
       & h2:not(:first-child) {
         padding-left: 9px;
@@ -49,7 +50,6 @@
     & .rating {
       position: relative;
       right: 10px;
-      bottom: 10px;
       font-weight: bold;
       padding: 5px 10px;
       color: var(--primary-color);
