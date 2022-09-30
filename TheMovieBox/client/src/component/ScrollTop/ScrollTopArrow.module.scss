@@ -32,9 +32,11 @@
   }
 }
 
-@media (min-width: 468px) {
+$layout-breakpoint-min-width: 400px;
+
+@media (min-width: $layout-breakpoint-min-width) {
   .scrollTop {
-    left: 43%;
-    height: 40px;
+    left: 44%;
+    height: 35px;
   }
 }
