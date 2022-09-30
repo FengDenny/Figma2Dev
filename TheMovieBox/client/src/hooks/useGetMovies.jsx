@@ -7,7 +7,6 @@ import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
 export const useGetMovies = (title, method) => {
   const [result, setResult] = useState([]);
   const [page, setPage] = useState(2);
-
   const [isFetching, setIsFetching] = useInfiniteScroll(infiniteMovies);
   const movieInfiniteEndpoint = getMoviesEndpoint(title, key, page);
 
@@ -45,8 +44,8 @@ export const useGetMovies = (title, method) => {
     movies();
   }, []);
 
-  if (result.length === 0 || isFetching) {
-    return <h1>Loading...</h1>;
+  if (isFetching) {
+    return <h5>Loading...</h5>;
   }
 
   return result;
