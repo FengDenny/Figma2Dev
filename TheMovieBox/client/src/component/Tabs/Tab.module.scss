@@ -11,6 +11,7 @@
     position: relative;
     top: 42px;
     left: 13px;
+    width: 92%;
     display: block;
     content: "";
     border-bottom: 1px solid var(--secondary-card-font);
@@ -44,7 +45,7 @@
 
 .tabsContentContainer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 
   & .tabContent {
     display: flex;
@@ -57,5 +58,19 @@
     &.notActive {
       display: none;
     }
+  }
+}
+
+$layout-breakpoint-min-width: 668px;
+$layout-breakpoint-max-width: 667px;
+
+@media (min-width: $layout-breakpoint-min-width) {
+  .container {
+    bottom: 164px;
+  }
+}
+@media (max-width: $layout-breakpoint-max-width) {
+  .tabsContentContainer {
+    justify-content: center;
   }
 }
