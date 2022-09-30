@@ -44,9 +44,5 @@ export const useGetMovies = (title, method) => {
     movies();
   }, []);
 
-  if (isFetching) {
-    return <h5>Loading...</h5>;
-  }
-
   return result;
 };
