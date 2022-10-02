@@ -66,11 +66,7 @@ export default function Hero() {
                     </h5>
                   </div>
                   <WatchMovieButton title='Watch Trailer' />
-                  <ViewInfoButton
-                    title='View Info'
-                    handleClick={handleClick}
-                    handleClose={handleClose}
-                  />
+                  <ViewInfoButton title='View Info' handleClick={handleClick} />
                   {showModal && (
                     <div className={styles.darkBG}>
                       <Modal
