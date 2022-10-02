@@ -12,6 +12,7 @@ export default function FetchSingleRequestByID(response, dataID) {
         original_language,
         vote_count,
         overview,
+        genre_ids,
       }
     ) => {
       id.toString().includes(dataID) &&
@@ -24,6 +25,7 @@ export default function FetchSingleRequestByID(response, dataID) {
           original_language,
           vote_count,
           overview,
+          genre_ids,
         });
       return acc;
     },
