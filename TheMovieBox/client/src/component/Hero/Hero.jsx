@@ -11,13 +11,14 @@ import { getImage } from "../../api/endpoint/image";
 import { key } from "../../api/TMBDKey.js";
 import Modal from "../Modal/Modal";
 import AnimationStyles from "../Modal/Animations.module.scss";
+import HeroInfo from "./HeroInfo";
 
 export default function Hero() {
   const getMovieResults = getMoviesEndpoint("now_playing", key, 1);
   const [result, setResult] = useState([]);
   const [firstItem, setFirstItem] = useState({});
-  let item = FetchSingleRequestByID(result, firstItem.id);
   const [showModal, setShowModal] = useState(false);
+  let item = FetchSingleRequestByID(result, firstItem.id);
 
   useEffect(() => {
     try {
@@ -64,18 +65,24 @@ export default function Hero() {
                       </span>
                     </h5>
                   </div>
-                  <WatchMovieButton title='Watch Movie' />
-                  <ViewInfoButton title='View Info' handleClick={handleClick} />
+                  <WatchMovieButton title='Watch Trailer' />
+                  <ViewInfoButton
+                    title='View Info'
+                    handleClick={handleClick}
+                    handleClose={handleClose}
+                  />
                   {showModal && (
                     <div className={styles.darkBG}>
                       <Modal
                         show={showModal}
-                        className={styles.modal}
+                        className={styles.heroModal}
                         activeStyle={AnimationStyles.active}
                         hiddenStyle={AnimationStyles.hiddenStyle}
+                        handleClose={handleClose}
+                        headerClass={styles.modalHeader}
+                        title={data.title}
                       >
-                        <h3 className={styles.modalHeader}>Modal</h3>
-                        <button onClick={handleClose}>close</button>
+                        <HeroInfo data={data} />
                       </Modal>
                     </div>
                   )}
