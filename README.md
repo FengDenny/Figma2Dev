@@ -34,13 +34,13 @@ Turning high-fidelity mockups to pixel-pefect websites.
 
 3. The Movie Box development: [The Movie Box website](https://themovieboxx.netlify.app/)
 
-
 ---
 
 # Tool Used
 
 1. Figma
 2. Postman
+3. Redux Devtools Extension
 
 # Technical Stack
 
@@ -48,3 +48,4 @@ Turning high-fidelity mockups to pixel-pefect websites.
 2. CSS Modules
 3. SCSS
 4. CSS Animations
+5. Redux Toolkit
