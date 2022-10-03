@@ -179,7 +179,7 @@
 // Media Queries
 
 $layout-breakpoint-min-width: 668px;
-$sm-layout-breakpoint-max-width: 667px;
+$sm-phone-layout-breakpoint-max-width: 667px;
 $sm-layout-breakpoint-max-width: 492px;
 $xsm-layout-breakpoint-max-width: 397px;
 
@@ -200,7 +200,7 @@ $xsm-layout-breakpoint-max-width: 397px;
   }
 }
 
-@media (max-width: $sm-layout-breakpoint-max-width) {
+@media (max-width: $sm-phone-layout-breakpoint-max-width) {
   .flexHeader {
     display: flex;
     flex-direction: column;
