@@ -30,6 +30,7 @@
 
 1. Figma
 2. Postman
+3. Redux Devtools Extension
 
 # Technical Stack
 
@@ -37,3 +38,4 @@
 2. CSS Modules
 3. SCSS
 4. CSS Animations
+5. Redux Toolkit
