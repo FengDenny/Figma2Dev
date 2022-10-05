@@ -1,12 +1,25 @@
+import { useState } from "react";
 import global from "../../../global.module.scss";
 import styles from "../movieTypes.module.scss";
 import { getImage } from "../../../api/endpoint/image";
 import { useGetMovies } from "../../../hooks/useGetMovies";
 import { useGetGenre } from "../../../hooks/useGetGenre";
+import { ModalShow } from "../../Modal/ModalShow";
+import { AiOutlineInfoCircle } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { movieAction } from "../../../redux/slice/movies/movieID-slice";
+import {
+  openDispatchModal,
+  closeModal,
+} from "../../Modal/ModalHelper/ModalHelpers";
 
 export default function Popular() {
   const popular = useGetMovies("popular", "GET");
   const genre = useGetGenre();
+  const [showModal, setShowModal] = useState(false);
+  const dispatch = useDispatch();
+  const moviesID = useSelector((state) => state.movieID);
+  const { id } = moviesID;
 
   return (
     <ol className={global.gridWrapper}>
@@ -16,6 +29,28 @@ export default function Popular() {
             <div className={styles.image}>
               <img src={getImage(data.backdrop_path)} alt={data.title} />
             </div>
+            <button
+              className={styles.btnInfo}
+              onClick={() =>
+                openDispatchModal(
+                  dispatch,
+                  movieAction,
+                  setShowModal,
+                  showModal,
+                  data.id
+                )
+              }
+            >
+              <AiOutlineInfoCircle />
+            </button>
+            {
+              <ModalShow
+                showModal={showModal}
+                closeModal={() => closeModal(setShowModal)}
+                id={id}
+                data={data}
+              />
+            }
             <div className={styles.header}>
               <h2>{data.title}</h2>
               <h5 className={styles.date}>

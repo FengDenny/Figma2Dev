@@ -1,21 +1,56 @@
+import { useState, useEffect } from "react";
 import global from "../../../global.module.scss";
 import styles from "../movieTypes.module.scss";
 import { getImage } from "../../../api/endpoint/image";
 import { useGetMovies } from "../../../hooks/useGetMovies";
 import { useGetGenre } from "../../../hooks/useGetGenre";
+import { AiOutlineInfoCircle } from "react-icons/ai";
+import { ModalShow } from "../../Modal/ModalShow";
+import { useDispatch, useSelector } from "react-redux";
+import { movieAction } from "../../../redux/slice/movies/movieID-slice";
+import {
+  openDispatchModal,
+  closeModal,
+} from "../../Modal/ModalHelper/ModalHelpers";
 
 export default function NowPlaying() {
   const nowPlaying = useGetMovies("now_playing", "GET");
   const genre = useGetGenre();
+  const [showModal, setShowModal] = useState(false);
+  const dispatch = useDispatch();
+  const moviesID = useSelector((state) => state.movieID);
+  const { id } = moviesID;
 
   return (
     <ol className={global.gridWrapper}>
       {Array.isArray(nowPlaying) &&
-        nowPlaying.map((data) => (
+        nowPlaying.slice(1).map((data) => (
           <li className={styles.container} key={data.id}>
             <div className={styles.image}>
               <img src={getImage(data.backdrop_path)} alt={data.title} />
             </div>
+            <button
+              className={styles.btnInfo}
+              onClick={() =>
+                openDispatchModal(
+                  dispatch,
+                  movieAction,
+                  setShowModal,
+                  showModal,
+                  data.id
+                )
+              }
+            >
+              <AiOutlineInfoCircle />
+            </button>
+            {
+              <ModalShow
+                showModal={showModal}
+                closeModal={() => closeModal(setShowModal)}
+                id={id}
+                data={data}
+              />
+            }
             <div className={styles.header}>
               <h2>{data.title}</h2>
               <h5 className={styles.date}>
