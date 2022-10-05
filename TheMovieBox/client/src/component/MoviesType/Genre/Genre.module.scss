@@ -1,0 +1,27 @@
+.form {
+  position: relative;
+  width: 250px;
+  padding: 10px 0;
+  left: 10px;
+  & select {
+    width: 295px;
+    max-width: 300px;
+    padding: 6px;
+    border: 1px solid var(--primary-color);
+    outline: none;
+  }
+
+  & option {
+    color: var(--secondary-color);
+    padding: 10px;
+    background-color: var(--bg-color);
+  }
+}
+
+$layout-breakpoint-min-width: 669px;
+
+@media (min-width: $layout-breakpoint-min-width) {
+  .form {
+    left: 0;
+  }
+}
