@@ -76,109 +76,10 @@
   }
 }
 
-// Modal
-.darkBG {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 10;
-  top: 0;
-  left: 0;
-  transition: visibility 0.25s;
-}
-
-.heroModal {
-  position: relative;
-  top: 20%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-  height: 500px;
-  width: calc(100% - 10%) !important;
-  height: auto !important;
-  box-shadow: var(--btn-box-shadow);
-  & .modalHeader {
-    color: var(--primary-card-font);
-    font-size: 2rem;
-    margin: 10px auto;
-  }
-  & button {
-    position: absolute;
-    top: 5px;
-    right: 7px;
-    padding: 5px;
-    font-size: 1.1rem;
-    border: none;
-    background: transparent !important;
-    color: var(--secondary-card-font);
-    cursor: pointer;
-    & :hover {
-      transition: color 150ms ease-in;
-      color: var(--primary-color);
-    }
-  }
-
-  & .modalSmallHeader {
-    display: flex;
-    flex-direction: row;
-    color: var(--primary-color);
-    padding: 10px;
-    & span {
-      padding-left: 5px;
-      color: var(--secondary-color);
-    }
-  }
-
-  & .genres {
-    display: flex;
-    gap: 10px;
-    font-size: 1.3rem;
-    justify-content: center;
-    padding-right: 40px;
-    & .genresVLine {
-      position: relative;
-      bottom: 2px;
-      left: 57px;
-    }
-
-    & span {
-      color: var(--secondary-card-font);
-      font-size: 1.2rem;
-      padding: 0 2px;
-    }
-  }
-
-  & .description {
-    & span {
-      color: var(--secondary-color);
-      width: calc(100% - 20%);
-      margin: 0 auto;
-      line-height: 25px;
-      font-weight: normal;
-      padding-left: 5px;
-    }
-  }
-  & .modalSmallHeader,
-  & .description,
-  &.genres {
-    font-size: 1.3rem;
-    gap: 10px;
-    padding: 10px;
-
-    & span {
-      font-size: 1.1rem;
-    }
-  }
-}
-
 // Media Queries
 
 $layout-breakpoint-min-width: 668px;
 $sm-phone-layout-breakpoint-max-width: 667px;
-$sm-layout-breakpoint-max-width: 492px;
 $xsm-layout-breakpoint-max-width: 397px;
 
 @media (min-width: $layout-breakpoint-min-width) {
@@ -187,16 +88,6 @@ $xsm-layout-breakpoint-max-width: 397px;
     width: 320px;
     bottom: 16rem !important;
     z-index: 1;
-  }
-
-  .heroModal {
-    max-width: 500px !important;
-    display: flex;
-    margin: 0 auto;
-    // position: absolute !important;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-40%, -40%) !important;
   }
 }
 
@@ -211,22 +102,7 @@ $xsm-layout-breakpoint-max-width: 397px;
     margin-left: 77px !important;
   }
 }
-@media (max-width: $sm-layout-breakpoint-max-width) {
-  .modalSmallHeader,
-  .description {
-    padding: 0 !important;
-    font-size: 1rem !important;
 
-    & span {
-      font-size: 1rem !important;
-    }
-  }
-
-  .description,
-  .genres {
-    margin-top: 10px;
-  }
-}
 @media (max-width: $xsm-layout-breakpoint-max-width) {
   .header {
     bottom: 21rem !important;

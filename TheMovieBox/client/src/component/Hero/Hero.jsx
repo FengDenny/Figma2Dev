@@ -9,9 +9,9 @@ import { fetchRequest } from "../../api/FetchRquests/FetchRequest";
 import { getMoviesEndpoint } from "../../api/endpoint/movies";
 import { getImage } from "../../api/endpoint/image";
 import { key } from "../../api/TMBDKey.js";
-import Modal from "../Modal/Modal";
-import AnimationStyles from "../Modal/Animations.module.scss";
-import HeroInfo from "./HeroInfo";
+
+import { openHeroModal, closeModal } from "../Modal/ModalHelper/ModalHelpers";
+import { ModalHeroShow } from "../Modal/ModalShow";
 
 export default function Hero() {
   const getMovieResults = getMoviesEndpoint("now_playing", key, 1);
@@ -30,14 +30,6 @@ export default function Hero() {
       console.log(err);
     }
   }, []);
-
-  const handleClick = () => {
-    setShowModal(!showModal);
-  };
-
-  const handleClose = () => {
-    setShowModal(false);
-  };
 
   return (
     <section>
@@ -66,22 +58,17 @@ export default function Hero() {
                     </h5>
                   </div>
                   <WatchMovieButton title='Watch Trailer' />
-                  <ViewInfoButton title='View Info' handleClick={handleClick} />
-                  {showModal && (
-                    <div className={styles.darkBG}>
-                      <Modal
-                        show={showModal}
-                        className={styles.heroModal}
-                        activeStyle={AnimationStyles.active}
-                        hiddenStyle={AnimationStyles.hiddenStyle}
-                        handleClose={handleClose}
-                        headerClass={styles.modalHeader}
-                        title={data.title}
-                      >
-                        <HeroInfo data={data} />
-                      </Modal>
-                    </div>
-                  )}
+                  <ViewInfoButton
+                    title='View Info'
+                    handleClick={() => openHeroModal(setShowModal, showModal)}
+                  />
+                  {
+                    <ModalHeroShow
+                      showModal={showModal}
+                      closeModal={() => closeModal(setShowModal)}
+                      data={data}
+                    />
+                  }
                 </div>
                 <Star
                   title='Rating'
