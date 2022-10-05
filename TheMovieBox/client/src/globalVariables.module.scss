@@ -39,4 +39,4 @@ $space-between: "space-between";
   @if ($space-between) {
     justify-content: var(--j-c-space-between);
   }
-} ;
+}
