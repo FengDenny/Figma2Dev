@@ -6,7 +6,7 @@
 
 .hidden {
   visibility: hidden;
-  animation: disappear 1s forward;
+  animation: disappear 1s forwards;
 }
 
 @keyframes appear {
