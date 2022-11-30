@@ -13,7 +13,7 @@
 
 .env
 
-src/firebaseConfig.js
+src/firebase/firebaseConfig.js
 
 # misc
 .DS_Store
