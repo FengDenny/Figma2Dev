@@ -6,19 +6,17 @@ export default function LoginAuthModal({ setActive }) {
     <form className={authStyles.authForm}>
       <div className={authStyles.formInput}>
         <label htmlFor='Email'>Email</label>
-        <input type='email' name='email' value='' required />
-      </div>
-      <div className={authStyles.formInput}>
-        <label htmlFor='full_name'>Full name</label>
-        <input type='text' name='full_name' value='' required />
-      </div>
-      <div className={authStyles.formInput}>
-        <label htmlFor='password'>Password</label>
-        <input type='password' name='password' value='' required />
+        <input type='email' name='email' required />
       </div>
 
       <div className={authStyles.formInput}>
-        <button type='submit' className={authStyles.formSubmit}>
+        <label htmlFor='password'>Password</label>
+        <input type='password' name='password' required />
+        <button className={authStyles.passwordReset}>Forgot password?</button>
+      </div>
+
+      <div className={authStyles.formInput}>
+        <button type='button' className={authStyles.formSubmit}>
           Log in
         </button>
       </div>
@@ -26,6 +24,7 @@ export default function LoginAuthModal({ setActive }) {
         <div className={authStyles.formSwitch}>
           <h3>Need an account?</h3>
           <button
+            type='button'
             onClick={() => setActive("register")}
             className={authStyles.formSwitchBtn}
           >
