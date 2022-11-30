@@ -1,0 +1,77 @@
+.authForm {
+  position: relative;
+  max-width: 90%;
+  padding: 20px 2px;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 30px;
+  & label {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+  }
+
+  & input {
+    height: 35px;
+    margin-top: 5px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    padding-left: 10px;
+
+    &:focus {
+      outline: none !important;
+      border: 3px solid var(--primary-card-font);
+    }
+  }
+
+  & .passwordReset {
+    position: absolute;
+    font-size: 0.9rem;
+    color: var(--primary-card);
+    top: 33.5%;
+    right: 10%;
+
+    &:hover {
+      color: var(--primary-color-hover);
+      text-decoration: underline;
+    }
+  }
+
+  & .formSubmit {
+    position: relative;
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color) !important;
+    border-radius: 5px;
+    color: var(--white) !important;
+    left: 0px !important;
+
+    &:hover {
+      background-color: var(--primary-color-hover) !important;
+      border: 2px solid var(--primary-color-hover);
+    }
+  }
+
+  & .formSwitch {
+    color: var(--secondary-color);
+    font-weight: normal !important;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row !important;
+  }
+
+  & .formSwitchBtn {
+    position: relative;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: normal !important;
+    text-decoration: underline !important;
+    top: -7px;
+    left: 5px;
+
+    &:hover {
+      color: var(--primary-color-hover);
+    }
+  }
+}
