@@ -7,7 +7,7 @@ import {
   closeModal,
 } from "../../Modal/ModalHelper/ModalHelpers";
 
-import { app } from "../../../firebaseConfig";
+import { app } from "../../../firebase/firebaseConfig";
 import {
   getAuth,
   createUserWithEmailAndPassword,
