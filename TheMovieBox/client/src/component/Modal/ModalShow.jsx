@@ -57,6 +57,9 @@ export const ModalAuthShow = ({
   title,
   active,
   setActive,
+  handleIncomingData,
+  accountData,
+  data,
 }) => {
   return (
     <>
@@ -74,7 +77,12 @@ export const ModalAuthShow = ({
             {active === "login" ? (
               <LoginAuth setActive={setActive} />
             ) : (
-              <RegisterAuth setActive={setActive} />
+              <RegisterAuth
+                setActive={setActive}
+                handleIncomingData={handleIncomingData}
+                accountData={accountData}
+                data={data}
+              />
             )}
           </Modal>
         </div>

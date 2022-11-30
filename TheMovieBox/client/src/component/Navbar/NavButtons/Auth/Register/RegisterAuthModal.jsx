@@ -1,23 +1,53 @@
 import React from "react";
 import authStyles from "../auths.module.scss";
 
-export default function RegisterAuthModal({ setActive }) {
+export default function RegisterAuthModal({
+  setActive,
+  handleIncomingData,
+  accountData,
+  clearData,
+  data,
+}) {
   return (
     <form className={authStyles.authForm}>
       <div className={authStyles.formInput}>
         <label htmlFor='Email'>Email</label>
-        <input type='email' name='email' value='' required />
+        <input
+          type='email'
+          name='email'
+          value={data.email}
+          onChange={(event) => handleIncomingData(event)}
+          required
+        />
+      </div>
+      <div className={authStyles.formInput}>
+        <label htmlFor='fullName'>Full name</label>
+        <input
+          type='text'
+          name='fullName'
+          value={data.fullName}
+          onChange={(event) => handleIncomingData(event)}
+          required
+        />
       </div>
 
       <div className={authStyles.formInput}>
         <label htmlFor='password'>Password</label>
-        <input type='password' name='password' value='' required />
-
-        <button className={authStyles.passwordReset}>Forgot password?</button>
+        <input
+          type='password'
+          name='password'
+          value={data.password}
+          onChange={(event) => handleIncomingData(event)}
+          required
+        />
       </div>
 
       <div className={authStyles.formInput}>
-        <button type='submit' className={authStyles.formSubmit}>
+        <button
+          type='button'
+          className={authStyles.formSubmit}
+          onClick={accountData}
+        >
           Sign up
         </button>
       </div>
