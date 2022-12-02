@@ -4,7 +4,7 @@
 }
 
 .navbar {
-  background: transparent;
+  background: black;
   grid-area: nav;
   z-index: 1000;
   position: absolute;
@@ -20,6 +20,45 @@
     min-height: 24px;
     margin-top: 10px;
     cursor: pointer;
+  }
+
+  & .desktopNavItems {
+    display: flex;
+    & .authNotification {
+      color: var(--white);
+      font-size: 1.4rem;
+      width: 100%;
+    }
+    & .navUL {
+      width: 180px;
+      margin-top: 5px;
+      & .navLink {
+        color: var(--white);
+        &:hover {
+          border-bottom: 1px solid var(--white);
+        }
+      }
+    }
+
+    & .logoutBtn {
+      position: relative;
+      border: 1px solid var(--primary-color);
+      background: var(--primary-color);
+      border-radius: 5px;
+      width: 120px;
+      height: 30px;
+      color: var(--white);
+      font-size: 1rem;
+      box-shadow: var(--btn-box-shadow);
+      cursor: pointer;
+      margin: 0 23px;
+      bottom: 5px;
+
+      &:hover {
+        background: var(--primary-color-hover);
+        border: 1px solid var(--primary-color-hover);
+      }
+    }
   }
 }
 
@@ -41,7 +80,7 @@ $xsm-layout-breakpoint-max-width: 667px;
 
     & .navButtons {
       display: flex;
-      padding: 10px 20px;
+      margin-top: 15px;
     }
   }
 }
