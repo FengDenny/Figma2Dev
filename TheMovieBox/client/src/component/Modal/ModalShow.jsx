@@ -75,7 +75,12 @@ export const ModalAuthShow = ({
             title={title}
           >
             {active === "login" ? (
-              <LoginAuth setActive={setActive} />
+              <LoginAuth
+                setActive={setActive}
+                handleIncomingData={handleIncomingData}
+                accountData={accountData}
+                data={data}
+              />
             ) : (
               <RegisterAuth
                 setActive={setActive}
