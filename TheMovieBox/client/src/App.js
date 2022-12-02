@@ -3,8 +3,21 @@ import Home from "./pages/Home/Home";
 import Navbar from "./component/Navbar/Navbar";
 import { useRoutes } from "react-router-dom";
 import global from "./global.module.scss";
+import { app } from "./firebase/firebaseConfig";
+import PrivateRoute from "./component/PrivateRoute/PrivateRoute";
+import AccountSettings from "./pages/AccountSetting/AccountSettings";
 const Main = () => {
-  let routes = useRoutes([{ path: "/", element: <Home /> }]);
+  let routes = useRoutes([
+    { path: "/", element: <Home /> },
+    {
+      path: "/account-setting/:id",
+      element: (
+        <PrivateRoute>
+          <AccountSettings />
+        </PrivateRoute>
+      ),
+    },
+  ]);
   return routes;
 };
 
