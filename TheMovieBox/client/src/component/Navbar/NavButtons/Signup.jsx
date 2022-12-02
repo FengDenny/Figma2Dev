@@ -7,12 +7,17 @@ import {
   closeModal,
 } from "../../Modal/ModalHelper/ModalHelpers";
 
-import { app } from "../../../firebase/firebaseConfig";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
+
+import { useNavigate } from "react-router-dom";
+
+// redux
+import { useDispatch, useSelector } from "react-redux";
+import { userAction } from "../../../redux/slice/auth/userData-slice";
 
 export default function Signup({ mobile }) {
   const [showModal, setShowModal] = useState(false);
@@ -23,6 +28,10 @@ export default function Signup({ mobile }) {
     password: "",
   });
   const auth = getAuth();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { userData } = useSelector((state) => ({ ...state }));
+  const { isLoggedIn, uid } = userData.userInfo;
 
   const handleIncomingData = (event) => {
     event.preventDefault();
@@ -34,6 +43,24 @@ export default function Signup({ mobile }) {
     await createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((res) => {
         console.log(res.user);
+        const { email, uid, accessToken, metadata } = res.user;
+        const { creationTime, lastSignInTime } = metadata;
+        console.log(metadata);
+        dispatch(
+          userAction.addUserAccountInfo({
+            uid,
+            accessToken,
+            displayName: data.fullName,
+            email,
+            isLoggedIn: true,
+          })
+        );
+        dispatch(
+          userAction.addUserMetaData({
+            creationTime,
+            lastSignInTime,
+          })
+        );
       })
       .catch((err) => console.log(err.message));
 
@@ -42,6 +69,10 @@ export default function Signup({ mobile }) {
     );
 
     setData({ email: "", fullName: "", password: "" });
+    if (isLoggedIn) {
+      navigate(`/account-setting/${uid}`);
+      setShowModal(!showModal);
+    }
   };
 
   return (

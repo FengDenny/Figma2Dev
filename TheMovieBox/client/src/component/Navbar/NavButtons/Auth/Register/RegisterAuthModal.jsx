@@ -5,7 +5,6 @@ export default function RegisterAuthModal({
   setActive,
   handleIncomingData,
   accountData,
-  clearData,
   data,
 }) {
   return (
