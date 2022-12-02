@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { movieIDSlice } from "../slice/movies/movieID-slice";
+import { userDataSlice } from "../slice/auth/userData-slice";
 import { composeWithDevTools } from "redux-devtools-extension";
 // redux-persist
 import { persistReducer } from "redux-persist";
@@ -10,6 +11,7 @@ import thunk from "redux-thunk";
 
 const reducer = combineReducers({
   movieID: movieIDSlice.reducer,
+  userData: userDataSlice.reducer,
 });
 
 const persistConfig = {
