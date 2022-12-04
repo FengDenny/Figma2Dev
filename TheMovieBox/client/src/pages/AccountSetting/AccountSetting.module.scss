@@ -21,8 +21,64 @@
       color: var(--white);
     }
 
+    & .accountUserInfo {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+
+      & label {
+        position: relative;
+        font-size: 1.4rem;
+        top: 5px;
+      }
+
+      & input {
+        border: 1px solid var(--white);
+        border-radius: 5px;
+        height: 30px;
+        padding: 10px;
+        margin: 10px 0;
+      }
+    }
+
     & .accountMetaInfo {
-      margin-top: 50px;
+      position: relative;
+      display: flex;
+      margin-top: 2px;
+      padding-top: 10px;
+
+      & h4 {
+        margin-top: 10px;
+        & span {
+          color: var(--secondary-color);
+          margin-left: 5px;
+        }
+      }
+
+      & .loggedStatus {
+        display: flex;
+        margin-left: 20px;
+        position: absolute;
+        right: 0;
+      }
+    }
+    & .btnSave {
+      width: 50%;
+      height: 40px;
+      margin-top: 25px;
+      align-self: center;
+      font-size: 1.1rem;
+      color: var(--white);
+      background-color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+      box-shadow: var(--btn-box-shadow);
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--primary-color-hover);
+        border: 1px solid var(--primary-color-hover);
+      }
     }
   }
 }
