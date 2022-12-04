@@ -13,6 +13,11 @@ export const userDataSlice = createSlice({
       photoURL: "",
       isLoggedIn: false,
     },
+
+    usersCollectionID: {
+      userID: "",
+    },
+
     metadata: {
       creationTime: "",
       lastSignInTime: "",
@@ -33,6 +38,14 @@ export const userDataSlice = createSlice({
         isLoggedIn: userAccountInfo.isLoggedIn,
       };
     },
+
+    addUserCollectionID(state, action) {
+      const userInfo = action.payload;
+      state.usersCollectionID = {
+        userID: userInfo.userID,
+      };
+    },
+
     addUserMetaData(state, action) {
       const userMetaData = action.payload;
       state.metadata = {

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./buttons.module.scss";
 
 import { ModalAuthShow } from "../../Modal/ModalShow";
@@ -12,8 +13,8 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-
-import { useNavigate } from "react-router-dom";
+import { database } from "../../../firebase/firebaseConfig";
+import { collection, addDoc } from "firebase/firestore";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
@@ -27,11 +28,17 @@ export default function Signup({ mobile }) {
     fullName: "",
     password: "",
   });
+  const collectionRef = collection(database, "users");
   const auth = getAuth();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { userData } = useSelector((state) => ({ ...state }));
-  const { isLoggedIn, uid } = userData.userInfo;
+  const { userData } = useSelector((state) => ({
+    ...state,
+  }));
+  const { userInfo, metadata } = userData;
+
+  const { isLoggedIn, uid } = userInfo;
+  const { creationTime, lastSignInTime } = metadata;
 
   const handleIncomingData = (event) => {
     event.preventDefault();
@@ -61,6 +68,16 @@ export default function Signup({ mobile }) {
             lastSignInTime,
           })
         );
+      })
+      .then(() => {
+        addDoc(collectionRef, {
+          email: data.email,
+          displayName: data.fullName,
+          creationTime,
+          lastSignInTime,
+        })
+          .then(() => console.log("data added"))
+          .catch((err) => console.log(err.message));
       })
       .catch((err) => console.log(err.message));
 

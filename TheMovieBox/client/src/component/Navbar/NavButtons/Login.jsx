@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./buttons.module.scss";
 import { ModalAuthShow } from "../../Modal/ModalShow";
 import {
   openHeroModal,
   closeModal,
 } from "../../Modal/ModalHelper/ModalHelpers";
-
+import { database } from "../../../firebase/firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
@@ -23,8 +24,25 @@ export default function Login({ mobile }) {
   const auth = getAuth();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const collectionRef = collection(database, "users");
+
   const { userData } = useSelector((state) => ({ ...state }));
   const { isLoggedIn, uid } = userData.userInfo;
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    const data = await getDocs(collectionRef);
+    data.docs.map((item) => {
+      return dispatch(
+        userAction.addUserCollectionID({
+          userID: item.id,
+        })
+      );
+    });
+  };
 
   const handleIncomingData = (event) => {
     event.preventDefault();
