@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+  grid-area: tab;
+}
+
+.tabList {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  & .tabItems {
+    font-size: 1.7rem;
+    padding: 10px;
+    margin-top: 15px;
+    width: 150px;
+    font-weight: bold;
+    color: var(--primary-card-font);
+    cursor: pointer;
+    transition: border, color 300ms ease-in-out;
+    &.active {
+      color: var(--primary-color);
+      &::after {
+        position: relative;
+        display: block;
+        content: "";
+        border-bottom: 3px solid var(--primary-color);
+        top: 11px;
+      }
+    }
+  }
+}
+
+.tabsContentContainer {
+  & .tabContent {
+    display: flex;
+    flex-direction: column;
+    &.active {
+      display: flex;
+    }
+
+    &.notActive {
+      display: none;
+    }
+  }
+}
