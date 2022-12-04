@@ -4,3 +4,8 @@ export const tabs = [
   { id: 2, title: "New Arrivals", subtitle: "upcoming" },
   { id: 3, title: "Genre", subtitle: "genre" },
 ];
+
+export const AccountSettingTabs = [
+  { id: 0, title: "General" },
+  { id: 1, title: "Security" },
+];
