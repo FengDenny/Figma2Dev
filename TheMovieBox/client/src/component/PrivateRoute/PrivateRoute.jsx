@@ -1,14 +1,13 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-
-import { useSelector } from "react-redux";
+import { useAuthStatus } from "./hooks/useAuthStatus";
 
 export default function PrivateRoute({ children }) {
-  const { userData } = useSelector((state) => ({ ...state }));
-  const { isLoggedIn } = userData.userInfo;
+  const { loggedIn, status } = useAuthStatus();
 
-  if (!isLoggedIn) {
-    return <Navigate to='/' />;
+  if (status) {
+    return "Loading";
   }
-  return children;
+
+  return loggedIn ? children : <Navigate to='/' />;
 }
