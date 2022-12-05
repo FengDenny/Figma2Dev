@@ -1,7 +1,7 @@
 import React from "react";
-import AccountCreationAndLoggedInfo from "../../SettingTabs/MetaData/AccountCreationAndLoggedInfo";
+import AccountCreationAndLoggedInfo from "../MetaData/AccountCreationAndLoggedInfo";
 
-export default function UpdateEmailAndPassword({
+export default function UpdateEmailAndName({
   styles,
   email,
   displayName,

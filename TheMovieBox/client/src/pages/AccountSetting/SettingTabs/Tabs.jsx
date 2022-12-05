@@ -3,7 +3,7 @@ import tabStyles from "./Tabs.module.scss";
 import TabsItem from "../../../component/Tabs/TabsItem";
 import TabsContent from "../../../component/Tabs/TabsContent";
 import { AccountSettingTabs } from "../../../component/Tabs/data/tabs";
-import UpdateEmailAndPassword from "../SettingTabs/General/UpdateEmailAndPassword";
+import UpdateEmailAndPassword from "./General/UpdateEmailAndName";
 
 import UpdatePassword from "../SettingTabs/Security/UpdatePassword";
 export default function Tabs({
