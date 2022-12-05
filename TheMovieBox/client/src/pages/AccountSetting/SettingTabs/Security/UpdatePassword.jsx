@@ -2,20 +2,22 @@ import React from "react";
 import styles from "../../AccountSetting.module.scss";
 
 export default function UpdatePassword({
-  password,
-  currentPassword,
-  confirmPassword,
+  newPasswordData,
+  updateNewPassword,
+  handleIncomingUpdatedData,
 }) {
   return (
     <div className={styles.settings}>
       <h2 className={styles.header}>Account Settings</h2>
       <div className={styles.accountInfo}>
         <div className={styles.accountUserInfo}>
-          <label htmlFor='password'>Current Password</label>
+          <label htmlFor='currentPassword'>Current Password</label>
           <input
             type='password'
-            name='password'
-            placeholder='Enter current password'
+            name='currentPassword'
+            placeholder='Verify current password'
+            value={newPasswordData.currentPassword}
+            onChange={(event) => handleIncomingUpdatedData(event)}
           />
         </div>
         <div className={styles.accountUserInfo}>
@@ -24,6 +26,8 @@ export default function UpdatePassword({
             type='password'
             name='newPassword'
             placeholder='Create a new password'
+            value={newPasswordData.newPassword}
+            onChange={(event) => handleIncomingUpdatedData(event)}
           />
         </div>
         <div className={styles.accountUserInfo}>
@@ -32,9 +36,13 @@ export default function UpdatePassword({
             type='password'
             name='confirmPassword'
             placeholder='Confirm your new password'
+            value={newPasswordData.confirmPassword}
+            onChange={(event) => handleIncomingUpdatedData(event)}
           />
         </div>
-        <button className={styles.btnSave}>Save changes</button>
+        <button className={styles.btnSave} onClick={updateNewPassword}>
+          Save changes
+        </button>
       </div>
     </div>
   );
