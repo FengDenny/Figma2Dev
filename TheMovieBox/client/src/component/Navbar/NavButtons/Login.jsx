@@ -6,6 +6,9 @@ import {
   openHeroModal,
   closeModal,
 } from "../../Modal/ModalHelper/ModalHelpers";
+
+import { useAuthStatus } from "../../PrivateRoute/hooks/useAuthStatus";
+
 import { database } from "../../../firebase/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -21,19 +24,18 @@ export default function Login({ mobile }) {
     email: "",
     password: "",
   });
-  const auth = getAuth();
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const collectionRef = collection(database, "users");
-
+  const { loggedIn } = useAuthStatus();
   const { userData } = useSelector((state) => ({ ...state }));
-  const { isLoggedIn, uid } = userData.userInfo;
 
   useEffect(() => {
     getData();
   }, []);
 
   const getData = async () => {
+    const collectionRef = collection(database, "users");
     const data = await getDocs(collectionRef);
     data.docs.map((item) => {
       return dispatch(
@@ -51,19 +53,20 @@ export default function Login({ mobile }) {
   };
 
   const accountData = async () => {
+    const auth = getAuth();
+
     await signInWithEmailAndPassword(auth, data.email, data.password)
       .then((res) => {
         console.log(res.user);
         const { email, uid, accessToken, displayName, metadata } = res.user;
         const { creationTime, lastSignInTime } = metadata;
-        console.log(metadata);
         dispatch(
           userAction.addUserAccountInfo({
             uid,
             accessToken,
             displayName,
             email,
-            isLoggedIn: true,
+            isLoggedIn: loggedIn,
           })
         );
         dispatch(
@@ -76,8 +79,9 @@ export default function Login({ mobile }) {
       .catch((err) => console.log(err.message));
 
     setData({ email: "", password: "" });
-    if (isLoggedIn) {
-      navigate(`/account-setting/${uid}`);
+
+    if (loggedIn) {
+      navigate(`/`);
       setShowModal(!showModal);
     }
   };
