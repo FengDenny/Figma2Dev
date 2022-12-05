@@ -8,16 +8,13 @@ import {
   getAuth,
   updateProfile,
   updateEmail,
-  onAuthStateChanged,
+  updatePassword,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
 } from "firebase/auth";
+import { useAuthStatus } from "../../component/PrivateRoute/hooks/useAuthStatus";
 import { database } from "../../firebase/firebaseConfig";
-import {
-  collection,
-  getDocs,
-  doc,
-  updateDoc,
-  deleteDoc,
-} from "firebase/firestore";
+import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
@@ -29,11 +26,21 @@ export default function AccountSettings() {
   const { email, displayName } = userInfo;
   const { creationTime, lastSignInTime } = metadata;
   const { userID } = usersCollectionID;
+  const { loggedIn } = useAuthStatus();
+
   const [newData, setNewData] = useState({
     newEmail: "",
     newFullName: "",
-    newPassword: "",
   });
+
+  const [newPasswordData, setNewPasswordData] = useState({
+    currentPassword: "",
+    newPassword: "",
+    confirmPassword: "",
+  });
+
+  const { newEmail, newFullName } = newData;
+  const { currentPassword, newPassword, confirmPassword } = newPasswordData;
   const auth = getAuth();
   const dispatch = useDispatch();
   const collectionRef = collection(database, "users");
@@ -51,48 +58,81 @@ export default function AccountSettings() {
       );
     });
   };
-  const newEmail = newData.newEmail;
 
   const handleIncomingUpdatedData = (event) => {
     event.preventDefault();
     let inputs = { [event.target.name]: event.target.value };
-    setNewData({ ...newData, ...inputs });
+    newData && setNewData({ ...newData, ...inputs });
+    newPasswordData && setNewPasswordData({ ...newPasswordData, ...inputs });
   };
 
   const updateAccountData = async () => {
     let dataToUpdate = doc(database, "users", userID);
-
-    await updateProfile(auth.currentUser, {
-      displayName:
-        newData.newFullName !== "" ? newData.newFullName : displayName,
-    })
-      .then(() => {
-        dispatch(
-          userAction.addUserAccountInfo({
-            displayName:
-              newData.newFullName !== "" ? newData.newFullName : displayName,
+    const { email, uid, accessToken, displayName } = auth.currentUser;
+    const fullNameElseDisplayName =
+      newFullName !== "" ? newFullName : displayName;
+    const newEmailElseEmail = newEmail !== "" ? newEmail : email;
+    try {
+      if (displayName !== newFullName) {
+        await updateProfile(auth.currentUser, {
+          displayName: fullNameElseDisplayName,
+        })
+          .then(async () => {
+            await updateDoc(dataToUpdate, {
+              displayName: fullNameElseDisplayName,
+            });
+            dispatch(
+              userAction.addUserAccountInfo({
+                displayName: fullNameElseDisplayName,
+                uid,
+                email,
+                accessToken,
+                isLoggedIn: loggedIn,
+              })
+            );
           })
-        );
-      })
-      .catch((err) => console.log(err.message));
+          .catch((err) => console.log(err.message));
+      }
 
-    await updateEmail(auth.currentUser, newEmail !== "" ? newEmail : email)
-      .then(() => {
-        dispatch(
-          userAction.addUserAccountInfo({
-            email: newData.newEmail !== "" ? newData.newEmail : email,
+      if (email !== newEmail) {
+        await updateEmail(auth.currentUser, newEmail)
+          .then(async () => {
+            await updateDoc(dataToUpdate, {
+              email: newEmailElseEmail,
+            });
+            dispatch(
+              userAction.addUserAccountInfo({
+                displayName: fullNameElseDisplayName,
+                uid,
+                email: newEmailElseEmail,
+                accessToken,
+                isLoggedIn: loggedIn,
+              })
+            );
           })
-        );
-      })
-      .catch((err) => console.log(err.message));
+          .catch((err) => console.log(err.message));
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
 
-    await updateDoc(dataToUpdate, {
-      email: newData.newEmail !== "" ? newData.newEmail : email,
-      displayName:
-        newData.newFullName !== "" ? newData.newFullName : displayName,
-    })
-      .then(() => console.log("Data has been updated! Please log in!"))
-      .catch((err) => console.log(err.message));
+  const updateNewPassword = async () => {
+    const { email } = auth.currentUser;
+    const credentials = EmailAuthProvider.credential(email, currentPassword);
+
+    try {
+      await reauthenticateWithCredential(auth.currentUser, credentials)
+        .then(async () => {
+          if (newPassword === confirmPassword) {
+            await updatePassword(auth.currentUser, newPassword);
+            setNewPasswordData({ ...newPasswordData, ...null });
+          }
+        })
+        .then(() => console.log("Password updated successfully"));
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (
@@ -106,7 +146,9 @@ export default function AccountSettings() {
           lastSignInTime={lastSignInTime.substring(0, 16)}
           handleIncomingUpdatedData={handleIncomingUpdatedData}
           updateAccountData={updateAccountData}
+          updateNewPassword={updateNewPassword}
           newData={newData}
+          newPasswordData={newPasswordData}
           userID={userID}
         />
       </div>
