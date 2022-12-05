@@ -2,7 +2,7 @@
 
 Turning high-fidelity mockups to pixel-pefect websites.
 
-## Flexbox Layout Development
+## Single Page Web Applications
 
 ### Noren
 
@@ -24,7 +24,7 @@ Turning high-fidelity mockups to pixel-pefect websites.
 
 ---
 
-## CSS Grid Layout w/ Flexbox Development
+## Full Stack Web Applications
 
 ### The Movie Box
 
