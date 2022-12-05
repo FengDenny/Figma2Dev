@@ -42,11 +42,7 @@ export default function UpdateEmailAndName({
           lastSignInTime={lastSignInTime}
         />
 
-        <button
-          className={styles.btnSave}
-          onClick={updateAccountData}
-          disabled={!newData.email && !newData.newFullName}
-        >
+        <button className={styles.btnSave} onClick={updateAccountData}>
           Save changes
         </button>
       </div>
