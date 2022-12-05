@@ -15,6 +15,8 @@ export default function Tabs({
   handleIncomingUpdatedData,
   updateAccountData,
   newData,
+  updateNewPassword,
+  newPasswordData,
 }) {
   const [tab, setTab] = useState(0);
 
@@ -57,7 +59,14 @@ export default function Tabs({
                 newData={newData}
               />
             )}
-            {item.id === 1 && <UpdatePassword styles={styles} />}
+            {item.id === 1 && (
+              <UpdatePassword
+                styles={styles}
+                handleIncomingUpdatedData={handleIncomingUpdatedData}
+                updateNewPassword={updateNewPassword}
+                newPasswordData={newPasswordData}
+              />
+            )}
           </TabsContent>
         ))}
       </div>
