@@ -7,13 +7,13 @@ import {
   openHeroModal,
   closeModal,
 } from "../../Modal/ModalHelper/ModalHelpers";
-
+import { useAuthStatus } from "../../PrivateRoute/hooks/useAuthStatus";
+import { database } from "../../../firebase/firebaseConfig";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { database } from "../../../firebase/firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
 
 // redux
@@ -23,22 +23,18 @@ import { userAction } from "../../../redux/slice/auth/userData-slice";
 export default function Signup({ mobile }) {
   const [showModal, setShowModal] = useState(false);
   const [active, setActive] = useState("register");
+  const { loggedIn } = useAuthStatus();
   const [data, setData] = useState({
     email: "",
     fullName: "",
     password: "",
   });
-  const collectionRef = collection(database, "users");
-  const auth = getAuth();
-  const dispatch = useDispatch();
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { userData } = useSelector((state) => ({
     ...state,
   }));
-  const { userInfo, metadata } = userData;
-
-  const { isLoggedIn, uid } = userInfo;
-  const { creationTime, lastSignInTime } = metadata;
 
   const handleIncomingData = (event) => {
     event.preventDefault();
@@ -47,48 +43,52 @@ export default function Signup({ mobile }) {
   };
 
   const accountData = async () => {
-    await createUserWithEmailAndPassword(auth, data.email, data.password)
-      .then((res) => {
-        console.log(res.user);
-        const { email, uid, accessToken, metadata } = res.user;
-        const { creationTime, lastSignInTime } = metadata;
-        console.log(metadata);
-        dispatch(
-          userAction.addUserAccountInfo({
-            uid,
-            accessToken,
-            displayName: data.fullName,
-            email,
-            isLoggedIn: true,
-          })
-        );
-        dispatch(
-          userAction.addUserMetaData({
-            creationTime,
-            lastSignInTime,
-          })
-        );
-      })
-      .then(() => {
-        addDoc(collectionRef, {
-          email: data.email,
-          displayName: data.fullName,
-          creationTime,
-          lastSignInTime,
-        })
-          .then(() => console.log("data added"))
-          .catch((err) => console.log(err.message));
-      })
-      .catch((err) => console.log(err.message));
+    const auth = getAuth();
+    const { email, fullName, password } = data;
+    const collectionRef = collection(database, "users");
+    const { metadata } = userData;
+    const { creationTime, lastSignInTime } = metadata;
+    try {
+      await createUserWithEmailAndPassword(auth, email, password).then(
+        (res) => {
+          console.log(res.user);
+          const { email, uid, accessToken, metadata } = res.user;
+          const { creationTime, lastSignInTime } = metadata;
+          console.log(metadata);
+          dispatch(
+            userAction.addUserAccountInfo({
+              uid,
+              accessToken,
+              displayName: data.fullName,
+              email,
+              isLoggedIn: loggedIn,
+            })
+          );
+          dispatch(
+            userAction.addUserMetaData({
+              creationTime,
+              lastSignInTime,
+            })
+          );
+        }
+      );
 
-    await updateProfile(auth.currentUser, { displayName: data.fullName }).catch(
-      (err) => console.log(err.message)
-    );
+      await updateProfile(auth.currentUser, { displayName: data.fullName });
 
-    setData({ email: "", fullName: "", password: "" });
-    if (isLoggedIn) {
-      navigate(`/account-setting/${uid}`);
-      setShowModal(!showModal);
+      await addDoc(collectionRef, {
+        email,
+        displayName: fullName,
+        creationTime,
+        lastSignInTime,
+      });
+
+      setData({ email: "", fullName: "", password: "" });
+      if (loggedIn) {
+        navigate(`/`);
+        setShowModal(!showModal);
+      }
+    } catch (err) {
+      console.log(err.message);
     }
   };
 
