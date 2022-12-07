@@ -1,13 +1,14 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { useAuthStatus } from "./hooks/useAuthStatus";
+import { useSelector } from "react-redux";
 
 export default function PrivateRoute({ children }) {
-  const { loggedIn, status } = useAuthStatus();
+  const { userData } = useSelector((state) => ({ ...state }));
+  const { isLoggedIn } = userData.userInfo;
 
-  if (status) {
-    return "Loading";
+  if (!isLoggedIn) {
+    console.log("Please login to gain access");
   }
 
-  return loggedIn ? children : <Navigate to='/' />;
+  return isLoggedIn ? children : <Navigate to='/' />;
 }
