@@ -7,8 +7,6 @@ import {
   closeModal,
 } from "../../Modal/ModalHelper/ModalHelpers";
 
-import { useAuthStatus } from "../../PrivateRoute/hooks/useAuthStatus";
-
 import { database } from "../../../firebase/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -27,8 +25,8 @@ export default function Login({ mobile }) {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { loggedIn } = useAuthStatus();
   const { userData } = useSelector((state) => ({ ...state }));
+  const { isLoggedIn } = userData.userInfo;
 
   useEffect(() => {
     getData();
@@ -66,7 +64,7 @@ export default function Login({ mobile }) {
             accessToken,
             displayName,
             email,
-            isLoggedIn: loggedIn,
+            isLoggedIn: true,
           })
         );
         dispatch(
@@ -80,7 +78,7 @@ export default function Login({ mobile }) {
 
     setData({ email: "", password: "" });
 
-    if (loggedIn) {
+    if (isLoggedIn) {
       navigate(`/`);
       setShowModal(!showModal);
     }

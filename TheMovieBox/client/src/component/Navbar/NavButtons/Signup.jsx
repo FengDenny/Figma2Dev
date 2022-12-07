@@ -7,7 +7,6 @@ import {
   openHeroModal,
   closeModal,
 } from "../../Modal/ModalHelper/ModalHelpers";
-import { useAuthStatus } from "../../PrivateRoute/hooks/useAuthStatus";
 import { database } from "../../../firebase/firebaseConfig";
 import {
   getAuth,
@@ -23,7 +22,6 @@ import { userAction } from "../../../redux/slice/auth/userData-slice";
 export default function Signup({ mobile }) {
   const [showModal, setShowModal] = useState(false);
   const [active, setActive] = useState("register");
-  const { loggedIn } = useAuthStatus();
   const [data, setData] = useState({
     email: "",
     fullName: "",
@@ -35,6 +33,7 @@ export default function Signup({ mobile }) {
   const { userData } = useSelector((state) => ({
     ...state,
   }));
+  const { isLoggedIn } = userData.userInfo;
 
   const handleIncomingData = (event) => {
     event.preventDefault();
@@ -61,7 +60,7 @@ export default function Signup({ mobile }) {
               accessToken,
               displayName: data.fullName,
               email,
-              isLoggedIn: loggedIn,
+              isLoggedIn: true,
             })
           );
           dispatch(
@@ -83,7 +82,7 @@ export default function Signup({ mobile }) {
       });
 
       setData({ email: "", fullName: "", password: "" });
-      if (loggedIn) {
+      if (isLoggedIn) {
         navigate(`/`);
         setShowModal(!showModal);
       }
