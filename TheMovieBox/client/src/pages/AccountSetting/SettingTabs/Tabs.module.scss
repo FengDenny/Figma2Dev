@@ -42,3 +42,24 @@
     }
   }
 }
+
+$layout-breakpoint-min-width: 998px;
+$layout-breakpoint-max-width: 997px;
+
+@media (max-width: $layout-breakpoint-max-width) {
+  .tabList {
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+// @media (max-width: $layout-breakpoint-max-width) {
+//   $layout-breakpoint-min-width: 769px;
+
+//   @media (min-width: $layout-breakpoint-min-width) {
+//     .mobileButton {
+//       flex-direction: row !important;
+//     }
+//   }
+// }
