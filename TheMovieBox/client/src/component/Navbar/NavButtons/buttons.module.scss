@@ -81,8 +81,7 @@ $layout-breakpoint-max-width: 997px;
 
   @media (min-width: $layout-breakpoint-min-width) {
     .signupBtnMobile {
-      margin-top: 0;
-      margin-left: 20px;
+      margin-top: 10px;
     }
   }
 }
