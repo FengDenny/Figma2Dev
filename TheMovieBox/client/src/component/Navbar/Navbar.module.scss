@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  min-height: 10vh;
+  min-height: 11vh;
 }
 
 .navbar {
@@ -29,11 +29,36 @@
       font-size: 1.4rem;
       width: 100%;
     }
-    & .navUL {
-      width: 180px;
+
+    & .desktopNavUL {
       margin-top: 5px;
+      & li {
+        padding-right: 20px;
+      }
+
+      & .desktopNavLink {
+        color: var(--white);
+        font-size: 1.3rem;
+        transition: border-bottom 100ms ease-in;
+        &:hover {
+          border-bottom: 2px solid var(--white);
+        }
+      }
+    }
+
+    & .navUL {
+      margin-top: 5px;
+
+      & li {
+        position: relative;
+        padding: 5px 0;
+        top: 20px;
+      }
+
       & .navLink {
         color: var(--white);
+        font-size: 1.2rem;
+
         &:hover {
           border-bottom: 1px solid var(--white);
         }
@@ -51,8 +76,7 @@
       font-size: 1rem;
       box-shadow: var(--btn-box-shadow);
       cursor: pointer;
-      margin: 0 23px;
-      bottom: 5px;
+      top: 30px;
 
       &:hover {
         background: var(--primary-color-hover);
@@ -81,19 +105,6 @@ $xsm-layout-breakpoint-max-width: 667px;
     & .navButtons {
       display: flex;
       margin-top: 15px;
-    }
-  }
-}
-
-@media (max-width: $xsm-layout-breakpoint-max-width) {
-  .logo {
-    position: relative;
-    right: -30px;
-  }
-  $xsm-layout-breakpoint-max-height: 667px;
-  @media (max-height: $xsm-layout-breakpoint-max-height) {
-    .logo {
-      right: -12px;
     }
   }
 }
