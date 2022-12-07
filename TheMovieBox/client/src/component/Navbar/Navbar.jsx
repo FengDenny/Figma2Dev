@@ -1,15 +1,16 @@
 import React from "react";
 import styles from "./Navbar.module.scss";
-import btnStyles from "./NavButtons/buttons.module.scss";
 import global from "../../global.module.scss";
-import ToggleMobileNav from "./mobile/ToggleMobileNav";
+import ToggleMobileNav from "./Mobile/ToggleMobileNav";
 import Searchbar from "./Searchbar/Searchbar";
 import Login from "./NavButtons/Login";
 import Signup from "./NavButtons/Signup";
 import { GetFirstName } from "../../helper/getFirstName";
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "../../redux/slice/auth/userData-slice";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import DesktopDropdown from "./Dropdown/DesktopDropdown";
+import DesktopNav from "./Desktop/DesktopNav";
 
 export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
   const { isLoggedIn, uid } = userData.userInfo;
   const firstName = GetFirstName();
   const dispatch = useDispatch();
+
   const toggleOpen = () => {
     return setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -49,25 +51,15 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
           <div className={styles.desktopNav}>
             <Searchbar />
             <div className={styles.navButtons}>
+              <DesktopNav styles={styles} />
+
               {isLoggedIn ? (
-                <div className={styles.desktopNavItems}>
-                  <ul className={styles.navUL}>
-                    <li>
-                      <Link
-                        to={`/account-setting/${uid}`}
-                        className={styles.navLink}
-                      >
-                        Account Setting
-                      </Link>
-                    </li>
-                  </ul>
-                  <button className={styles.logoutBtn} onClick={userLoggedOut}>
-                    Logout
-                  </button>
-                  <h3 className={styles.authNotification}>
-                    Welcome back, {firstName}
-                  </h3>
-                </div>
+                <DesktopDropdown
+                  styles={styles}
+                  firstName={firstName}
+                  uid={uid}
+                  userLoggedOut={userLoggedOut}
+                />
               ) : (
                 <>
                   <Login desktop />
