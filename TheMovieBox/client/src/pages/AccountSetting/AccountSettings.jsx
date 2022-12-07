@@ -12,7 +12,7 @@ import {
   EmailAuthProvider,
   reauthenticateWithCredential,
 } from "firebase/auth";
-import { useAuthStatus } from "../../component/PrivateRoute/hooks/useAuthStatus";
+
 import { database } from "../../firebase/firebaseConfig";
 import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 
@@ -26,7 +26,6 @@ export default function AccountSettings() {
   const { email, displayName } = userInfo;
   const { creationTime, lastSignInTime } = metadata;
   const { userID } = usersCollectionID;
-  const { loggedIn } = useAuthStatus();
 
   const [newData, setNewData] = useState({
     newEmail: "",
@@ -87,7 +86,7 @@ export default function AccountSettings() {
                 uid,
                 email,
                 accessToken,
-                isLoggedIn: loggedIn,
+                isLoggedIn: true,
               })
             );
           })
@@ -106,7 +105,7 @@ export default function AccountSettings() {
                 uid,
                 email: newEmailElseEmail,
                 accessToken,
-                isLoggedIn: loggedIn,
+                isLoggedIn: true,
               })
             );
           })
