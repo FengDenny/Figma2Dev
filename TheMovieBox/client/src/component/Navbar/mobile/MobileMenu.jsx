@@ -1,18 +1,18 @@
 import React from "react";
 import styles from "./MobileMenu.module.scss";
+import desktopStyles from "../Navbar.module.scss";
+import DesktopNav from "../Desktop/DesktopNav";
 import btnStyles from "../NavButtons/buttons.module.scss";
 import Searchbar from "../Searchbar/Searchbar";
 import Login from "../NavButtons/Login";
 import Signup from "../NavButtons/Signup";
 import { useDispatch, useSelector } from "react-redux";
-import { GetFirstName } from "../../../helper/getFirstName";
 import { userAction } from "../../../redux/slice/auth/userData-slice";
 import { useNavigate, Link } from "react-router-dom";
 
-export default function MobileMenu({ show, close }) {
+export default function MobileMenu({ show }) {
   const { userData } = useSelector((state) => ({ ...state }));
   const { isLoggedIn, uid } = userData.userInfo;
-  const firstName = GetFirstName();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -31,13 +31,16 @@ export default function MobileMenu({ show, close }) {
       <div className={styles.mobileButton}>
         {isLoggedIn ? (
           <>
-            <h3 className={styles.authNotification}>
-              Welcome back, {firstName}
-            </h3>
+            <DesktopNav styles={desktopStyles} />
             <ul className={styles.navUL}>
               <li>
+                <Link to={`/trailers/my-list`} className={styles.navLink}>
+                  My List
+                </Link>
+              </li>
+              <li>
                 <Link to={`/account-setting/${uid}`} className={styles.navLink}>
-                  Account Setting
+                  Settings
                 </Link>
               </li>
             </ul>
