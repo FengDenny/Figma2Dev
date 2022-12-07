@@ -7,7 +7,7 @@ export default function UpdatePassword({
   handleIncomingUpdatedData,
 }) {
   return (
-    <div className={styles.settings}>
+    <section className={styles.security}>
       <h2 className={styles.header}>Account Settings</h2>
       <div className={styles.accountInfo}>
         <div className={styles.accountUserInfo}>
@@ -44,6 +44,6 @@ export default function UpdatePassword({
           Save changes
         </button>
       </div>
-    </div>
+    </section>
   );
 }

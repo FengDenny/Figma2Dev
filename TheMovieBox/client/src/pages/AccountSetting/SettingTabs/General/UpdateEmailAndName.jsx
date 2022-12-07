@@ -12,7 +12,7 @@ export default function UpdateEmailAndName({
   newData,
 }) {
   return (
-    <>
+    <section className={styles.general}>
       <h2 className={styles.header}>Account Settings</h2>
       <div className={styles.accountInfo}>
         <div className={styles.accountUserInfo}>
@@ -46,6 +46,6 @@ export default function UpdateEmailAndName({
           Save changes
         </button>
       </div>
-    </>
+    </section>
   );
 }
