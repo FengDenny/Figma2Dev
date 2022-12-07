@@ -1,0 +1,41 @@
+.dropdown {
+  position: relative;
+  transition: 1s;
+  & .dropdownBtn {
+    font-size: 1rem;
+    color: var(--secondary-card-font);
+    border: none;
+    background-color: transparent;
+    padding-left: 1px;
+    margin-top: 3px;
+    cursor: pointer;
+  }
+
+  & .dropdownItems {
+    background-color: var(--secondary-card-font);
+    color: var(--primary-card-font);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    transition: opacity 0.4s ease;
+    width: 150px;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid var(--secondary-card-font);
+    border-radius: 5px;
+
+    &.visble {
+      visibility: visible;
+      opacity: 1;
+      transition: 0.2s ease-in;
+    }
+
+    &.hidden {
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.2s ease-out;
+    }
+  }
+}
