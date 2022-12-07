@@ -1,0 +1,13 @@
+.myList {
+  position: relative;
+  top: 150px;
+
+  & .listCard {
+    display: flex;
+    justify-content: flex-start;
+
+    & h3 {
+      font-size: 2rem;
+    }
+  }
+}

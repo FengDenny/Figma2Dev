@@ -6,6 +6,7 @@ import global from "./global.module.scss";
 import { app } from "./firebase/firebaseConfig";
 import PrivateRoute from "./component/PrivateRoute/PrivateRoute";
 import AccountSettings from "./pages/AccountSetting/AccountSettings";
+import MyList from "./pages/MyList/MyList";
 const Main = () => {
   let routes = useRoutes([
     { path: "/", element: <Home /> },
@@ -13,11 +14,20 @@ const Main = () => {
       path: "/account-setting/:id",
       element: (
         <PrivateRoute>
-          <AccountSettings />
+          <AccountSettings />,
+        </PrivateRoute>
+      ),
+    },
+    {
+      path: "/trailers/my-list",
+      element: (
+        <PrivateRoute>
+          <MyList />
         </PrivateRoute>
       ),
     },
   ]);
+
   return routes;
 };
 
