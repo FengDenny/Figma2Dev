@@ -18,6 +18,7 @@ export default function Hero() {
   const [result, setResult] = useState([]);
   const [firstItem, setFirstItem] = useState({});
   const [showModal, setShowModal] = useState(false);
+  // 820067
   let item = FetchSingleRequestByID(result, firstItem.id);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export default function Hero() {
                 className={`${global.container} ${styles.flexHeader} `}
               >
                 <div className={styles.header}>
-                  <h2>{data.title}</h2>
+                  <h2 className={styles.headerTitle}>{data.title}</h2>
                   <div className={styles.flexHeader}>
                     <h5>
                       Original language: <span>{data.original_language}</span>
