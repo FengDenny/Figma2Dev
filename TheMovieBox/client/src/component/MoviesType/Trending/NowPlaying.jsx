@@ -4,7 +4,11 @@ import styles from "../movieTypes.module.scss";
 import { getImage } from "../../../api/endpoint/image";
 import { useGetMovies } from "../../../hooks/useGetMovies";
 import { useGetGenre } from "../../../hooks/useGetGenre";
-import { AiOutlineInfoCircle } from "react-icons/ai";
+import {
+  AiOutlineInfoCircle,
+  AiOutlinePlusCircle,
+  AiOutlineCheckCircle,
+} from "react-icons/ai";
 import { ModalShow } from "../../Modal/ModalShow";
 import { useDispatch, useSelector } from "react-redux";
 import { movieAction } from "../../../redux/slice/movies/movieID-slice";
@@ -29,6 +33,9 @@ export default function NowPlaying() {
             <div className={styles.image}>
               <img src={getImage(data.backdrop_path)} alt={data.title} />
             </div>
+            <button className={styles.btnAddList}>
+              <AiOutlinePlusCircle />
+            </button>
             <button
               className={styles.btnInfo}
               onClick={() =>
