@@ -22,10 +22,10 @@
     bottom: 23rem;
     z-index: 1;
 
-    & h2 {
+    & .headerTitle {
       color: var(--white);
       text-shadow: 2px 2px 4px #000000;
-      font-size: 4rem;
+      font-size: 3rem;
     }
 
     & .flexHeader {
@@ -87,7 +87,7 @@ $xsm-layout-breakpoint-max-width: 397px;
   .header {
     margin: 0 !important;
     width: 320px;
-    bottom: 16rem !important;
+    bottom: 20rem !important;
     z-index: 1;
   }
 }
@@ -101,15 +101,5 @@ $xsm-layout-breakpoint-max-width: 397px;
 
   .buttonRight {
     margin-left: 77px !important;
-  }
-}
-
-@media (max-width: $xsm-layout-breakpoint-max-width) {
-  .header {
-    bottom: 21rem !important;
-
-    & h5 {
-      font-size: 1.1rem !important;
-    }
   }
 }
