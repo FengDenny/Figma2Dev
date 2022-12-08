@@ -18,7 +18,7 @@ export default function Hero() {
   const [result, setResult] = useState([]);
   const [firstItem, setFirstItem] = useState({});
   const [showModal, setShowModal] = useState(false);
-  // 820067
+
   let item = FetchSingleRequestByID(result, firstItem.id);
 
   useEffect(() => {
