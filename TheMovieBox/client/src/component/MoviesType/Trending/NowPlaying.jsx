@@ -29,7 +29,7 @@ export default function NowPlaying() {
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator
   const moviesInList = movieList.myListData.map((item) => item.movieID);
-  // console.log(moviesInList);
+  console.log(moviesInList);
 
   const isMoviesInList = (data) => {
     // TC: O(N)
@@ -37,14 +37,14 @@ export default function NowPlaying() {
     // console.log(iterator);
 
     for (let elements of iterator) {
-      // console.log("data.id", data);
-      // console.log("elements", elements);
+      console.log("data.id", data);
+      console.log("elements", elements);
 
       if (elements === data) {
-        // console.log("elements == data:", data);
+        console.log("elements == data:", data);
         return data;
       } else {
-        // console.log("elements != data:", data);
+        console.log("elements != data:", data);
         continue;
       }
     }
@@ -66,7 +66,8 @@ export default function NowPlaying() {
         release_date: data.release_date,
         overview: data.overview,
         backdrop_path: data.backdrop_path,
-        genres: data.genre_id,
+        genre_ids: data.genre_ids,
+        vote_average: data.vote_average,
       })
     );
     dispatch(movieAction.addMovieToListID({ id: data.id }));
@@ -93,7 +94,7 @@ export default function NowPlaying() {
                 <AiOutlinePlusCircle />
               )}
               {/* to check isMoviesInList() performance/steps   */}
-              {/* {console.log(data)} */}
+              {console.log(data)}
             </button>
             <button
               className={styles.btnInfo}
