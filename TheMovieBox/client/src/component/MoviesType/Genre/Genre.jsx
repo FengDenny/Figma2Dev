@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
-
 import styles from "./Genre.module.scss";
 import { key } from "../../../api/TMBDKey.js";
 import { fetchRequest } from "../../../api/FetchRquests/FetchRequest";
 import { getMovieGenre } from "../../../api/endpoint/genre";
 import global from "../../../global.module.scss";
-import TopMovieGenre from "../Genre/TopMovieGenre";
+import MovieTypesData from "../../MoviesType/MovieTypesData";
+import { useGetGenreMovies } from "../../../hooks/useGetGenreMovies";
+
 export default function Genre() {
   const [genres, setGenres] = useState([]);
   const genre = getMovieGenre(key);
   const [value, setValue] = useState("");
-
+  const TopMovieGenre = useGetGenreMovies(value, "GET", "2022-01-01");
   useEffect(() => {
     try {
       fetchRequest(genre, "GET", key).then((response) => {
@@ -37,7 +38,7 @@ export default function Genre() {
         </select>
       </form>
       <div>
-        <TopMovieGenre value={value} />
+        <MovieTypesData dataType={TopMovieGenre} />
       </div>
     </div>
   );
