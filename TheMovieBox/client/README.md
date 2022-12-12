@@ -39,3 +39,4 @@
 3. SCSS
 4. CSS Animations
 5. Redux Toolkit
+6. Firebase
