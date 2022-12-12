@@ -25,11 +25,16 @@ export default function NowPlaying() {
   const dispatch = useDispatch();
   const moviesID = useSelector((state) => state.movieID);
   const movieList = useSelector((state) => state.listData);
+  const userData = useSelector((state) => state.userData);
+
+  const { isLoggedIn } = userData.userInfo;
+  console.log(isLoggedIn);
+
   const { id } = moviesID;
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator
   const moviesInList = movieList.myListData.map((item) => item.movieID);
-  console.log(moviesInList);
+  // console.log(moviesInList);
 
   const isMoviesInList = (data) => {
     // TC: O(N)
@@ -37,14 +42,14 @@ export default function NowPlaying() {
     // console.log(iterator);
 
     for (let elements of iterator) {
-      console.log("data.id", data);
-      console.log("elements", elements);
+      // console.log("data.id", data);
+      // console.log("elements", elements);
 
       if (elements === data) {
-        console.log("elements == data:", data);
+        // console.log("elements == data:", data);
         return data;
       } else {
-        console.log("elements != data:", data);
+        // console.log("elements != data:", data);
         continue;
       }
     }
@@ -58,19 +63,21 @@ export default function NowPlaying() {
     // for (const id of Object.keys(moviesID)) {
     //   console.log(id);
     // }
-    dispatch(
-      myListAction.appendToList({
-        movieID: data.id,
-        title: data.title,
-        original_language: data.original_language,
-        release_date: data.release_date,
-        overview: data.overview,
-        backdrop_path: data.backdrop_path,
-        genre_ids: data.genre_ids,
-        vote_average: data.vote_average,
-      })
-    );
-    dispatch(movieAction.addMovieToListID({ id: data.id }));
+    if (isLoggedIn) {
+      dispatch(
+        myListAction.appendToList({
+          movieID: data.id,
+          title: data.title,
+          original_language: data.original_language,
+          release_date: data.release_date,
+          overview: data.overview,
+          backdrop_path: data.backdrop_path,
+          genre_ids: data.genre_ids,
+          vote_average: data.vote_average,
+        })
+      );
+      dispatch(movieAction.addMovieToListID({ id: data.id }));
+    }
   };
 
   return (
@@ -85,7 +92,7 @@ export default function NowPlaying() {
               className={styles.btnAddList}
               onClick={() => {
                 addMovieToList(data);
-                console.log(data.id);
+                // console.log(data.id);
               }}
             >
               {isMoviesInList(data.id) ? (
@@ -94,7 +101,7 @@ export default function NowPlaying() {
                 <AiOutlinePlusCircle />
               )}
               {/* to check isMoviesInList() performance/steps   */}
-              {console.log(data)}
+              {/* {console.log(data)} */}
             </button>
             <button
               className={styles.btnInfo}
