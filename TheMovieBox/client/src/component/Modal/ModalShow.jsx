@@ -9,7 +9,7 @@ export const ModalShow = ({ showModal, closeModal, id, data }) => {
   return (
     <>
       {showModal
-        ? id === data.id && (
+        ? (id === data.id || id === data.movieID) && (
             <div className={MovieInfoStyles.darkBG}>
               <Modal
                 show={showModal}
