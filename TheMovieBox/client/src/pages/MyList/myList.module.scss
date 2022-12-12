@@ -1,13 +1,93 @@
 .myList {
   position: relative;
   top: 150px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  grid: lists;
 
+  & h3 {
+    font-size: 2.5rem;
+    color: var(--primary-card-font);
+  }
   & .listCard {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
 
-    & h3 {
-      font-size: 2rem;
+    & .listData {
+      padding: 10px 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 320px;
+      height: auto;
+      border: 2px solid var(--bg-color);
+      border-radius: 8px;
+      margin: 10px 0;
+      box-shadow: var(--btn-box-shadow);
+
+      & .image {
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 318px;
+        height: 180px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        & img {
+          width: 318px;
+          max-width: 500px;
+          height: auto;
+          opacity: 0.5;
+        }
+      }
+      & .btnInfo {
+        background: transparent;
+        border: none;
+        font-size: 1.7rem;
+        color: var(--white);
+        position: absolute;
+        height: auto;
+        top: 55%;
+        right: 3%;
+        cursor: pointer;
+
+        & :hover {
+          transition: color 0.5s ease;
+          color: var(--secondary-card-font);
+        }
+      }
+      & .header {
+        padding: 10px;
+        & h5 {
+          position: absolute;
+          top: 56%;
+          color: var(--white);
+          font-size: 1.1rem;
+        }
+        & .genres {
+          flex-wrap: wrap;
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          font-size: 0.7rem;
+          color: var(--secondary-card-font);
+          top: 10px;
+          width: 240px;
+          font-style: italic;
+          & h2:not(:first-child) {
+            padding-left: 9px;
+          }
+        }
+        & .rating {
+          position: relative;
+          right: 10px;
+          font-weight: bold;
+          padding: 5px 10px;
+          color: var(--primary-color);
+          border: 1px solid var(--primary-color);
+          border-radius: 5px;
+          box-shadow: var(--btn-box-shadow);
+        }
+      }
     }
   }
 }
