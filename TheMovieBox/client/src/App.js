@@ -19,7 +19,7 @@ const Main = () => {
       ),
     },
     {
-      path: "/trailers/my-list",
+      path: "/my-list",
       element: (
         <PrivateRoute>
           <MyList />

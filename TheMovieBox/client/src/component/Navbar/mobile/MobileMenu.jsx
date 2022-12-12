@@ -34,7 +34,7 @@ export default function MobileMenu({ show }) {
             <DesktopNav styles={desktopStyles} />
             <ul className={styles.navUL}>
               <li>
-                <Link to={`/trailers/my-list`} className={styles.navLink}>
+                <Link to={`/my-list`} className={styles.navLink}>
                   My List
                 </Link>
               </li>

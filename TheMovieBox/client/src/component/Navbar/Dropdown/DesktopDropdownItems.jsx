@@ -6,7 +6,7 @@ export default function DesktopDropdownItems({ styles, uid, userLoggedOut }) {
     <div>
       <ul className={styles.navUL}>
         <li>
-          <Link to={`/trailers/my-list`} className={styles.navLink}>
+          <Link to={`/my-list`} className={styles.navLink}>
             My List
           </Link>
         </li>
