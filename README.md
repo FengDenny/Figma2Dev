@@ -49,3 +49,4 @@ Turning high-fidelity mockups to pixel-pefect websites.
 3. SCSS
 4. CSS Animations
 5. Redux Toolkit
+6. Firebase
