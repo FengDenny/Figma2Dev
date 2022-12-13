@@ -23,7 +23,6 @@ export default function MovieTypesData({ dataType, type }) {
     for (let elements of iterator) {
       // console.log("data.id", data);
       // console.log("elements", elements);
-
       if (elements === data) {
         // console.log("elements == data:", data);
         return data;
@@ -60,6 +59,7 @@ export default function MovieTypesData({ dataType, type }) {
   };
 
   const dataSliced = () => {
+    // TC: O(N)
     return (
       Array.isArray(dataType) &&
       dataType
@@ -75,6 +75,8 @@ export default function MovieTypesData({ dataType, type }) {
   };
 
   const dataNotSliced = () => {
+    // TC: O(N)
+
     return (
       Array.isArray(dataType) &&
       dataType.map((data) => (
