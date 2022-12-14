@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import global from "../../global.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { movieAction } from "../../redux/slice/movies/movieID-slice";
 import { myListAction } from "../../redux/slice/my-list/myList-slice";
 import MoviesTypeCardInfo from "./MoviesTypeCardInfo";
+import { database } from "../../firebase/firebaseConfig";
+import {
+  collection,
+  getDoc,
+  setDoc,
+  updateDoc,
+  arrayUnion,
+  doc,
+} from "firebase/firestore";
+
+import { getAuth } from "firebase/auth";
 
 export default function MovieTypesData({ dataType, type }) {
   const dispatch = useDispatch();
@@ -11,6 +22,8 @@ export default function MovieTypesData({ dataType, type }) {
   const userData = useSelector((state) => state.userData);
   const { isLoggedIn } = userData.userInfo;
 
+  const auth = getAuth();
+  console.log(auth.currentUser);
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator
   const moviesInList = movieList.myListData.map((item) => item.movieID);
   // console.log(moviesInList);
@@ -33,7 +46,21 @@ export default function MovieTypesData({ dataType, type }) {
     }
   };
 
-  const addMovieToList = (data) => {
+  const addMovieToList = async (data) => {
+    const myListCollection = doc(database, "lists", "my-list");
+
+    const checkDoc = await getDoc(myListCollection);
+
+    // await addDoc(myListCollection, {
+    //   movies: [{ ...data }],
+    // }).then(async (data) => {
+    //   if (data) {
+    //     await updateDoc(myListCollection, {
+    //       movies: arrayUnion({ ...data }),
+    //     });
+    //   }
+    // });
+
     /* TO DO: CREATE SPAM DISPATCH DETECTION / BLOCK */
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/is_not_iterable
     // console.log(moviesID.movieListID);
@@ -55,6 +82,22 @@ export default function MovieTypesData({ dataType, type }) {
         })
       );
       dispatch(movieAction.addMovieToListID({ id: data.id }));
+
+      if (!checkDoc.exists()) {
+        await setDoc(myListCollection, {
+          movies: [
+            {
+              ...data,
+            },
+          ],
+        });
+      } else {
+        updateDoc(myListCollection, {
+          movies: arrayUnion({
+            ...data,
+          }),
+        });
+      }
     }
   };
 
