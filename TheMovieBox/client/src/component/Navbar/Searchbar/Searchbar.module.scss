@@ -1,8 +1,9 @@
 .content {
-  width: 50vw;
+  width: 40vw;
+  position: relative;
+  top: 10px;
   height: 10px;
   display: flex;
-  justify-content: center;
   & .searchContainer {
     position: relative;
     padding: 3px;
@@ -71,6 +72,15 @@
 }
 
 $layout-breakpoint-min-width: 998px;
+$layout-breakpoint-max-width: 998px;
+
+@media (max-width: $layout-breakpoint-max-width) {
+  .content {
+    justify-content: center;
+    margin-right: 100px;
+  }
+}
+
 @media (min-width: $layout-breakpoint-min-width) {
   .searchContainer {
     transition: width 450ms cubic-bezier(0.18, 0.89, 0.32, 1) !important;
