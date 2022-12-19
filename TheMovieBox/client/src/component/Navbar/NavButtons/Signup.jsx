@@ -45,15 +45,23 @@ export default function Signup({ mobile }) {
     const auth = getAuth();
     const { email, fullName, password } = data;
     const collectionRef = collection(database, "users");
-    const { metadata } = userData;
-    const { creationTime, lastSignInTime } = metadata;
     try {
       await createUserWithEmailAndPassword(auth, email, password).then(
-        (res) => {
+        async (res) => {
           console.log(res.user);
           const { email, uid, accessToken, metadata } = res.user;
           const { creationTime, lastSignInTime } = metadata;
           console.log(metadata);
+          await updateProfile(auth.currentUser, { displayName: data.fullName });
+
+          await addDoc(collectionRef, {
+            uid,
+            email,
+            displayName: fullName,
+            creationTime,
+            lastSignInTime,
+          });
+
           dispatch(
             userAction.addUserAccountInfo({
               uid,
@@ -71,15 +79,6 @@ export default function Signup({ mobile }) {
           );
         }
       );
-
-      await updateProfile(auth.currentUser, { displayName: data.fullName });
-
-      await addDoc(collectionRef, {
-        email,
-        displayName: fullName,
-        creationTime,
-        lastSignInTime,
-      });
 
       setData({ email: "", fullName: "", password: "" });
       if (isLoggedIn) {
