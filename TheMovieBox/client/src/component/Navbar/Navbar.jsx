@@ -5,7 +5,7 @@ import ToggleMobileNav from "./Mobile/ToggleMobileNav";
 import Searchbar from "./Searchbar/Searchbar";
 import Login from "./NavButtons/Login";
 import Signup from "./NavButtons/Signup";
-import { GetFirstName } from "../../helper/getFirstName";
+import GetFirstName from "./helper/GetFirstName";
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "../../redux/slice/auth/userData-slice";
 import { useNavigate } from "react-router-dom";
