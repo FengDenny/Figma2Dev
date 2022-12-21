@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import global from "../../global.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { movieAction } from "../../redux/slice/movies/movieID-slice";
-import { myListAction } from "../../redux/slice/my-list/myList-slice";
 import MoviesTypeCardInfo from "./MoviesTypeCardInfo";
 import { database } from "../../firebase/firebaseConfig";
+
 import {
   collection,
   getDoc,
@@ -12,26 +12,67 @@ import {
   updateDoc,
   arrayUnion,
   doc,
+  query,
+  where,
+  onSnapshot,
 } from "firebase/firestore";
 
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default function MovieTypesData({ dataType, type }) {
   const dispatch = useDispatch();
-  const movieList = useSelector((state) => state.listData);
   const userData = useSelector((state) => state.userData);
   const { isLoggedIn } = userData.userInfo;
+  const [userID, setUserID] = useState();
+  const [docID, setDocID] = useState();
+  const [listDoc, setListDoc] = useState([]);
 
+  const isMounted = useRef(true);
   const auth = getAuth();
-  console.log(auth.currentUser);
+
+  useEffect(() => {
+    const getListDoc = () => {
+      const filteredListRef = doc(database, "lists", `${docID}`);
+      onSnapshot(filteredListRef, (results) => {
+        setListDoc({ ...results.data() });
+      });
+    };
+    getListDoc();
+  }, [docID]);
+
+  useEffect(() => {
+    const getUserDoc = () => {
+      const filteredRef = query(
+        collection(database, "users"),
+        where("uid", "==", `${userID}`)
+      );
+      onSnapshot(filteredRef, (results) => {
+        results.docs.map((item) => setDocID(item.id));
+      });
+    };
+    getUserDoc();
+  }, [userID, docID]);
+
+  useEffect(() => {
+    if (isMounted) {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          setUserID(user.uid);
+        }
+      });
+    }
+    return () => {
+      isMounted.current = false;
+    };
+  }, [isMounted]);
+
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator
-  const moviesInList = movieList.myListData.map((item) => item.movieID);
-  // console.log(moviesInList);
+  const moviesInList =
+    listDoc.movies === undefined ? [] : listDoc.movies.map((items) => items.id);
 
   const isMoviesInList = (data) => {
     // TC: O(N)
     var iterator = moviesInList.values();
-    // console.log(iterator);
 
     for (let elements of iterator) {
       // console.log("data.id", data);
@@ -47,42 +88,11 @@ export default function MovieTypesData({ dataType, type }) {
   };
 
   const addMovieToList = async (data) => {
-    const myListCollection = doc(database, "lists", "my-list");
-
+    const myListCollection = doc(database, "lists", docID);
     const checkDoc = await getDoc(myListCollection);
 
-    // await addDoc(myListCollection, {
-    //   movies: [{ ...data }],
-    // }).then(async (data) => {
-    //   if (data) {
-    //     await updateDoc(myListCollection, {
-    //       movies: arrayUnion({ ...data }),
-    //     });
-    //   }
-    // });
-
-    /* TO DO: CREATE SPAM DISPATCH DETECTION / BLOCK */
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/is_not_iterable
-    // console.log(moviesID.movieListID);
-    // console.log(movieList);
-    // for (const id of Object.keys(moviesID)) {
-    //   console.log(id);
-    // }
     if (isLoggedIn) {
-      dispatch(
-        myListAction.appendToList({
-          movieID: data.id,
-          title: data.title,
-          original_language: data.original_language,
-          release_date: data.release_date,
-          overview: data.overview,
-          backdrop_path: data.backdrop_path,
-          genre_ids: data.genre_ids,
-          vote_average: data.vote_average,
-        })
-      );
       dispatch(movieAction.addMovieToListID({ id: data.id }));
-
       if (!checkDoc.exists()) {
         await setDoc(myListCollection, {
           movies: [
@@ -99,6 +109,14 @@ export default function MovieTypesData({ dataType, type }) {
         });
       }
     }
+
+    /* TO DO: CREATE SPAM DISPATCH DETECTION / BLOCK */
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/is_not_iterable
+    // console.log(moviesID.movieListID);
+    // console.log(movieList);
+    // for (const id of Object.keys(moviesID)) {
+    //   console.log(id);
+    // }
   };
 
   const dataSliced = () => {
@@ -119,7 +137,6 @@ export default function MovieTypesData({ dataType, type }) {
 
   const dataNotSliced = () => {
     // TC: O(N)
-
     return (
       Array.isArray(dataType) &&
       dataType.map((data) => (
