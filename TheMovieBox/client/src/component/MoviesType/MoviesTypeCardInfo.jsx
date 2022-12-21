@@ -25,7 +25,10 @@ export default function MoviesTypeCardInfo({
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
   const moviesID = useSelector((state) => state.movieID);
+  const userData = useSelector((state) => state.userData);
+  const { isLoggedIn } = userData.userInfo;
   const { id } = moviesID;
+
   return (
     <li className={styles.container} key={data.id}>
       <div className={styles.image}>
@@ -35,10 +38,9 @@ export default function MoviesTypeCardInfo({
         className={styles.btnAddList}
         onClick={() => {
           addMovieToList(data);
-          // console.log(data.id);
         }}
       >
-        {isMoviesInList(data.id) ? (
+        {isMoviesInList(data.id) && isLoggedIn ? (
           <AiOutlineCheckCircle />
         ) : (
           <AiOutlinePlusCircle />
