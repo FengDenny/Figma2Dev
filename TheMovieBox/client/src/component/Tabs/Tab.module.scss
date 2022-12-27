@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   //   min-height: 150px;
-  bottom: 240px;
+  bottom: 0;
   grid-area: tab;
 }
 
@@ -64,11 +64,6 @@
 $layout-breakpoint-min-width: 668px;
 $layout-breakpoint-max-width: 667px;
 
-@media (min-width: $layout-breakpoint-min-width) {
-  .container {
-    bottom: 164px;
-  }
-}
 @media (max-width: $layout-breakpoint-max-width) {
   .tabsContentContainer {
     justify-content: center;
