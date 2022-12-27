@@ -6,17 +6,28 @@
 .hero {
   position: relative;
   grid-area: hero;
-  & img {
+
+  & .trailerContainer {
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    height: 62vh !important;
-    // overlay
-    filter: hue-rotate(10deg) brightness(15%) grayscale(10%);
+    padding-top: 46%;
+    filter: hue-rotate(10deg) brightness(65%) grayscale(10%);
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
   }
 
   & .header {
     display: block;
-    margin: 0 auto;
-    width: 313px;
+    width: 400px;
     position: relative;
     bottom: 23rem;
     z-index: 1;
@@ -30,6 +41,12 @@
     & .flexHeader {
       display: flex;
       flex-direction: row;
+
+      & .releaseDate {
+        position: absolute;
+        right: 39px;
+      }
+
       & h5 {
         font-weight: 400;
         font-size: 1.2rem;
@@ -43,6 +60,8 @@
             content: "";
             border-right: 1px solid var(--white);
             padding: 5px;
+            left: 25px;
+            position: relative;
           }
         }
 
@@ -60,7 +79,7 @@
       height: 48px;
       padding: 10px;
       background: var(--primary-color);
-      border: 1px solid var(--primary-color);
+      border: 2px solid var(--primary-color);
       border-radius: 8px;
       box-shadow: var(--btn-box-shadow);
       font-size: 1.1rem;
@@ -70,8 +89,6 @@
 
     & .buttonRight {
       background: transparent;
-      border: 1px solid var(--white);
-      margin-left: 80px;
     }
   }
 }
@@ -84,21 +101,23 @@ $xsm-layout-breakpoint-max-width: 397px;
 
 @media (min-width: $layout-breakpoint-min-width) {
   .header {
-    margin: 0 !important;
-    width: 320px;
-    bottom: 20rem !important;
-    z-index: 1;
+    width: 320px !important;
+    bottom: 10rem !important;
   }
 }
 
 @media (max-width: $sm-phone-layout-breakpoint-max-width) {
+  .header {
+    bottom: 8.5rem !important;
+  }
+
   .flexHeader {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  .buttonRight {
-    margin-left: 77px !important;
+  .trailerContainer {
+    padding-top: 70% !important;
   }
 }
