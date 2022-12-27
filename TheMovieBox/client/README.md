@@ -14,17 +14,20 @@
 
 ## Completed
 
-1. Infinite scroll (completed)
-2. Star rating system (completed)
-3. Tabs (completed)
-4. Custom Hooks (completed)
+1. Infinite scroll
+2. Star rating system
+3. Tabs
+4. Custom Hooks
+5. My List
+6. YouTube embeded trailer Hero Section
+7. Authentication system
+8. Modal
 
 ## Not yet implemented
 
-5. Search System
-6. Modal
-7. Authentication system
-8. Add to wishlist
+9. Search System
+10. Refactor Password System
+11. Watch Trailers
 
 # Tool Used
 
