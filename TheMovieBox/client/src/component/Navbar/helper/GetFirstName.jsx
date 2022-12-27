@@ -34,7 +34,5 @@ export default function GetFirstName() {
     };
   }, [isMounted]);
 
-  console.log(firstName);
-
   return firstName?.split(" ")[0];
 }
