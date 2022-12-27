@@ -127,6 +127,7 @@ export default function MovieTypesData({ dataType, type }) {
         .slice(1)
         .map((data) => (
           <MoviesTypeCardInfo
+            key={data.id}
             data={data}
             addMovieToList={addMovieToList}
             isMoviesInList={isMoviesInList}
@@ -141,6 +142,7 @@ export default function MovieTypesData({ dataType, type }) {
       Array.isArray(dataType) &&
       dataType.map((data) => (
         <MoviesTypeCardInfo
+          key={data.id}
           data={data}
           addMovieToList={addMovieToList}
           isMoviesInList={isMoviesInList}

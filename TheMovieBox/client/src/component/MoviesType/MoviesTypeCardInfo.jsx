@@ -78,7 +78,7 @@ export default function MoviesTypeCardInfo({
         <div className={`${global.dFlexRow} ${global.spaceBetween}`}>
           <div className={styles.genres}>
             {data.genre_ids.map((id) => (
-              <h2 key={genre[id]}>{genre[id]}</h2>
+              <h2 key={id}>{genre[id]}</h2>
             ))}
           </div>
           <div className={styles.rating}>{data.vote_average}</div>
