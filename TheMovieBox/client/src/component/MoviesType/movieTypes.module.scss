@@ -67,6 +67,46 @@
       color: var(--white);
     }
 
+    & .trailerModal {
+      position: relative;
+      top: 10%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px;
+      width: calc(100% - 10%) !important;
+      height: 400px !important;
+      box-shadow: var(--btn-box-shadow);
+      border: none;
+      & button {
+        position: absolute;
+        top: 5px;
+        right: 7px;
+        padding: 5px;
+        font-size: 1.1rem;
+        border: none;
+        background: transparent !important;
+        color: var(--secondary-card-font);
+        cursor: pointer;
+        z-index: 1000;
+        & :hover {
+          transition: color 150ms ease-in;
+          color: var(--primary-color);
+        }
+      }
+    }
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     & .genres {
       flex-wrap: wrap;
       position: relative;
@@ -92,5 +132,16 @@
       border-radius: 5px;
       box-shadow: var(--btn-box-shadow);
     }
+  }
+}
+
+$layout-breakpoint-min-width: 668px;
+$sm-layout-breakpoint-max-width: 492px;
+
+@media (min-width: $layout-breakpoint-min-width) {
+  .trailerModal {
+    max-width: 500px !important;
+    display: flex;
+    margin: 0 auto;
   }
 }
