@@ -8,12 +8,13 @@ import {
   AiOutlinePlusCircle,
   AiOutlineCheckCircle,
 } from "react-icons/ai";
-import { ModalShow } from "../Modal/ModalShow";
+import { ModalShow, ModalTrailerShow } from "../Modal/ModalShow";
 import { useDispatch, useSelector } from "react-redux";
 import { movieAction } from "../../redux/slice/movies/movieID-slice";
 import {
   openDispatchModal,
   closeModal,
+  openHeroModal,
 } from "../Modal/ModalHelper/ModalHelpers";
 
 export default function MoviesTypeCardInfo({
@@ -23,6 +24,7 @@ export default function MoviesTypeCardInfo({
 }) {
   const genre = useGetGenre();
   const [showModal, setShowModal] = useState(false);
+  const [showTrailerModal, setShowTrailerModal] = useState(false);
   const dispatch = useDispatch();
   const moviesID = useSelector((state) => state.movieID);
   const userData = useSelector((state) => state.userData);
@@ -75,6 +77,19 @@ export default function MoviesTypeCardInfo({
         <h5 className={styles.date}>
           {data.release_date.split("-").slice(0, 1)}
         </h5>
+        <button
+          onClick={() => openHeroModal(setShowTrailerModal, showTrailerModal)}
+          className={styles.trailerBtn}
+        >
+          Watch Trailer
+        </button>
+        {
+          <ModalTrailerShow
+            showModal={showTrailerModal}
+            closeModal={() => closeModal(setShowTrailerModal)}
+            data={data}
+          />
+        }
         <div className={`${global.dFlexRow} ${global.spaceBetween}`}>
           <div className={styles.genres}>
             {data.genre_ids.map((id) => (
