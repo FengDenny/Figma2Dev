@@ -5,6 +5,8 @@ import MovieInfoStyles from "../MoviesType/MovieInfo/MovieInfo.module.scss";
 import LoginAuth from "../Navbar/NavButtons/Auth/Login/LoginAuthModal";
 import RegisterAuth from "../Navbar/NavButtons/Auth/Register/RegisterAuthModal";
 
+import MovieTrailer from "../Trailer/Trailer";
+
 export const ModalShow = ({ showModal, closeModal, id, data }) => {
   return (
     <>
@@ -44,6 +46,27 @@ export const ModalHeroShow = ({ showModal, closeModal, data }) => {
             title={data.title}
           >
             <MovieInfo data={data} />
+          </Modal>
+        </div>
+      )}
+    </>
+  );
+};
+export const ModalTrailerShow = ({ showModal, closeModal, data }) => {
+  return (
+    <>
+      {showModal && (
+        <div className={MovieInfoStyles.darkBG}>
+          <Modal
+            show={showModal}
+            className={MovieInfoStyles.heroModal}
+            activeStyle={AnimationStyles.active}
+            hiddenStyle={AnimationStyles.hidden}
+            handleClose={closeModal}
+            headerClass={MovieInfoStyles.modalHeader}
+            title={data.title}
+          >
+            <MovieTrailer data={data} />
           </Modal>
         </div>
       )}
