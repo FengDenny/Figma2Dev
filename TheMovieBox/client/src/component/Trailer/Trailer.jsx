@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
-import {
-  getMovieYTTrailers,
-  embedYouTubeURL,
-} from "../../../api/endpoint/movies";
-import { key } from "../../../api/TMBDKey.js";
-import { fetchRequest } from "../../../api/FetchRquests/FetchRequest";
+import { getMovieYTTrailers, embedYouTubeURL } from "../../api/endpoint/movies";
+import { key } from "../../api/TMBDKey.js";
+import { fetchRequest } from "../../api/FetchRquests/FetchRequest";
 
 export default function Trailer({ data }) {
   const [trailerData, setTrailerData] = useState([]);

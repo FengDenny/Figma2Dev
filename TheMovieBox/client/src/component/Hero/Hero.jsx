@@ -3,7 +3,7 @@ import styles from "./Hero.module.scss";
 import global from "../../global.module.scss";
 import Star from "./StarRating/Star";
 import ViewInfoButton from "./Buttons/ViewInfoButton";
-import Trailer from "./Trailer/Trailer";
+import Trailer from "../Trailer/Trailer";
 import FetchSingleRequestByID from "../../api/FetchRquests/FetchSingleRequestByID";
 import { fetchRequest } from "../../api/FetchRquests/FetchRequest";
 import { getMoviesEndpoint } from "../../api/endpoint/movies";
