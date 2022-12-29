@@ -55,6 +55,18 @@
       font-size: 1.1rem;
     }
 
+    & .trailerBtn {
+      position: absolute;
+      top: 54%;
+      left: 35%;
+      width: 110px;
+      height: 25px;
+      border: 2px solid var(--primary-color);
+      border-radius: 5px;
+      background: transparent;
+      color: var(--white);
+    }
+
     & .genres {
       flex-wrap: wrap;
       position: relative;
