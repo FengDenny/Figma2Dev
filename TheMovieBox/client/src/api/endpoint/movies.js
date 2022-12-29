@@ -7,7 +7,7 @@ export const youTubeWatchURL = (key) => {
 };
 
 export const embedYouTubeURL = (key) => {
-  return `https://www.youtube.com/embed/${key}?wmode=transparent&rel=0`;
+  return `https://www.youtube.com/embed/${key}?wmode=transparent&rel=0&amp;autoplay=1&mute=1`;
 };
 
 export const getMovieYTTrailers = (id, key) => {
