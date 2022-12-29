@@ -2,6 +2,7 @@ import Modal from "./Modal";
 import AnimationStyles from "./Animations.module.scss";
 import MovieInfo from "../MoviesType/MovieInfo/MovieInfo";
 import MovieInfoStyles from "../MoviesType/MovieInfo/MovieInfo.module.scss";
+import MovieTypesStyles from "../MoviesType/movieTypes.module.scss";
 import LoginAuth from "../Navbar/NavButtons/Auth/Login/LoginAuthModal";
 import RegisterAuth from "../Navbar/NavButtons/Auth/Register/RegisterAuthModal";
 
@@ -59,12 +60,11 @@ export const ModalTrailerShow = ({ showModal, closeModal, data }) => {
         <div className={MovieInfoStyles.darkBG}>
           <Modal
             show={showModal}
-            className={MovieInfoStyles.heroModal}
+            className={MovieTypesStyles.trailerModal}
             activeStyle={AnimationStyles.active}
             hiddenStyle={AnimationStyles.hidden}
             handleClose={closeModal}
-            headerClass={MovieInfoStyles.modalHeader}
-            title={data.title}
+            headerClass={MovieTypesStyles.modalHeader}
           >
             <MovieTrailer data={data} />
           </Modal>
