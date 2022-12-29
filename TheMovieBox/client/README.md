@@ -22,12 +22,13 @@
 6. YouTube embeded trailer Hero Section
 7. Authentication system
 8. Modal
+9. Watch Trailers
 
 ## Not yet implemented
 
-9. Search System
-10. Refactor Password System
-11. Watch Trailers
+10. Search System
+11. Refactor Password System
+12. Remove trailer from My List
 
 # Tool Used
 
