@@ -56,11 +56,11 @@
       }
 
       & .navLink {
-        color: var(--white);
+        color: var(--primary-card-font);
         font-size: 1.2rem;
 
         &:hover {
-          border-bottom: 1px solid var(--white);
+          border-bottom: 1px solid var(--primary-card-font);
         }
       }
     }
