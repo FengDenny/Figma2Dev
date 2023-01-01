@@ -98,10 +98,22 @@
 
 $layout-breakpoint-min-width: 998px;
 $layout-breakpoint-max-width: 997px;
+$xsm-layout-breakpoint-max-width: 470px;
 
 @media (min-width: $layout-breakpoint-min-width) {
   .buttonToggler {
     display: none;
+  }
+}
+
+@media (max-width: $xsm-layout-breakpoint-max-width) {
+  .mobileButton {
+    display: flex;
+    flex-direction: column !important;
+    position: relative;
+    align-self: flex-start;
+    top: 50px;
+    left: 15px;
   }
 }
 
