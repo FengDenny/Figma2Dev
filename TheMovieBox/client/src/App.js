@@ -35,7 +35,6 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div className={global.grid}>
-      <div className={mobileMenuOpen ? global.overlay : null}></div>
       <Navbar
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
