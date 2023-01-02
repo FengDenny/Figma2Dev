@@ -55,6 +55,29 @@
           color: var(--secondary-card-font);
         }
       }
+
+      & .btnRemoveList {
+        background: transparent;
+        border: none;
+        font-size: 1.7rem;
+        color: var(--white);
+        position: absolute;
+        max-width: auto;
+        height: auto;
+        top: 53%;
+        right: 3%;
+        cursor: pointer;
+
+        & :hover {
+          transition: color 0.5s ease;
+          color: var(--secondary-card-font);
+        }
+      }
+
+      & .btnRemoveList {
+        top: 40%;
+      }
+
       & .header {
         padding: 10px;
         & h5 {
