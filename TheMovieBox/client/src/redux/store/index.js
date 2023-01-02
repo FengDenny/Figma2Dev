@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { movieIDSlice } from "../slice/movies/movieID-slice";
 import { userDataSlice } from "../slice/auth/userData-slice";
 import { myListSlice } from "../slice/my-list/myList-slice";
+import { searchSlice } from "../slice/search/search-slice";
 import { composeWithDevTools } from "redux-devtools-extension";
 // redux-persist
 import { persistReducer } from "redux-persist";
@@ -14,6 +15,7 @@ const reducer = combineReducers({
   movieID: movieIDSlice.reducer,
   userData: userDataSlice.reducer,
   listData: myListSlice.reducer,
+  searchData: searchSlice.reducer,
 });
 
 const persistConfig = {
