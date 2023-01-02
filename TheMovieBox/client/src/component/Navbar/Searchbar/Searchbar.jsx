@@ -8,12 +8,13 @@ import { searchAction } from "../../../redux/slice/search/search-slice";
 export default function Searchbar() {
   const navigate = useNavigate();
 
-  const [searchTitle, setSearchTitle] = useState();
+  const [searchTitle, setSearchTitle] = useState("");
   const dispatch = useDispatch();
 
   const handleIncomingDispatch = (event) => {
     event.preventDefault();
-    dispatch(searchAction.searchTitle({ title: searchTitle }));
+    dispatch(searchAction.searchTitle({ searchTitle }));
+    setSearchTitle("");
   };
 
   return (
@@ -26,7 +27,7 @@ export default function Searchbar() {
           name='search'
           placeholder='Search '
           value={searchTitle}
-          onChange={(e) => setSearchTitle(e.target.value)}
+          onChange={(e) => setSearchTitle(e.target.value.toLowerCase())}
         />
         <button
           className={styles.searchBtn}
