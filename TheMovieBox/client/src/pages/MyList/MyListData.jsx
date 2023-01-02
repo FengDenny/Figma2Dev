@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./myList.module.scss";
 import global from "../../global.module.scss";
 import { getImage } from "../../api/endpoint/image";
 import { useGetGenre } from "../../hooks/useGetGenre";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { TbCircleX } from "react-icons/tb";
 import {
   openDispatchModal,
   closeModal,
@@ -20,6 +21,7 @@ export default function MyListData({
   backdrop_path,
   genre_ids,
   item,
+  removeListItem,
 }) {
   const [showModal, setShowModal] = useState(false);
   const genre = useGetGenre();
@@ -31,6 +33,14 @@ export default function MyListData({
         <div className={styles.image}>
           <img src={getImage(backdrop_path)} alt={title} />
         </div>
+        <button
+          className={styles.btnRemoveList}
+          onClick={() => {
+            removeListItem(movieID);
+          }}
+        >
+          <TbCircleX />
+        </button>
         <button
           className={styles.btnInfo}
           onClick={() =>

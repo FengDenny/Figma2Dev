@@ -2,7 +2,15 @@ import React, { useEffect, useState, useRef } from "react";
 import global from "../../global.module.scss";
 import styles from "./myList.module.scss";
 import MyListData from "./MyListData";
-import { collection, doc, query, where, onSnapshot } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  query,
+  where,
+  onSnapshot,
+  updateDoc,
+  getDoc,
+} from "firebase/firestore";
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { database } from "../../firebase/firebaseConfig";
@@ -22,8 +30,27 @@ export default function MyList() {
         setListDoc({ id: results.id, ...results.data() });
       });
     };
+
     getListDoc();
   }, [docID]);
+
+  const removeListItem = async (id) => {
+    const listingRef = doc(database, "lists", `${docID}`);
+    const docSnap = await getDoc(listingRef);
+
+    try {
+      if (docSnap.exists()) {
+        const newDoc = docSnap.data().movies.filter((item) => item.id !== id);
+        updateDoc(listingRef, {
+          movies: newDoc,
+        });
+      } else {
+        console.log("No such document!");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
     const getUserDoc = () => {
@@ -79,6 +106,7 @@ export default function MyList() {
                     genre_ids={genre_ids}
                     vote_average={vote_average}
                     item={data}
+                    removeListItem={removeListItem}
                   />
                 );
               })
