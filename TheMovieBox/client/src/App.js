@@ -29,11 +29,7 @@ const Main = () => {
     },
     {
       path: "/search",
-      element: (
-        <PrivateRoute>
-          <SearchData />
-        </PrivateRoute>
-      ),
+      element: <SearchData />,
     },
   ]);
 
