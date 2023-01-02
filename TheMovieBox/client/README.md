@@ -23,10 +23,10 @@
 7. Authentication system
 8. Modal
 9. Watch Trailers
+10. Search System
 
 ## Not yet implemented
 
-10. Search System
 11. Refactor Password System
 12. Remove trailer from My List
 
