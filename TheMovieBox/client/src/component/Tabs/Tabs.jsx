@@ -6,7 +6,6 @@ import TabsItem from "./TabsItem";
 import TabsContent from "./TabsContent";
 import MovieTypesData from "../MoviesType/MovieTypesData";
 import Genre from "../MoviesType/Genre/Genre";
-import { useGetMovies } from "../../hooks/useGetMovies";
 
 import { MovieData } from "../../api/FetchRquests/GetMovieData";
 
