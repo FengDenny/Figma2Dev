@@ -7,6 +7,7 @@ import { app } from "./firebase/firebaseConfig";
 import PrivateRoute from "./component/PrivateRoute/PrivateRoute";
 import AccountSettings from "./pages/AccountSetting/AccountSettings";
 import MyList from "./pages/MyList/MyList";
+import SearchData from "./component/Navbar/Searchbar/SearchData";
 const Main = () => {
   let routes = useRoutes([
     { path: "/", element: <Home /> },
@@ -23,6 +24,14 @@ const Main = () => {
       element: (
         <PrivateRoute>
           <MyList />
+        </PrivateRoute>
+      ),
+    },
+    {
+      path: "/search",
+      element: (
+        <PrivateRoute>
+          <SearchData />
         </PrivateRoute>
       ),
     },
