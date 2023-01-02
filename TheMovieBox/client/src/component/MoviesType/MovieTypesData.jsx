@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { movieAction } from "../../redux/slice/movies/movieID-slice";
 import MoviesTypeCardInfo from "./MoviesTypeCardInfo";
 import { database } from "../../firebase/firebaseConfig";
-
 import {
   collection,
   getDoc,
@@ -21,6 +20,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default function MovieTypesData({ dataType, type }) {
   const dispatch = useDispatch();
+  const { searchData } = useSelector((state) => ({ ...state }));
   const userData = useSelector((state) => state.userData);
   const { isLoggedIn } = userData.userInfo;
   const [userID, setUserID] = useState();
@@ -151,9 +151,32 @@ export default function MovieTypesData({ dataType, type }) {
     );
   };
 
+  const dataFiltered = () => {
+    const { searchTitle } = searchData.title;
+    return (
+      Array.isArray(dataType) &&
+      dataType
+        .filter((item) => item.title.toLowerCase().includes(searchTitle))
+        .map((data) => (
+          <MoviesTypeCardInfo
+            key={data.id}
+            data={data}
+            addMovieToList={addMovieToList}
+            isMoviesInList={isMoviesInList}
+          />
+        ))
+    );
+  };
+
   return (
     <ol className={global.gridWrapper}>
-      {type === "now_playing" ? dataSliced() : dataNotSliced()}
+      {type === "now_playing"
+        ? dataSliced()
+        : type === "upcoming" || type === "popular"
+        ? dataNotSliced()
+        : type === "search"
+        ? dataFiltered()
+        : dataNotSliced()}
     </ol>
   );
 }
