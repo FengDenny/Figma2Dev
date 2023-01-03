@@ -28,6 +28,11 @@ export default function Signup({ mobile }) {
     password: "",
   });
 
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { userData } = useSelector((state) => ({
@@ -111,6 +116,8 @@ export default function Signup({ mobile }) {
           data={data}
           showModal={showModal}
           closeModal={() => closeModal(setShowModal)}
+          togglePasswordVisiblity={togglePasswordVisiblity}
+          passwordShown={passwordShown}
         />
       }
     </>

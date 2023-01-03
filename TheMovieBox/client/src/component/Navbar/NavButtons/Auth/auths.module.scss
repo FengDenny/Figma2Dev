@@ -5,6 +5,7 @@
 }
 
 .formInput {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 20px 30px;
@@ -26,12 +27,25 @@
     }
   }
 
+  & .showPassword {
+    position: absolute;
+    top: 30px;
+    font-size: 1.5rem;
+    right: 20px;
+    color: var(--secondary-card-font);
+    cursor: pointer;
+    & :hover {
+      transition: color 150ms ease-in;
+      color: var(--primary-color);
+    }
+  }
+
   & .passwordReset {
     position: absolute;
     font-size: 0.9rem;
     color: var(--primary-card);
-    top: 33.5%;
-    right: 10%;
+    top: 0%;
+    right: 0%;
 
     &:hover {
       color: var(--primary-color-hover);

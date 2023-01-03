@@ -6,6 +6,10 @@ export default function RegisterAuthModal({
   handleIncomingData,
   accountData,
   data,
+  AiOutlineEye,
+  AiOutlineEyeInvisible,
+  togglePasswordVisiblity,
+  passwordShown,
 }) {
   return (
     <form className={authStyles.authForm}>
@@ -33,12 +37,18 @@ export default function RegisterAuthModal({
       <div className={authStyles.formInput}>
         <label htmlFor='password'>Password</label>
         <input
-          type='password'
+          type={passwordShown ? "text" : "password"}
           name='password'
           value={data.password}
           onChange={(event) => handleIncomingData(event)}
           required
         />
+        <i
+          className={authStyles.showPassword}
+          onClick={togglePasswordVisiblity}
+        >
+          {passwordShown ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
+        </i>
       </div>
 
       <div className={authStyles.formInput}>

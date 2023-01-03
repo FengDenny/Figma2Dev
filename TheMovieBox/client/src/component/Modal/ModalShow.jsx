@@ -8,6 +8,8 @@ import RegisterAuth from "../Navbar/NavButtons/Auth/Register/RegisterAuthModal";
 
 import MovieTrailer from "../Trailer/Trailer";
 
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+
 export const ModalShow = ({ showModal, closeModal, id, data }) => {
   return (
     <>
@@ -83,6 +85,8 @@ export const ModalAuthShow = ({
   handleIncomingData,
   accountData,
   data,
+  togglePasswordVisiblity,
+  passwordShown,
 }) => {
   return (
     <>
@@ -103,6 +107,10 @@ export const ModalAuthShow = ({
                 handleIncomingData={handleIncomingData}
                 accountData={accountData}
                 data={data}
+                AiOutlineEye={AiOutlineEye}
+                AiOutlineEyeInvisible={AiOutlineEyeInvisible}
+                togglePasswordVisiblity={togglePasswordVisiblity}
+                passwordShown={passwordShown}
               />
             ) : (
               <RegisterAuth
@@ -110,6 +118,10 @@ export const ModalAuthShow = ({
                 handleIncomingData={handleIncomingData}
                 accountData={accountData}
                 data={data}
+                AiOutlineEye={AiOutlineEye}
+                AiOutlineEyeInvisible={AiOutlineEyeInvisible}
+                togglePasswordVisiblity={togglePasswordVisiblity}
+                passwordShown={passwordShown}
               />
             )}
           </Modal>
