@@ -1,5 +1,6 @@
 import React from "react";
 import authStyles from "../auths.module.scss";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginAuthModal({
   setActive,
@@ -11,6 +12,7 @@ export default function LoginAuthModal({
   togglePasswordVisiblity,
   passwordShown,
 }) {
+  const navigate = useNavigate();
   return (
     <form className={authStyles.authForm}>
       <div className={authStyles.formInput}>
@@ -33,7 +35,12 @@ export default function LoginAuthModal({
           onChange={(event) => handleIncomingData(event)}
           required
         />
-        <button className={authStyles.passwordReset}>Forgot password?</button>
+        <button
+          className={authStyles.passwordReset}
+          onClick={() => navigate("/reset-password")}
+        >
+          Forgot password?
+        </button>
         <i
           className={authStyles.showPassword}
           onClick={togglePasswordVisiblity}
