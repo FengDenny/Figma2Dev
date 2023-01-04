@@ -1,0 +1,75 @@
+.resetContainer {
+  background: var(--primary-card-font);
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  margin: 10% auto;
+  border: 1px solid var(--primary-card-font);
+  border-radius: 10px;
+  box-shadow: var(--card-box-shadow);
+
+  & .header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    h4 {
+      color: var(--secondary-card-font);
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
+    span {
+      color: var(--white);
+      margin-top: 10px;
+      font-size: 1.3rem;
+    }
+  }
+
+  & .authForm {
+    position: relative;
+    max-width: 90%;
+    padding: 20px 2px;
+    width: 100%;
+  }
+  .formInput {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 20px 30px;
+    margin: 5% auto;
+    & label {
+      font-size: 1.5rem;
+      color: var(--white);
+    }
+
+    & input {
+      height: 35px;
+      margin-top: 5px;
+      border: 1px solid var(--white);
+      border-radius: 5px;
+      padding-left: 10px;
+
+      &:focus {
+        outline: none !important;
+        border: 3px solid var(--secondary-card-font);
+      }
+    }
+    & .formSubmit {
+      position: relative;
+      height: 30px;
+      border: 2px solid var(--primary-color);
+      background-color: var(--primary-color) !important;
+      border-radius: 5px;
+      color: var(--white) !important;
+      left: 0px !important;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--primary-color-hover) !important;
+        border: 2px solid var(--primary-color-hover);
+      }
+    }
+  }
+}
