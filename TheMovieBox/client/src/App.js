@@ -8,6 +8,7 @@ import PrivateRoute from "./component/PrivateRoute/PrivateRoute";
 import AccountSettings from "./pages/AccountSetting/AccountSettings";
 import MyList from "./pages/MyList/MyList";
 import SearchData from "./component/Navbar/Searchbar/SearchData";
+import ResetPassword from "./component/Navbar/NavButtons/helper/ResetPassword/ResetPassword";
 const Main = () => {
   let routes = useRoutes([
     { path: "/", element: <Home /> },
@@ -30,6 +31,10 @@ const Main = () => {
     {
       path: "/search",
       element: <SearchData />,
+    },
+    {
+      path: "/reset-password",
+      element: <ResetPassword />,
     },
   ]);
 
