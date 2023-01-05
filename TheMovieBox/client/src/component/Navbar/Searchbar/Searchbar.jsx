@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { searchAction } from "../../../redux/slice/search/search-slice";
 
-export default function Searchbar() {
+export default function Searchbar({ close }) {
   const navigate = useNavigate();
 
   const [searchTitle, setSearchTitle] = useState("");
@@ -35,6 +35,7 @@ export default function Searchbar() {
           onClick={(e) => {
             handleIncomingDispatch(e);
             navigate("/search");
+            close();
           }}
         >
           <FaSearch className={styles.searchIcon} size={20} />

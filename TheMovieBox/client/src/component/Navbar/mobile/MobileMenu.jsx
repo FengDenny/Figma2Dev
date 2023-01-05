@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "../../../redux/slice/auth/userData-slice";
 import { useNavigate, Link } from "react-router-dom";
 
-export default function MobileMenu({ show }) {
+export default function MobileMenu({ show, close }) {
   const { userData } = useSelector((state) => ({ ...state }));
   const { isLoggedIn, uid } = userData.userInfo;
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ export default function MobileMenu({ show }) {
 
   return (
     <div className={`${styles.mobileNavWrapper} ${show ? styles.open : null}`}>
-      <Searchbar />
+      <Searchbar close={close} />
       <div className={styles.mobileButton}>
         <DesktopNav styles={desktopStyles} mobile />
         {isLoggedIn ? (
