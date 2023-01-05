@@ -22,7 +22,8 @@
     span {
       color: var(--white);
       margin-top: 10px;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      width: 451px;
     }
   }
 
@@ -69,6 +70,23 @@
       &:hover {
         background-color: var(--primary-color-hover) !important;
         border: 2px solid var(--primary-color-hover);
+      }
+    }
+  }
+}
+
+$layout-breakpoint-max-width: 440px;
+$layout-breakpoint-min-width: 998px;
+$xsm-layout-breakpoint-max-width: 667px;
+@media (max-width: $layout-breakpoint-max-width) {
+  .resetContainer {
+    width: 350px;
+    margin: 50% auto;
+
+    & .header {
+      span {
+        width: 237px;
+        margin-left: 10%;
       }
     }
   }
