@@ -1,6 +1,6 @@
 .content {
   position: relative;
-  width: 350px;
+  width: 360px;
   height: 10px;
   display: flex;
   justify-content: center;
@@ -82,7 +82,7 @@ $layout-breakpoint-max-width: 998px;
 }
 @media (max-width: $xsm-layout-breakpoint-max-width) {
   .content {
-    right: 27px;
+    right: 23px;
   }
 }
 
