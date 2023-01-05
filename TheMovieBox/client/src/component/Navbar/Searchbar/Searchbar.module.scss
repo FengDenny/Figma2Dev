@@ -4,6 +4,7 @@
   height: 10px;
   display: flex;
   margin: 0 auto;
+  top: 11px;
   & .searchContainer {
     position: relative;
     padding: 3px;
@@ -75,6 +76,11 @@ $layout-breakpoint-min-width: 998px;
 $xsm-layout-breakpoint-max-width: 470px;
 $layout-breakpoint-max-width: 998px;
 
+@media (max-width: $layout-breakpoint-max-width) {
+  .content {
+    top: 0px;
+  }
+}
 @media (max-width: $xsm-layout-breakpoint-max-width) {
   .content {
     justify-content: flex-start;
