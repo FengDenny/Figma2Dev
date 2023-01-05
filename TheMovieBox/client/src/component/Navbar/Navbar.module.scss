@@ -91,15 +91,23 @@
         border: 1px solid var(--primary-color-hover);
       }
     }
+
+    & .mobileNavUL {
+      padding: 15px 0;
+    }
   }
 }
 
+$layout-breakpoint-max-width: 997px;
 $layout-breakpoint-max-width: 997px;
 $layout-breakpoint-min-width: 998px;
 $xsm-layout-breakpoint-max-width: 667px;
 @media (max-width: $layout-breakpoint-max-width) {
   .desktopNav {
     display: none;
+  }
+  .desktopNavLink {
+    font-size: 1.5rem !important;
   }
 }
 
