@@ -3,6 +3,14 @@
   min-height: 11vh;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.781);
+  transition: background 500ms ease-in;
+}
+
 .navbar {
   background: black;
   grid-area: nav;
