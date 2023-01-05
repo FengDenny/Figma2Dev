@@ -29,10 +29,10 @@ export default function MobileMenu({ show, close }) {
     <div className={`${styles.mobileNavWrapper} ${show ? styles.open : null}`}>
       <Searchbar close={close} />
       <div className={styles.mobileButton}>
-        <DesktopNav styles={desktopStyles} mobile />
+        <DesktopNav styles={desktopStyles} mobile close={close} />
         {isLoggedIn ? (
           <>
-            <ul className={styles.navUL}>
+            <ul className={styles.navUL} onClick={close}>
               <li>
                 <Link to={`/my-list`} className={styles.navLink}>
                   My List
@@ -44,7 +44,13 @@ export default function MobileMenu({ show, close }) {
                 </Link>
               </li>
             </ul>
-            <button className={btnStyles.logoutBtn} onClick={userLoggedOut}>
+            <button
+              className={btnStyles.logoutBtn}
+              onClick={() => {
+                userLoggedOut();
+                close();
+              }}
+            >
               Logout
             </button>
           </>
