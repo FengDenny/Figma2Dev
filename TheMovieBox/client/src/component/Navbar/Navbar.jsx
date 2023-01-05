@@ -11,6 +11,7 @@ import { userAction } from "../../redux/slice/auth/userData-slice";
 import { useNavigate } from "react-router-dom";
 import DesktopDropdown from "./Dropdown/DesktopDropdown";
 import DesktopNav from "./Desktop/DesktopNav";
+import { useStickyNavbar } from "./helper/useStickyNavbar";
 
 export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
   const { isLoggedIn, uid } = userData.userInfo;
   const firstName = GetFirstName();
   const dispatch = useDispatch();
+  useStickyNavbar(styles);
 
   const toggleOpen = () => {
     return setMobileMenuOpen(!mobileMenuOpen);
@@ -38,7 +40,7 @@ export default function Navbar({ mobileMenuOpen, setMobileMenuOpen }) {
 
   return (
     <div className={`${styles.container} ${styles.navbar}`}>
-      <nav className={styles.nav}>
+      <nav className={styles.nav} id='navbar'>
         <div
           className={`${global.container} ${global.dFlexRow} ${global.spaceBetween}`}
         >
