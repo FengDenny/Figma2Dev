@@ -97,6 +97,7 @@
 }
 
 $layout-breakpoint-min-width: 668px;
+$layout-breakpoint-max-width: 998px;
 $sm-layout-breakpoint-max-width: 492px;
 
 @media (min-width: $layout-breakpoint-min-width) {
@@ -104,6 +105,11 @@ $sm-layout-breakpoint-max-width: 492px;
     max-width: 500px !important;
     display: flex;
     margin: 0 auto;
+  }
+}
+@media (max-width: $layout-breakpoint-max-width) {
+  .heroModal {
+    top: 2% !important;
   }
 }
 
