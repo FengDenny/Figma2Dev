@@ -1,10 +1,7 @@
 .content {
-  width: 362px;
   position: relative;
   height: 10px;
   display: flex;
-  margin: 0 auto;
-  top: 11px;
   justify-content: center;
   & .searchContainer {
     position: relative;
@@ -91,8 +88,9 @@ $layout-breakpoint-max-width: 998px;
 @media (min-width: $layout-breakpoint-min-width) {
   .content {
     width: 70vw;
-    justify-content: center;
-    right: 100px;
+    position: absolute;
+    right: 16%;
+    top: 11%;
   }
 
   .searchContainer {
