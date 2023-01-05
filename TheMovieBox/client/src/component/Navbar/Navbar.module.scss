@@ -91,10 +91,6 @@
         border: 1px solid var(--primary-color-hover);
       }
     }
-
-    & .mobileNavUL {
-      padding: 15px 0;
-    }
   }
 }
 
@@ -110,7 +106,10 @@ $xsm-layout-breakpoint-max-width: 667px;
     font-size: 1.5rem !important;
   }
   .mobileNavUL {
-    margin: 0 auto;
+    margin: 16px auto;
+    position: relative;
+    top: 10px;
+    left: 7px;
   }
 }
 
