@@ -25,10 +25,7 @@
 9. Watch Trailers
 10. Search System
 11. Remove trailer from My List
-
-## Not yet implemented
-
-11. Refactor Password System
+12. Refactor Password System
 
 # Tool Used
 
