@@ -83,11 +83,13 @@ export default function MyList() {
       <div className={styles.myList}>
         <h3>My List</h3>
         <div className={styles.listCard}>
-          <div className={global.gridWrapper}>
-            {listDoc.movies === undefined ? (
-              <h2>Add a movie to your list.</h2>
-            ) : (
-              listDoc.movies.map((data) => {
+          {listDoc.movies === undefined || listDoc.movies.length === 0 ? (
+            <h2>
+              Add a movie to your list<span>.</span>
+            </h2>
+          ) : (
+            <div className={global.gridWrapper}>
+              {listDoc.movies.map((data) => {
                 const {
                   id,
                   title,
@@ -109,9 +111,9 @@ export default function MyList() {
                     removeListItem={removeListItem}
                   />
                 );
-              })
-            )}
-          </div>
+              })}
+            </div>
+          )}
         </div>
       </div>
     </section>
