@@ -77,6 +77,11 @@
 $layout-breakpoint-max-width: 997px;
 
 @media (max-width: $layout-breakpoint-max-width) {
+  .loginBtnMobile,
+  .signupBtnMobile {
+    width: 356px;
+  }
+
   $layout-breakpoint-min-width: 769px;
 
   @media (min-width: $layout-breakpoint-min-width) {
