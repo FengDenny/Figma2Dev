@@ -50,8 +50,8 @@ export default function MobileMenu({ show, close }) {
           </>
         ) : (
           <>
-            <Login mobile />
-            <Signup mobile />
+            <Login close={close} mobile />
+            <Signup close={close} mobile />
           </>
         )}
       </div>

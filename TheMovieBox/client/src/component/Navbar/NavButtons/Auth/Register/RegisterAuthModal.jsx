@@ -1,8 +1,5 @@
 import React from "react";
 import authStyles from "../auths.module.scss";
-import { usePasswordChecker } from "../../helper/usePasswordChecker";
-import passwordStyles from "../../helper/passwordChecker.module.scss";
-
 import { DisplayError } from "../../helper/DisplayError";
 
 export default function RegisterAuthModal({
@@ -14,6 +11,7 @@ export default function RegisterAuthModal({
   AiOutlineEyeInvisible,
   togglePasswordVisiblity,
   passwordShown,
+  close,
 }) {
   return (
     <form className={authStyles.authForm}>
@@ -59,7 +57,10 @@ export default function RegisterAuthModal({
         <button
           type='button'
           className={authStyles.formSubmit}
-          onClick={accountData}
+          onClick={() => {
+            accountData();
+            close();
+          }}
           disabled={
             !data.password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/)
           }

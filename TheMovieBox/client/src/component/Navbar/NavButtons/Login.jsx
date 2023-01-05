@@ -15,7 +15,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "../../../redux/slice/auth/userData-slice";
 
-export default function Login({ mobile }) {
+export default function Login({ mobile, close }) {
   const [showModal, setShowModal] = useState(false);
   const [active, setActive] = useState("login");
   const [data, setData] = useState({
@@ -113,6 +113,7 @@ export default function Login({ mobile }) {
           closeModal={() => closeModal(setShowModal)}
           togglePasswordVisiblity={togglePasswordVisiblity}
           passwordShown={passwordShown}
+          close={close}
         />
       }
     </>

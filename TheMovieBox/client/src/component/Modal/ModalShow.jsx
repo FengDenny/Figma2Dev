@@ -87,6 +87,7 @@ export const ModalAuthShow = ({
   data,
   togglePasswordVisiblity,
   passwordShown,
+  close,
 }) => {
   return (
     <>
@@ -111,6 +112,7 @@ export const ModalAuthShow = ({
                 AiOutlineEyeInvisible={AiOutlineEyeInvisible}
                 togglePasswordVisiblity={togglePasswordVisiblity}
                 passwordShown={passwordShown}
+                close={close}
               />
             ) : (
               <RegisterAuth
@@ -122,6 +124,7 @@ export const ModalAuthShow = ({
                 AiOutlineEyeInvisible={AiOutlineEyeInvisible}
                 togglePasswordVisiblity={togglePasswordVisiblity}
                 passwordShown={passwordShown}
+                close={close}
               />
             )}
           </Modal>
