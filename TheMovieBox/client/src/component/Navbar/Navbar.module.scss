@@ -109,6 +109,11 @@ $xsm-layout-breakpoint-max-width: 667px;
   .desktopNavLink {
     font-size: 1.5rem !important;
   }
+  .mobileNavUL {
+    margin: 0 auto;
+    position: relative;
+    left: 7px;
+  }
 }
 
 @media (min-width: $layout-breakpoint-min-width) {
