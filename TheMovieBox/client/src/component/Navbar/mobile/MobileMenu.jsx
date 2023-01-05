@@ -29,9 +29,9 @@ export default function MobileMenu({ show }) {
     <div className={`${styles.mobileNavWrapper} ${show ? styles.open : null}`}>
       <Searchbar />
       <div className={styles.mobileButton}>
+        <DesktopNav styles={desktopStyles} mobile />
         {isLoggedIn ? (
           <>
-            <DesktopNav styles={desktopStyles} />
             <ul className={styles.navUL}>
               <li>
                 <Link to={`/my-list`} className={styles.navLink}>
