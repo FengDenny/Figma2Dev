@@ -56,7 +56,10 @@ export default function RegisterAuthModal({
         </i>
         <button
           className={authStyles.displayHintBtn}
-          onClick={() => setShowHint(!hint)}
+          onClick={(e) => {
+            e.preventDefault();
+            setShowHint(!hint);
+          }}
         >
           Show hint
         </button>
