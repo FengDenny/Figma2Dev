@@ -9,6 +9,8 @@ import AccountSettings from "./pages/AccountSetting/AccountSettings";
 import MyList from "./pages/MyList/MyList";
 import SearchData from "./component/Navbar/Searchbar/SearchData";
 import ResetPassword from "./component/Navbar/NavButtons/helper/ResetPassword/ResetPassword";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Main = () => {
   let routes = useRoutes([
     { path: "/", element: <Home /> },
@@ -51,6 +53,13 @@ function App() {
       />
       <main>
         <Main />
+        <ToastContainer
+          theme='dark'
+          position='top-center'
+          autoClose={3000}
+          closeOnClick
+          hideProgressBar={false}
+        />
       </main>
     </div>
   );
