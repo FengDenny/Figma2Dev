@@ -54,10 +54,7 @@ export default function LoginAuthModal({
         <button
           type='button'
           className={authStyles.formSubmit}
-          onClick={() => {
-            accountData();
-            close();
-          }}
+          onClick={accountData}
         >
           Log in
         </button>
