@@ -12,6 +12,7 @@ export default function LoginAuthModal({
   togglePasswordVisiblity,
   passwordShown,
   close,
+  mobile,
 }) {
   const navigate = useNavigate();
   return (
@@ -54,7 +55,11 @@ export default function LoginAuthModal({
         <button
           type='button'
           className={authStyles.formSubmit}
-          onClick={accountData}
+          onClick={() => {
+            accountData();
+
+            mobile && close();
+          }}
         >
           Log in
         </button>

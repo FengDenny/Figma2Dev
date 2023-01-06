@@ -15,6 +15,7 @@ export default function RegisterAuthModal({
   close,
   hint,
   setShowHint,
+  mobile,
 }) {
   return (
     <form className={authStyles.authForm}>
@@ -77,7 +78,7 @@ export default function RegisterAuthModal({
           className={authStyles.formSubmit}
           onClick={() => {
             accountData();
-            close();
+            mobile && close();
           }}
           disabled={
             !data.password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/)

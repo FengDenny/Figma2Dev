@@ -90,6 +90,7 @@ export const ModalAuthShow = ({
   close,
   hint,
   setShowHint,
+  mobile,
 }) => {
   return (
     <>
@@ -115,6 +116,7 @@ export const ModalAuthShow = ({
                 togglePasswordVisiblity={togglePasswordVisiblity}
                 passwordShown={passwordShown}
                 close={close}
+                mobile={mobile}
               />
             ) : (
               <RegisterAuth
@@ -129,6 +131,7 @@ export const ModalAuthShow = ({
                 close={close}
                 hint={hint}
                 setShowHint={setShowHint}
+                mobile={mobile}
               />
             )}
           </Modal>
