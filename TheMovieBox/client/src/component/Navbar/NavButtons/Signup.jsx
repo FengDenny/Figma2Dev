@@ -18,6 +18,7 @@ import { collection, addDoc } from "firebase/firestore";
 // redux
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "../../../redux/slice/auth/userData-slice";
+import { Toast } from "../../../toastHelper/Toast";
 
 export default function Signup({ mobile, close }) {
   const [showModal, setShowModal] = useState(false);
@@ -88,15 +89,15 @@ export default function Signup({ mobile, close }) {
       );
 
       setData({ email: "", fullName: "", password: "" });
+      Toast(null, `${email} has successfully signed up!`);
       if (isLoggedIn) {
         navigate(`/`);
         setShowModal(!showModal);
       }
     } catch (err) {
-      console.log(err.message);
+      Toast("error", err.message);
     }
   };
-
   return (
     <>
       <button
@@ -123,6 +124,7 @@ export default function Signup({ mobile, close }) {
           close={close}
           hint={hint}
           setShowHint={setShowHint}
+          mobile={mobile}
         />
       }
     </>

@@ -14,6 +14,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 // redux
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "../../../redux/slice/auth/userData-slice";
+import { Toast } from "../../../toastHelper/Toast";
 
 export default function Login({ mobile, close }) {
   const [showModal, setShowModal] = useState(false);
@@ -78,8 +79,9 @@ export default function Login({ mobile, close }) {
             lastSignInTime,
           })
         );
+        Toast("", `Welcome back, ${data.email}!`);
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => Toast("error", err.message));
 
     setData({ email: "", password: "" });
 
@@ -114,6 +116,7 @@ export default function Login({ mobile, close }) {
           togglePasswordVisiblity={togglePasswordVisiblity}
           passwordShown={passwordShown}
           close={close}
+          mobile={mobile}
         />
       }
     </>
