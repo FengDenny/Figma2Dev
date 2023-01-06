@@ -17,6 +17,7 @@ import {
 } from "firebase/firestore";
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { Toast } from "../../toastHelper/Toast";
 
 export default function MovieTypesData({ dataType, type }) {
   const dispatch = useDispatch();
@@ -107,6 +108,8 @@ export default function MovieTypesData({ dataType, type }) {
             ...data,
           }),
         });
+
+        !isMoviesInList(data.id) && Toast(null, "Movie added to list");
       }
     }
 
