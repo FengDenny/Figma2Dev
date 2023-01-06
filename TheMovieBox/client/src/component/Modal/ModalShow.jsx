@@ -88,6 +88,8 @@ export const ModalAuthShow = ({
   togglePasswordVisiblity,
   passwordShown,
   close,
+  hint,
+  setShowHint,
 }) => {
   return (
     <>
@@ -125,6 +127,8 @@ export const ModalAuthShow = ({
                 togglePasswordVisiblity={togglePasswordVisiblity}
                 passwordShown={passwordShown}
                 close={close}
+                hint={hint}
+                setShowHint={setShowHint}
               />
             )}
           </Modal>

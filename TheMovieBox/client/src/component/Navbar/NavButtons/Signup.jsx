@@ -28,6 +28,8 @@ export default function Signup({ mobile, close }) {
     password: "",
   });
 
+  const [hint, setShowHint] = useState(false);
+
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
@@ -119,6 +121,8 @@ export default function Signup({ mobile, close }) {
           togglePasswordVisiblity={togglePasswordVisiblity}
           passwordShown={passwordShown}
           close={close}
+          hint={hint}
+          setShowHint={setShowHint}
         />
       }
     </>

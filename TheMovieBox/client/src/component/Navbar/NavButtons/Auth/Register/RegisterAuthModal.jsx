@@ -1,6 +1,7 @@
 import React from "react";
 import authStyles from "../auths.module.scss";
 import { DisplayError } from "../../helper/DisplayError";
+import passwordStyles from "../../helper/passwordChecker.module.scss";
 
 export default function RegisterAuthModal({
   setActive,
@@ -12,6 +13,8 @@ export default function RegisterAuthModal({
   togglePasswordVisiblity,
   passwordShown,
   close,
+  hint,
+  setShowHint,
 }) {
   return (
     <form className={authStyles.authForm}>
@@ -51,8 +54,20 @@ export default function RegisterAuthModal({
         >
           {passwordShown ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
         </i>
+        <button
+          className={authStyles.displayHintBtn}
+          onClick={() => setShowHint(!hint)}
+        >
+          Show hint
+        </button>
       </div>
-      {DisplayError(data)}
+
+      <div
+        className={hint ? passwordStyles.showHint : passwordStyles.removeHint}
+      >
+        {DisplayError(data)}
+      </div>
+
       <div className={authStyles.formInput}>
         <button
           type='button'

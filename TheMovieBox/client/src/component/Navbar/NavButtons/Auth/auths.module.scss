@@ -88,4 +88,17 @@
       color: var(--primary-color-hover);
     }
   }
+
+  .displayHintBtn {
+    position: absolute;
+    top: 1px;
+    font-size: 1rem;
+    bottom: 37px;
+    font-weight: normal !important;
+    color: var(--primary-color);
+    &:hover {
+      border-bottom: 1px solid var(--secondary-color);
+      transition: border-bottom 500ms linear;
+    }
+  }
 }
