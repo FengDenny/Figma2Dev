@@ -20,6 +20,8 @@ import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "../../redux/slice/auth/userData-slice";
 
+import { Toast } from "../../toastHelper/Toast";
+
 export default function AccountSettings() {
   const { userData } = useSelector((state) => ({ ...state }));
   const { userInfo, metadata, usersCollectionID } = userData;
@@ -89,6 +91,11 @@ export default function AccountSettings() {
                 isLoggedIn: true,
               })
             );
+
+            Toast(
+              "success",
+              `You have sucessfully changed your name to ${fullNameElseDisplayName} `
+            );
           })
           .catch((err) => console.log(err.message));
       }
@@ -107,6 +114,11 @@ export default function AccountSettings() {
                 accessToken,
                 isLoggedIn: true,
               })
+            );
+
+            Toast(
+              "success",
+              `You have sucessfully changed your email to ${newEmailElseEmail} `
             );
           })
           .catch((err) => console.log(err.message));
@@ -128,9 +140,9 @@ export default function AccountSettings() {
             setNewPasswordData({ ...newPasswordData, ...null });
           }
         })
-        .then(() => console.log("Password updated successfully"));
+        .then(() => Toast("success", "Password updated successfully"));
     } catch (err) {
-      console.log(err.message);
+      Toast("error", err.message);
     }
   };
 
