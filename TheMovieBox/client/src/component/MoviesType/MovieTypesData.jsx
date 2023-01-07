@@ -109,7 +109,7 @@ export default function MovieTypesData({ dataType, type }) {
           }),
         });
 
-        !isMoviesInList(data.id) && Toast(null, "Movie added to list");
+        !isMoviesInList(data.id) && Toast("success", "Movie added to list");
       }
     }
 

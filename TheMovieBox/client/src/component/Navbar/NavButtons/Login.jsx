@@ -79,7 +79,7 @@ export default function Login({ mobile, close }) {
             lastSignInTime,
           })
         );
-        Toast("", `Welcome back, ${data.email}!`);
+        Toast("success", `Welcome back, ${data.email}!`);
       })
       .catch((err) => Toast("error", err.message));
 

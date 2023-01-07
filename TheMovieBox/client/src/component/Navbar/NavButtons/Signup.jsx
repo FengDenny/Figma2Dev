@@ -89,7 +89,7 @@ export default function Signup({ mobile, close }) {
       );
 
       setData({ email: "", fullName: "", password: "" });
-      Toast(null, `${email} has successfully signed up!`);
+      Toast("success", `${email} has successfully signed up!`);
       if (isLoggedIn) {
         navigate(`/`);
         setShowModal(!showModal);
