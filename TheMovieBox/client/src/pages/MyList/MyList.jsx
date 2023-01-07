@@ -84,7 +84,7 @@ export default function MyList() {
         <h3>My List</h3>
         <div className={styles.listCard}>
           {listDoc.movies === undefined || listDoc.movies.length === 0 ? (
-            <h2>
+            <h2 className={styles.listCardHeader}>
               Add a movie to your list<span>.</span>
             </h2>
           ) : (
