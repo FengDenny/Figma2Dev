@@ -8,11 +8,13 @@ import { TbCircleX } from "react-icons/tb";
 import {
   openDispatchModal,
   closeModal,
+  openHeroModal,
 } from "../../component/Modal/ModalHelper/ModalHelpers";
 import { useDispatch } from "react-redux";
 import { movieAction } from "../../redux/slice/movies/movieID-slice";
-import { ModalShow } from "../../component/Modal/ModalShow";
+import { ModalShow, ModalTrailerShow } from "../../component/Modal/ModalShow";
 
+import movieStyles from "../../component/MoviesType/movieTypes.module.scss";
 export default function MyListData({
   movieID,
   title,
@@ -24,6 +26,7 @@ export default function MyListData({
   removeListItem,
 }) {
   const [showModal, setShowModal] = useState(false);
+  const [showTrailerModal, setShowTrailerModal] = useState(false);
   const genre = useGetGenre();
   const dispatch = useDispatch();
 
@@ -63,8 +66,22 @@ export default function MyListData({
             data={item}
           />
         }
+        <button
+          onClick={() => openHeroModal(setShowTrailerModal, showTrailerModal)}
+          className={movieStyles.trailerBtn}
+        >
+          Watch Trailer
+        </button>
+        {
+          <ModalTrailerShow
+            showModal={showTrailerModal}
+            closeModal={() => closeModal(setShowTrailerModal)}
+            data={item}
+          />
+        }
+
         <div className={styles.header}>
-          <h2>{title}</h2>
+          <h2 className={styles.title}>{title}</h2>
           <h5 className={styles.date}>{release_date.split("-").slice(0, 1)}</h5>
           <div className={`${global.dFlexRow} ${global.spaceBetween}`}>
             <div className={styles.genres}>
