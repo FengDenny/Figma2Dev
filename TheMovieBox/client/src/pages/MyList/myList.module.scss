@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
 
-    & h2 {
+    & .listCardHeader {
       font-size: 2rem;
       position: relative;
       margin-top: 5%;
@@ -81,7 +81,7 @@
         position: absolute;
         max-width: auto;
         height: auto;
-        top: 53%;
+        top: 43%;
         right: 3%;
         cursor: pointer;
 
@@ -91,12 +91,14 @@
         }
       }
 
-      & .btnRemoveList {
-        top: 40%;
-      }
-
       & .header {
         padding: 10px;
+
+        & .title {
+          color: black;
+          font-weight: bold;
+        }
+
         & h5 {
           position: absolute;
           top: 56%;
@@ -108,11 +110,16 @@
           position: relative;
           display: flex;
           flex-direction: row;
-          font-size: 0.7rem;
-          color: var(--secondary-card-font);
-          top: 10px;
           width: 240px;
           font-style: italic;
+
+          & h2 {
+            position: relative;
+            top: 9px;
+            font-size: 1.2rem;
+            color: var(--secondary-card-font) !important;
+          }
+
           & h2:not(:first-child) {
             padding-left: 9px;
           }
