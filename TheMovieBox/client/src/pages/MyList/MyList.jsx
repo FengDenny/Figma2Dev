@@ -14,6 +14,7 @@ import {
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { database } from "../../firebase/firebaseConfig";
+import { Toast } from "../../toastHelper/Toast";
 
 export default function MyList() {
   const [userID, setUserID] = useState();
@@ -37,6 +38,9 @@ export default function MyList() {
   const removeListItem = async (id) => {
     const listingRef = doc(database, "lists", `${docID}`);
     const docSnap = await getDoc(listingRef);
+    const showToastTitle = docSnap
+      .data()
+      .movies.filter((item) => item.id === id);
 
     try {
       if (docSnap.exists()) {
@@ -44,6 +48,7 @@ export default function MyList() {
         updateDoc(listingRef, {
           movies: newDoc,
         });
+        Toast("success", `${showToastTitle[0].title} was sucessfully removed.`);
       } else {
         console.log("No such document!");
       }

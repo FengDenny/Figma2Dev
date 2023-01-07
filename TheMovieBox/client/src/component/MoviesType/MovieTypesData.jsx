@@ -92,6 +92,8 @@ export default function MovieTypesData({ dataType, type }) {
     const myListCollection = doc(database, "lists", docID);
     const checkDoc = await getDoc(myListCollection);
 
+    console.log(data);
+
     if (isLoggedIn) {
       dispatch(movieAction.addMovieToListID({ id: data.id }));
       if (!checkDoc.exists()) {
@@ -109,7 +111,8 @@ export default function MovieTypesData({ dataType, type }) {
           }),
         });
 
-        !isMoviesInList(data.id) && Toast("success", "Movie added to list");
+        !isMoviesInList(data.id) &&
+          Toast("success", `${data.title} added to your list.`);
       }
     }
 
