@@ -2,7 +2,7 @@ import { usePasswordChecker } from "./usePasswordChecker";
 import passwordStyles from "./passwordChecker.module.scss";
 import authStyles from "../../NavButtons/Auth/auths.module.scss";
 
-export const DisplayError = (data) => {
+export const DisplayError = (data, update) => {
   const { error, IoIosCheckmarkCircleOutline } = usePasswordChecker(
     data.password
   );
@@ -16,7 +16,7 @@ export const DisplayError = (data) => {
             className={`${passwordStyles.error} ${authStyles.formInput}`}
           >
             <div>
-              <span>
+              <span className={update && passwordStyles.spanWhite}>
                 {data.password.length < 8 ? (
                   <IoIosCheckmarkCircleOutline className={passwordStyles.red} />
                 ) : (
@@ -28,7 +28,7 @@ export const DisplayError = (data) => {
               </span>
             </div>
             <div>
-              <span>
+              <span className={update && passwordStyles.spanWhite}>
                 {!data.password.match(/[A-Z]/) ? (
                   <IoIosCheckmarkCircleOutline className={passwordStyles.red} />
                 ) : (
@@ -40,7 +40,7 @@ export const DisplayError = (data) => {
               </span>
             </div>
             <div>
-              <span>
+              <span className={update && passwordStyles.spanWhite}>
                 {!data.password.match(/[a-z]/) ? (
                   <IoIosCheckmarkCircleOutline className={passwordStyles.red} />
                 ) : (
@@ -52,7 +52,7 @@ export const DisplayError = (data) => {
               </span>
             </div>
             <div>
-              <span>
+              <span className={update && passwordStyles.spanWhite}>
                 {!data.password.match(/[\d`~!@#$%\^&*()+=|;:'",.<>\/?\\\-]/) ? (
                   <IoIosCheckmarkCircleOutline className={passwordStyles.red} />
                 ) : (
