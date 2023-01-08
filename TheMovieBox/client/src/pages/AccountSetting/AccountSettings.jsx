@@ -20,7 +20,7 @@ import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { useDispatch, useSelector } from "react-redux";
 import { userAction } from "../../redux/slice/auth/userData-slice";
 
-import { Toast } from "../../toastHelper/Toast";
+import { Toast, UpdateToast } from "../../toastHelper/Toast";
 
 export default function AccountSettings() {
   const { userData } = useSelector((state) => ({ ...state }));
@@ -41,6 +41,14 @@ export default function AccountSettings() {
   });
 
   const [showHint, setShowHint] = useState(false);
+  const [passwordShown, setPasswordShown] = useState(false);
+  const [confirmPasswordShown, setConfirmPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+  };
+  const toggleConfirmPasswordVisiblity = () => {
+    setConfirmPasswordShown(confirmPasswordShown ? false : true);
+  };
 
   const { newEmail, newFullName } = newData;
   const { currentPassword, password, confirmPassword } = newPasswordData;
@@ -135,16 +143,21 @@ export default function AccountSettings() {
     const credentials = EmailAuthProvider.credential(email, currentPassword);
 
     try {
-      await reauthenticateWithCredential(auth.currentUser, credentials)
-        .then(async () => {
+      await reauthenticateWithCredential(auth.currentUser, credentials).then(
+        async () => {
           if (password === confirmPassword) {
             await updatePassword(auth.currentUser, password);
             setNewPasswordData({ ...newPasswordData, ...null });
+          } else if (password !== confirmPassword) {
+            UpdateToast(
+              "error",
+              "New password and confirm new password are not the same. "
+            );
           } else {
-            Toast("error", "Password are not the same.");
+            Toast("success", "Password updated successfully");
           }
-        })
-        .then(() => Toast("success", "Password updated successfully"));
+        }
+      );
     } catch (err) {
       Toast("error", err.message);
     }
@@ -167,6 +180,10 @@ export default function AccountSettings() {
           userID={userID}
           showHint={showHint}
           setShowHint={setShowHint}
+          togglePasswordVisiblity={togglePasswordVisiblity}
+          toggleConfirmPasswordVisiblity={toggleConfirmPasswordVisiblity}
+          passwordShown={passwordShown}
+          confirmPasswordShown={confirmPasswordShown}
         />
       </div>
     </section>

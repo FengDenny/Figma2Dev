@@ -3,12 +3,18 @@ import styles from "../../AccountSetting.module.scss";
 import { DisplayError } from "../../../../component/Navbar/NavButtons/helper/DisplayError";
 import passwordStyles from "../../../../component/Navbar/NavButtons/helper/passwordChecker.module.scss";
 
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+
 export default function UpdatePassword({
   newPasswordData,
   updateNewPassword,
   handleIncomingUpdatedData,
   setShowHint,
   showHint,
+  togglePasswordVisiblity,
+  toggleConfirmPasswordVisiblity,
+  passwordShown,
+  confirmPasswordShown,
 }) {
   return (
     <section className={styles.security}>
@@ -27,12 +33,19 @@ export default function UpdatePassword({
         <div className={styles.accountUserInfo}>
           <label htmlFor='newPassword'>New Password</label>
           <input
-            type='password'
+            type={passwordShown ? "text" : "password"}
             name='password'
             placeholder='Create a new password'
             value={newPasswordData.password}
             onChange={(event) => handleIncomingUpdatedData(event)}
           />
+          <i className={styles.showPassword} onClick={togglePasswordVisiblity}>
+            {passwordShown ? (
+              <AiOutlineEye className={styles.active} />
+            ) : (
+              <AiOutlineEyeInvisible className={styles.notActive} />
+            )}
+          </i>
           <button
             className={styles.displayHintBtn}
             onClick={(e) => {
@@ -53,12 +66,22 @@ export default function UpdatePassword({
         <div className={styles.accountUserInfo}>
           <label htmlFor='confirmPassword'>Confirm New Password</label>
           <input
-            type='password'
+            type={confirmPasswordShown ? "text" : "password"}
             name='confirmPassword'
             placeholder='Confirm your new password'
             value={newPasswordData.confirmPassword}
             onChange={(event) => handleIncomingUpdatedData(event)}
           />
+          <i
+            className={styles.showPassword}
+            onClick={toggleConfirmPasswordVisiblity}
+          >
+            {confirmPasswordShown ? (
+              <AiOutlineEye className={styles.active} />
+            ) : (
+              <AiOutlineEyeInvisible className={styles.notActive} />
+            )}
+          </i>
         </div>
         <button
           className={styles.btnSave}

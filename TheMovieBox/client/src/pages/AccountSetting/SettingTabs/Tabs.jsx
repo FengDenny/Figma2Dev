@@ -19,6 +19,10 @@ export default function Tabs({
   newPasswordData,
   showHint,
   setShowHint,
+  togglePasswordVisiblity,
+  passwordShown,
+  confirmPasswordShown,
+  toggleConfirmPasswordVisiblity,
 }) {
   const [tab, setTab] = useState(0);
 
@@ -69,6 +73,10 @@ export default function Tabs({
                 newPasswordData={newPasswordData}
                 showHint={showHint}
                 setShowHint={setShowHint}
+                togglePasswordVisiblity={togglePasswordVisiblity}
+                toggleConfirmPasswordVisiblity={toggleConfirmPasswordVisiblity}
+                passwordShown={passwordShown}
+                confirmPasswordShown={confirmPasswordShown}
               />
             )}
           </TabsContent>
