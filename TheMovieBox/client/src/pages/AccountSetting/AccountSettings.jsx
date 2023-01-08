@@ -148,13 +148,12 @@ export default function AccountSettings() {
           if (password === confirmPassword) {
             await updatePassword(auth.currentUser, password);
             setNewPasswordData({ ...newPasswordData, ...null });
+            Toast("success", "Password updated successfully");
           } else if (password !== confirmPassword) {
             UpdateToast(
               "error",
               "New password and confirm new password are not the same. "
             );
-          } else {
-            Toast("success", "Password updated successfully");
           }
         }
       );
