@@ -17,6 +17,8 @@ export default function Tabs({
   newData,
   updateNewPassword,
   newPasswordData,
+  showHint,
+  setShowHint,
 }) {
   const [tab, setTab] = useState(0);
 
@@ -65,6 +67,8 @@ export default function Tabs({
                 handleIncomingUpdatedData={handleIncomingUpdatedData}
                 updateNewPassword={updateNewPassword}
                 newPasswordData={newPasswordData}
+                showHint={showHint}
+                setShowHint={setShowHint}
               />
             )}
           </TabsContent>
