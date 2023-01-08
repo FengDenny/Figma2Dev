@@ -36,12 +36,14 @@ export default function AccountSettings() {
 
   const [newPasswordData, setNewPasswordData] = useState({
     currentPassword: "",
-    newPassword: "",
+    password: "",
     confirmPassword: "",
   });
 
+  const [showHint, setShowHint] = useState(false);
+
   const { newEmail, newFullName } = newData;
-  const { currentPassword, newPassword, confirmPassword } = newPasswordData;
+  const { currentPassword, password, confirmPassword } = newPasswordData;
   const auth = getAuth();
   const dispatch = useDispatch();
   const collectionRef = collection(database, "users");
@@ -135,9 +137,11 @@ export default function AccountSettings() {
     try {
       await reauthenticateWithCredential(auth.currentUser, credentials)
         .then(async () => {
-          if (newPassword === confirmPassword) {
-            await updatePassword(auth.currentUser, newPassword);
+          if (password === confirmPassword) {
+            await updatePassword(auth.currentUser, password);
             setNewPasswordData({ ...newPasswordData, ...null });
+          } else {
+            Toast("error", "Password are not the same.");
           }
         })
         .then(() => Toast("success", "Password updated successfully"));
@@ -161,6 +165,8 @@ export default function AccountSettings() {
           newData={newData}
           newPasswordData={newPasswordData}
           userID={userID}
+          showHint={showHint}
+          setShowHint={setShowHint}
         />
       </div>
     </section>
