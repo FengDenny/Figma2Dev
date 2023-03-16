@@ -19,7 +19,7 @@
 3. Tabs
 4. Custom Hooks
 5. My List
-6. YouTube embeded trailer Hero Section
+6. YouTube embedded trailer Hero Section
 7. Authentication system
 8. Modal
 9. Watch Trailers
