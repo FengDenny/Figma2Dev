@@ -1,6 +1,6 @@
 # Figma2Dev Projects (Ongoing)
 
-Turning high-fidelity mockups to pixel-pefect websites.
+Turning high-fidelity mockups to pixel-perfect websites.
 
 ## Single Page Web Applications
 
