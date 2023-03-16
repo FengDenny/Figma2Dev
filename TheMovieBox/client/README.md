@@ -25,7 +25,7 @@
 9. Watch Trailers
 10. Search System
 11. Remove trailer from My List
-12. Refactor Password System
+12. Reset Password System
 
 # Tool Used
 
