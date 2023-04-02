@@ -33,7 +33,7 @@ export default function ResetPassword() {
               className={resetStyle.formSubmit}
               onClick={() => ResetPasswordData(email)}
             >
-              Log in
+              Reset
             </button>
           </div>
         </form>
