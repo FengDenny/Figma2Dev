@@ -24,7 +24,6 @@ export default function LoginAuthModal({
           name='email'
           value={data.email}
           onChange={(event) => handleIncomingData(event)}
-          required
         />
       </div>
 
@@ -35,7 +34,6 @@ export default function LoginAuthModal({
           name='password'
           value={data.password}
           onChange={(event) => handleIncomingData(event)}
-          required
         />
         <button
           className={authStyles.passwordReset}
@@ -60,6 +58,7 @@ export default function LoginAuthModal({
 
             mobile && close();
           }}
+          disabled={!data.email || !data.password}
         >
           Log in
         </button>
