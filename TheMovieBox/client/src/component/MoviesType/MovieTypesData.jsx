@@ -115,14 +115,6 @@ export default function MovieTypesData({ dataType, type }) {
           Toast("success", `${data.title} added to your list.`);
       }
     }
-
-    /* TO DO: CREATE SPAM DISPATCH DETECTION / BLOCK */
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/is_not_iterable
-    // console.log(moviesID.movieListID);
-    // console.log(movieList);
-    // for (const id of Object.keys(moviesID)) {
-    //   console.log(id);
-    // }
   };
 
   const dataSliced = () => {
