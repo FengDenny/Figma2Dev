@@ -12,17 +12,11 @@ export const useGetMovies = (title, method) => {
 
   const movieEndpoint = getMoviesEndpoint(title, key, 1);
 
-  const movies = () => {
-    try {
-      fetchRequest(movieEndpoint, method, key).then((response) => {
-        setResult(
-          response.data.results.filter((item) => item.backdrop_path !== null)
-        );
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const set = new Set(result.map((item) => JSON.stringify(item)));
+  const deduped = [...set].map((item) => JSON.parse(item));
+  // console.log(movieEndpoint);
+  // console.log(`Removed ${result.length - deduped.length} elements`);
+  // console.log(deduped);
 
   function infiniteMovies() {
     try {
@@ -41,8 +35,19 @@ export const useGetMovies = (title, method) => {
   }
 
   useEffect(() => {
+    const movies = () => {
+      try {
+        fetchRequest(movieEndpoint, method, key).then((response) => {
+          setResult(
+            response.data.results.filter((item) => item.backdrop_path !== null)
+          );
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    };
     movies();
-  }, []);
+  }, [method, movieEndpoint]);
 
-  return result;
+  return deduped;
 };
